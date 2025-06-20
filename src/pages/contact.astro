@@ -1,1 +1,40 @@
- 
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact Us">
+  <main class="py-20 px-8">
+    <div class="max-w-2xl mx-auto text-center">
+      <h1 class="text-4xl font-bold mb-4">Request a Quote</h1>
+      <p class="text-gray-400 mb-8">
+        Fill out the form below and one of our specialists will get back to you shortly.
+      </p>
+    </div>
+    <div class="max-w-2xl mx-auto">
+      <form name="quote" method="POST" action="/thank-you" data-netlify="true" data-netlify-honeypot="bot-field" class="text-left bg-gray-800 p-8 rounded-lg">
+        <input type="hidden" name="form-name" value="quote" />
+        <div class="mb-4">
+          <label for="name" class="block mb-2 font-bold">Name</label>
+          <input type="text" name="name" id="name" placeholder="Your Name" class="w-full p-3 rounded bg-gray-700 border border-gray-600 focus:ring-blue-500 focus:border-blue-500">
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block mb-2 font-bold">Email</label>
+          <input type="email" name="email" id="email" placeholder="Your Email" class="w-full p-3 rounded bg-gray-700 border border-gray-600 focus:ring-blue-500 focus:border-blue-500">
+        </div>
+        <div class="mb-4">
+          <label for="phone" class="block mb-2 font-bold">Phone</label>
+          <input type="tel" name="phone" id="phone" placeholder="Your Phone Number" class="w-full p-3 rounded bg-gray-700 border border-gray-600 focus:ring-blue-500 focus:border-blue-500">
+        </div>
+        <div class="mb-4">
+          <label for="message" class="block mb-2 font-bold">Message</label>
+          <textarea name="message" id="message" rows="4" placeholder="Tell us about your project needs..." class="w-full p-3 rounded bg-gray-700 border border-gray-600 focus:ring-blue-500 focus:border-blue-500"></textarea>
+        </div>
+        <div>
+          <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg">
+            Send Message
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+</Layout> 
