@@ -1,0 +1,115 @@
+---
+import { SEO } from "astro-seo";
+import { getEntry } from "astro:content";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+  seo?: any;
+  type?: 'website' | 'article';
+}
+
+const {
+  title,
+  description,
+  image,
+  noindex = false,
+  seo,
+  type = 'website'
+} = Astro.props;
+
+// Get global SEO settings (with error handling)
+let globalSEO;
+let businessInfo;
+
+try {
+  globalSEO = await getEntry('seo_settings', 'seo');
+  businessInfo = await getEntry('business', 'company');
+} catch (error) {
+  console.warn('SEO collections not found. Using defaults.');
+}
+
+// Determine final SEO values with fallbacks
+const finalTitle = seo?.title || title || globalSEO?.data?.title || 'Custom Climates';
+const finalDescription = seo?.description || description || globalSEO?.data?.description || 'Climate-controlled storage solutions for construction materials';
+const finalImage = seo?.image || image || globalSEO?.data?.image;
+const finalKeywords = seo?.keywords || globalSEO?.data?.keywords;
+const finalImageAlt = seo?.imageAlt || finalTitle;
+
+// Build structured data for business (if business info exists)
+const businessSchema = businessInfo ? {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": businessInfo.data.name,
+  "telephone": businessInfo.data.phone,
+  "email": businessInfo.data.email,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": businessInfo.data.address,
+    "addressLocality": businessInfo.data.city,
+    "addressRegion": businessInfo.data.state,
+    "postalCode": businessInfo.data.zip
+  },
+  "areaServed": businessInfo.data.serviceAreas?.map(area => ({
+    "@type": "City",
+    "name": area.location
+  })) || [],
+  "openingHours": businessInfo.data.hours,
+  "url": Astro.site?.toString()
+} : null;
+---
+<SEO
+  title={finalTitle}
+  description={finalDescription}
+  noindex={noindex}
+  canonical={seo?.canonical || Astro.url.toString()}
+  openGraph={{
+    basic: {
+      title: finalTitle,
+      type: type,
+      image: finalImage ? new URL(finalImage, Astro.site || 'http://localhost:3000').toString() : undefined,
+      url: Astro.url.toString()
+    },
+    optional: {
+      description: finalDescription,
+      siteName: businessInfo?.data?.name || 'Custom Climates'
+    }
+  }}
+  twitter={{
+    card: "summary_large_image",
+    title: finalTitle,
+    description: finalDescription,
+    image: finalImage ? new URL(finalImage, Astro.site || 'http://localhost:3000').toString() : undefined,
+    imageAlt: finalImageAlt
+  }}
+/>
+
+<!-- Keywords Meta Tag -->
+{finalKeywords && (
+  <meta name="keywords" content={finalKeywords} />
+)}
+
+<!-- Business Schema -->
+{businessSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
+)}
+
+<!-- Analytics (if configured) -->
+{globalSEO?.data?.analytics?.googleAnalytics && (
+  <>
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${globalSEO.data.analytics.googleAnalytics}`}></script>
+    <script define:vars={{ gaId: globalSEO.data.analytics.googleAnalytics }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', gaId);
+    </script>
+  </>
+)}
+
+<!-- Favicon -->
+{globalSEO?.data?.favicon && (
+  <link rel="icon" type="image/svg+xml" href={globalSEO.data.favicon} />
+)} 

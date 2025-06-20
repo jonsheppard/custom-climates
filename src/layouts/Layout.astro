@@ -1,20 +1,22 @@
 ---
 import '../styles/global.css';
+import SEOHead from '../components/SEOHead.astro';
 
 interface Props {
-	title: string;
-	description: string;
+	title?: string;
+	description?: string;
+    frontmatter?: {
+        seo?: any;
+    };
 }
 
-const { title = 'Custom Climates | On-site Climate Controlled Solutions', description = 'Self-powered, climate-controlled trailers and conex containers that lock temps and humidity to spec, so Mother Nature never hijacks your schedule or your margins.' } = Astro.props;
+const { title, description, frontmatter } = Astro.props;
 ---
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -22,7 +24,11 @@ const { title = 'Custom Climates | On-site Climate Controlled Solutions', descri
 			rel="stylesheet"
 		/>
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+        <SEOHead 
+            title={title}
+            description={description}
+            seo={frontmatter?.seo}
+        />
 		<script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 	</head>
 	<body class="bg-neutral-light text-neutral-dark font-sans">
