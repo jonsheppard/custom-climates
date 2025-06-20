@@ -1,0 +1,60 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+
+# This line should be removed for production
+local_backend: true
+
+media_folder: "src/assets/uploads" # Media files will be stored in the repo under src/assets/uploads
+public_folder: "/assets/uploads" # The src attribute for uploaded media will begin with /assets/uploads
+
+collections:
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - file: "src/data/settings.json"
+        label: "Global Settings"
+        name: "settings"
+        fields:
+          - { label: "Site Title", name: "title", widget: "string" }
+          - { label: "Contact Phone Number", name: "phone", widget: "string" }
+          - { label: "Contact Email", name: "email", widget: "string" }
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/content/homepage.md"
+        label: "Homepage"
+        name: "homepage"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Hero Headline", name: "hero_headline", widget: "string" }
+          - { label: "Hero Subheadline", name: "hero_subheadline", widget: "text" }
+          - { label: "Body", name: "body", widget: "markdown" }
+      - file: "src/content/about.md"
+        label: "About Page"
+        name: "about"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "services"
+    label: "Services"
+    folder: "src/content/services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "case_studies"
+    label: "Case Studies"
+    folder: "src/content/case_studies"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Customer Name", name: "customer", widget: "string" }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" } 

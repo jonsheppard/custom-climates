@@ -1,0 +1,41 @@
+---
+const equipment = [
+    {
+        name: 'Climate-Controlled Trailers',
+        description: 'Our gooseneck trailers are dropped right on site, providing easy access to materials without disrupting your workflow. Fully powered and climate-locked.',
+        imageUrl: 'https://images.unsplash.com/photo-1615903998529-e38fad282910?q=80&w=1974&auto=format&fit=crop', // Placeholder
+        link: '/services#trailers'
+    },
+    {
+        name: 'Conex Containers',
+        description: 'Need more space? Our Conex containers offer robust, high-volume storage that can be securely placed for long-term projects.',
+        imageUrl: 'https://images.unsplash.com/photo-1662580799302-35a85f3964d3?q=80&w=2070&auto=format&fit=crop', // Placeholder
+        link: '/services#containers'
+    }
+]
+---
+
+<section class="py-20 bg-neutral-light">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold font-heading text-neutral-dark">The Right Tool for the Job</h2>
+            <p class="mt-4 text-lg text-neutral-medium max-w-2xl mx-auto">From compact trailers to high-capacity containers, we have the perfect climate-controlled solution for your site.</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-12">
+            {equipment.map(item => (
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src={item.imageUrl} alt={item.name} class="w-full h-64 object-cover"/>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold font-heading">{item.name}</h3>
+                        <p class="mt-4 text-neutral-medium">{item.description}</p>
+                        <div class="mt-6">
+                            <a href={item.link} class="text-brand-blue font-bold hover:underline">
+                                Learn More &rarr;
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section> 

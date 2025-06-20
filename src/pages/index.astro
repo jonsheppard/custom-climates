@@ -1,11 +1,73 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import ProblemStatement from '../components/ProblemStatement.astro';
+import SolutionOverview from '../components/SolutionOverview.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import EquipmentShowcase from '../components/EquipmentShowcase.astro';
+import SocialProof from '../components/SocialProof.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+import Footer from '../components/Footer.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout 
+	title="Custom Climates | Stop Weather From Hijacking Your Construction Timeline" 
+	description="Climate-controlled trailers and containers that protect materials, stream live data, and keep your project on schedule."
+>
+	<Header />
+	<main>
+		<Hero />
+		<ProblemStatement />
+		<SolutionOverview />
+		<HowItWorks />
+		<EquipmentShowcase />
+		<SocialProof />
+		<FinalCTA />
+		
+		<!-- Placeholder for Solution Overview Section -->
+		<section class="py-20 bg-neutral-light">
+			<div class="container mx-auto px-6 text-center">
+				<h2 class="text-3xl font-bold font-heading">Solution Overview Section</h2>
+				<p class="mt-4">Content coming soon...</p>
+			</div>
+		</section>
+
+		<!-- Placeholder for How It Works Section -->
+		<section class="py-20">
+			<div class="container mx-auto px-6 text-center">
+				<h2 class="text-3xl font-bold font-heading">How It Works Section</h2>
+				<p class="mt-4">Content coming soon...</p>
+			</div>
+		</section>
+
+		<!-- Placeholder for Equipment Showcase Section -->
+		<section class="py-20 bg-neutral-light">
+			<div class="container mx-auto px-6 text-center">
+				<h2 class="text-3xl font-bold font-heading">Equipment Showcase Section</h2>
+				<p class="mt-4">Content coming soon...</p>
+			</div>
+		</section>
+
+		<!-- Placeholder for Social Proof Section -->
+		<section class="py-20">
+			<div class="container mx-auto px-6 text-center">
+				<h2 class="text-3xl font-bold font-heading">Social Proof Section</h2>
+				<p class="mt-4">Content coming soon...</p>
+			</div>
+		</section>
+
+		<!-- Placeholder for Final CTA Section -->
+		<section class="py-20 bg-brand-blue text-white">
+			<div class="container mx-auto px-6 text-center">
+				<h2 class="text-3xl font-bold font-heading">Final CTA Section</h2>
+				<p class="mt-4">Content coming soon...</p>
+			</div>
+		</section>
+
+	</main>
+	<Footer />
 </Layout>

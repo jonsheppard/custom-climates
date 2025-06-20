@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import ComparisonTable from '../components/ComparisonTable.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+	title="Our Services | Custom Climates" 
+	description="Explore our climate-controlled trailers and conex containers, designed to protect your materials from weather damage on any job site."
+>
+	<Header />
+	<main>
+		<section class="py-20 text-center">
+			<div class="container mx-auto px-6">
+				<h1 class="text-4xl md:text-5xl font-bold font-heading">Our Equipment & Services</h1>
+				<p class="mt-4 text-lg max-w-2xl mx-auto text-neutral-medium">Tailored solutions to keep your materials pristine and your project on track.</p>
+			</div>
+		</section>
+
+		<!-- Placeholder for Service Details -->
+		<section class="py-20 bg-neutral-light">
+			<div class="container mx-auto px-6 text-center">
+				<h2 class="text-3xl font-bold font-heading">Service Details</h2>
+				<p class="mt-4">Content coming soon...</p>
+			</div>
+		</section>
+
+		<ComparisonTable />
+	</main>
+	<Footer />
+</Layout> 

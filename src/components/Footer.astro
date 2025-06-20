@@ -1,0 +1,52 @@
+---
+const footerLinks = [
+	{ name: 'Home', href: '/' },
+	{ name: 'About Us', href: '/about' },
+	{ name: 'Services', href: '/services' },
+	{ name: 'Contact Us', href: '/contact' },
+];
+
+const socialLinks = [
+    { name: 'Facebook', href: '#'},
+    { name: 'Instagram', href: '#'},
+    { name: 'LinkedIn', href: '#'},
+]
+---
+<footer class="bg-neutral-dark text-white">
+    <div class="container mx-auto px-6 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-xl font-bold font-heading">Custom Climates</h3>
+                <p class="mt-4 text-neutral-light max-w-xs">On-site climate controlled solutions to protect your materials and keep your project on schedule.</p>
+            </div>
+            <div>
+                <h3 class="font-bold font-heading">Navigation</h3>
+                <ul class="mt-4 space-y-2">
+                    {footerLinks.map(link => (
+                        <li><a href={link.href} class="hover:text-brand-orange transition-colors">{link.name}</a></li>
+                    ))}
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-bold font-heading">Contact Us</h3>
+                <ul class="mt-4 space-y-2">
+                    <li><span class="font-bold">Service Area:</span> Nationwide</li>
+                    <li><span class="font-bold">Email:</span> <a href="mailto:tate@customclimatesusa.com" class="hover:text-brand-orange">tate@customclimatesusa.com</a></li>
+                    <li><span class="font-bold">Phone:</span> <a href="tel:435-773-1076" class="hover:text-brand-orange">(435) 773-1076</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-bold font-heading">Connect With Us</h3>
+                <div class="flex mt-4 space-x-4">
+                    {socialLinks.map(link => (
+                         <a href={link.href} aria-label={link.name} class="hover:text-brand-orange transition-colors">{link.name}</a>
+                    ))}
+                </div>
+            </div>
+        </div>
+        <div class="mt-12 border-t border-neutral-medium pt-8 text-center text-sm">
+            <p>&copy; {new Date().getFullYear()} Custom Climates, LLC | All Rights Reserved</p>
+            <p class="mt-2">Web Development by <a href="https://obsessionmarketing.com/" target="_blank" rel="noopener noreferrer" class="underline hover:text-brand-orange">Obsession Marketing</a></p>
+        </div>
+    </div>
+</footer> 

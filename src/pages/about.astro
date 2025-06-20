@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+	title="About Us | Custom Climates" 
+	description="Learn about the mission and team behind Custom Climates, dedicated to protecting your construction projects from costly weather damage."
+>
+	<Header />
+	<main>
+		<section class="py-20 text-center">
+			<div class="container mx-auto px-6">
+				<h1 class="text-4xl md:text-5xl font-bold font-heading">About Custom Climates</h1>
+				<p class="mt-4 text-lg max-w-2xl mx-auto text-neutral-medium">The team dedicated to keeping your project on schedule and your materials pristine.</p>
+			</div>
+		</section>
+
+		<section class="py-20 bg-neutral-light">
+			<div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+				<div>
+					<h2 class="text-3xl font-bold font-heading mb-4">Our Story</h2>
+					<p class="mb-4 text-neutral-medium">Founded by construction industry veterans who were tired of seeing profits and timelines washed away by unpredictable weather, Custom Climates was born out of necessity. We experienced the $2.5 billion problem firsthand—materials ruined, schedules wrecked, and GCs stressed. We knew there had to be a better way than tarps and prayers.</p>
+					<p class="text-neutral-medium">We created a simple, powerful solution: bring the factory-controlled environment directly to the job site. Our mobile, self-powered units aren't just storage; they're an insurance policy against Mother Nature, ensuring every piece of millwork, every bucket of adhesive, and every plank of flooring is as perfect as the day it was made.</p>
+				</div>
+				<div>
+					<img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop" alt="Construction team working together" class="rounded-lg shadow-lg">
+				</div>
+			</div>
+		</section>
+
+        <section class="py-20">
+			<div class="container mx-auto px-6 text-center">
+				<h2 class="text-3xl font-bold font-heading">Meet the Team</h2>
+                <p class="mt-4 mb-10 text-lg max-w-2xl mx-auto text-neutral-medium">Placeholder for team/founder information.</p>
+				<!-- Placeholder for team members -->
+			</div>
+		</section>
+
+	</main>
+	<Footer />
+</Layout> 

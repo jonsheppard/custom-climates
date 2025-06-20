@@ -1,0 +1,39 @@
+---
+const testimonials = [
+    {
+        quote: "Custom Climates saved us during the summer heatwave. Our materials were pristine, and we stayed right on schedule. I can't imagine a big project without them now.",
+        author: 'John D., Project Manager',
+        company: 'Major Construction Inc.'
+    },
+    {
+        quote: "The real-time monitoring is a game-changer. Knowing our expensive hardwoods were safe from humidity swings gave us incredible peace of mind.",
+        author: 'Jane S., Lead Architect',
+        company: 'Architectural Wonders'
+    },
+    {
+        quote: "Their team was professional, the setup was unbelievably fast, and the unit performed flawlessly. Zero complaints. 10/10 would recommend.",
+        author: 'Mike R., General Contractor',
+        company: 'Reliable Builders'
+    }
+]
+---
+
+<section class="py-20">
+    <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold font-heading text-neutral-dark">Don't Just Take Our Word For It</h2>
+            <p class="mt-4 text-lg text-neutral-medium max-w-2xl mx-auto">See what our partners are saying about our climate-controlled solutions.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            {testimonials.map(testimonial => (
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <p class="text-neutral-medium italic">"{testimonial.quote}"</p>
+                    <div class="mt-6">
+                        <p class="font-bold font-heading text-neutral-dark">{testimonial.author}</p>
+                        <p class="text-sm text-neutral-medium">{testimonial.company}</p>
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+</section> 

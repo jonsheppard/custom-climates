@@ -1,0 +1,222 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# .cursorrules for Custom Climates Marketing Site
+
+## Core Development Philosophy
+- **Vibe coding:** Move fast, iterate quickly, ship working features
+- **Conversion-first:** Every component should drive leads/calls
+- **Mobile-first:** Construction folks check sites on phones
+- **Performance over perfection:** Fast loading beats pixel-perfect
+
+## Tech Stack Enforcement
+- **Framework:** Astro 4.x only - no React/Vue unless absolutely necessary
+- **Styling:** Tailwind CSS - no custom CSS files
+- **TypeScript:** Use TypeScript for all .ts/.astro files
+- **Images:** Always use Astro's Image component for optimization
+- **Forms:** Netlify Forms only - no external services
+
+## File Structure Rules
+```
+src/
+├── components/
+│   ├── layout/     # Header, Footer, Layout
+│   ├── sections/   # Homepage sections (Hero, CTA, etc.)
+│   ├── ui/         # Reusable UI components
+│   └── forms/      # Contact/Quote forms
+├── content/        # Netlify CMS collections
+├── pages/          # Route pages
+└── styles/         # Tailwind config only
+```
+
+## Component Conventions
+
+### Naming
+- Components: PascalCase (Hero.astro, ContactForm.astro)
+- Props: camelCase with TypeScript interfaces
+- CSS classes: Tailwind utilities only
+- Files: kebab-case for pages (how-it-works.astro)
+
+### Component Structure
+```astro
+---
+// TypeScript props interface first
+interface Props {
+  title: string;
+  subtitle?: string;
+}
+
+const { title, subtitle } = Astro.props;
+---
+
+<!-- HTML with Tailwind classes -->
+<section class="py-12 bg-gray-50">
+  <h2 class="text-3xl font-bold text-gray-900">{title}</h2>
+  {subtitle && <p class="text-gray-600">{subtitle}</p>}
+</section>
+```
+
+## Styling Rules
+
+### Tailwind Standards
+- **Colors:** Use consistent palette (blue-600, orange-500, gray-900)
+- **Spacing:** Stick to 4, 8, 12, 16, 24 scale (p-4, p-8, etc.)
+- **Typography:** text-base default, scale up deliberately
+- **Responsive:** Always include sm:, md:, lg: breakpoints
+
+### No Custom CSS
+- Use Tailwind utilities for everything
+- If you need custom styles, use Tailwind's @apply in components
+- No standalone CSS files
+
+### Button Standards
+```html
+<!-- Primary CTA -->
+<button class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors">
+  Get Quote
+</button>
+
+<!-- Secondary -->
+<button class="border border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold py-3 px-6 rounded-lg transition-colors">
+  Learn More
+</button>
+```
+
+## Content Rules
+
+### Copy Guidelines
+- **Headlines:** Action-oriented, benefit-focused
+- **CTAs:** "Get Quote" or "Call Now" - not "Learn More"
+- **Phone:** Always format as (435) 773-1076 with click-to-call
+- **Stats:** Always include "$2.5B annual damage" stat
+- **No lorem ipsum:** Ever. Use real placeholder content.
+
+### Image Requirements
+- Always use Astro's `<Image>` component
+- Alt text required for every image
+- WebP format preferred
+- Lazy loading by default
+
+## Performance Rules
+
+### Core Web Vitals Targets
+- **LCP:** Under 2.5 seconds
+- **FID:** Under 100ms  
+- **CLS:** Under 0.1
+- **Mobile score:** 90+ on Lighthouse
+
+### Optimization Requirements
+- Lazy load all images below fold
+- Preload critical fonts
+- Minimize JavaScript - use Astro's static generation
+- Compress images automatically
+
+## SEO Requirements
+
+### Meta Tags (Required on every page)
+```astro
+<title>Page Title | Custom Climates</title>
+<meta name="description" content="150-160 character description">
+<meta property="og:title" content="Page Title">
+<meta property="og:description" content="Description">
+<meta property="og:image" content="/images/og-image.jpg">
+```
+
+### Structured Data
+- Add JSON-LD for business info on every page
+- Use semantic HTML (header, main, section, footer)
+- H1 on every page, only one per page
+
+## Form Standards
+
+### Contact/Quote Forms
+- Use Netlify Forms (add `netlify` attribute)
+- Include honeypot for spam protection
+- Required fields: name, email, phone, project details
+- Success message after submission
+- Client-side validation before submit
+
+### Form Structure
+```html
+<form name="quote-request" method="POST" netlify>
+  <input type="hidden" name="form-name" value="quote-request">
+  <!-- Honeypot -->
+  <input type="hidden" name="bot-field">
+  <!-- Form fields -->
+</form>
+```
+
+## Business Logic Rules
+
+### Conversion Priorities
+1. **Phone calls** - most valuable lead type
+2. **Quote requests** - high-intent leads  
+3. **Email signups** - nurture leads
+
+### Trust Signals (Must Include)
+- Customer testimonials with photos
+- Specific ROI examples ($X saved, Y days faster)
+- Professional certifications/insurance
+- Emergency contact availability
+
+## Development Workflow
+
+### Before Every Commit
+- Test on mobile device
+- Check Lighthouse scores
+- Verify all forms work
+- Test phone number links
+- Ensure fast loading
+
+### Component Checklist
+- [ ] TypeScript interface defined
+- [ ] Mobile-responsive
+- [ ] Semantic HTML
+- [ ] Alt text on images
+- [ ] Loading states handled
+- [ ] Error states handled (forms)
+
+## Error Handling
+
+### Form Errors
+- Show validation errors inline
+- Graceful fallback for network issues
+- Success/error messages clearly visible
+
+### Image Errors
+- Always include alt text
+- Fallback for missing images
+- Proper aspect ratios
+
+## Deployment Rules
+
+### Pre-Deploy Checklist
+- [ ] All pages load under 3 seconds
+- [ ] Mobile Lighthouse score >90
+- [ ] Forms submit successfully  
+- [ ] Phone numbers are clickable
+- [ ] No console errors
+- [ ] All images optimized
+
+### Netlify CMS Setup
+- Configure admin interface at `/admin`
+- Set up content collections for Pages, Services, Case Studies
+- Enable editorial workflow for content approval
+
+## Emergency Fixes Priority
+1. **Broken forms** - immediate fix required
+2. **Phone number issues** - fix within hours
+3. **Mobile loading** - fix within day
+4. **Design issues** - fix when convenient
+
+---
+
+## Quick Commands Reference
+- `npm run dev` - Local development
+- `npm run build` - Production build
+- `npm run preview` - Preview build locally
+- `npx astro add tailwind` - Add Tailwind (if needed)
+
+**Remember: Ship working features fast. Iterate based on real user feedback. Conversion metrics matter more than perfect code.**
