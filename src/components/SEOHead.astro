@@ -38,7 +38,7 @@ const finalImage = seo?.image || image || globalSEO?.data?.image || '/placeholde
 const finalKeywords = seo?.keywords || globalSEO?.data?.keywords;
 const finalImageAlt = seo?.imageAlt || finalTitle;
 
-const siteURL = Astro.site ? Astro.site.toString() : 'https://example.com';
+const siteURL = Astro.site?.toString() || 'https://example.com';
 
 // Build structured data for business (if business info exists)
 const businessSchema = businessInfo ? {
@@ -56,7 +56,7 @@ const businessSchema = businessInfo ? {
   },
   "areaServed": businessInfo.data.serviceAreas?.map(area => ({
     "@type": "City",
-    "name": area.location
+    "name": area
   })) || [],
   "openingHours": businessInfo.data.hours,
   "url": siteURL
