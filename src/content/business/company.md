@@ -8,7 +8,7 @@ state: "UT"
 zip: "84770"
 hours: "Monday - Friday: 8:00 AM - 6:00 PM\nSaturday: 9:00 AM - 4:00 PM\nSunday: Closed"
 serviceAreas:
-  - "St. George, UT"
-  - "Washington County, UT"
+  - "St. George"
+  - "Washington County"
   - "Southern Utah"
 --- 
