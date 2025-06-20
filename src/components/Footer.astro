@@ -1,4 +1,6 @@
 ---
+import settings from '../data/settings.json';
+
 const footerLinks = [
 	{ name: 'Home', href: '/' },
 	{ name: 'About Us', href: '/about' },
@@ -31,8 +33,8 @@ const socialLinks = [
                 <h3 class="font-bold font-heading">Contact Us</h3>
                 <ul class="mt-4 space-y-2">
                     <li><span class="font-bold">Service Area:</span> Nationwide</li>
-                    <li><span class="font-bold">Email:</span> <a href="mailto:tate@customclimatesusa.com" class="hover:text-brand-orange">tate@customclimatesusa.com</a></li>
-                    <li><span class="font-bold">Phone:</span> <a href="tel:435-773-1076" class="hover:text-brand-orange">(435) 773-1076</a></li>
+                    <li><span class="font-bold">Email:</span> <a href={`mailto:${settings.email}`} class="hover:text-brand-orange">{settings.email}</a></li>
+                    <li><span class="font-bold">Phone:</span> <a href={`tel:${settings.phone}`} class="hover:text-brand-orange">{settings.phone}</a></li>
                 </ul>
             </div>
             <div>
@@ -46,7 +48,6 @@ const socialLinks = [
         </div>
         <div class="mt-12 border-t border-neutral-medium pt-8 text-center text-sm">
             <p>&copy; {new Date().getFullYear()} Custom Climates, LLC | All Rights Reserved</p>
-            <p class="mt-2">Web Development by <a href="https://obsessionmarketing.com/" target="_blank" rel="noopener noreferrer" class="underline hover:text-brand-orange">Obsession Marketing</a></p>
         </div>
     </div>
 </footer> 

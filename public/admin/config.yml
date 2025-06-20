@@ -20,7 +20,7 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - file: "src/content/homepage.md"
+      - file: "src/content/pages/homepage.md"
         label: "Homepage"
         name: "homepage"
         fields:
@@ -28,7 +28,7 @@ collections:
           - { label: "Hero Headline", name: "hero_headline", widget: "string" }
           - { label: "Hero Subheadline", name: "hero_subheadline", widget: "text" }
           - { label: "Body", name: "body", widget: "markdown" }
-      - file: "src/content/about.md"
+      - file: "src/content/pages/about.md"
         label: "About Page"
         name: "about"
         fields:

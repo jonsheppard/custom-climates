@@ -1,4 +1,5 @@
 ---
+import { getEntryBySlug } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
@@ -10,17 +11,20 @@ import SocialProof from '../components/SocialProof.astro';
 import FinalCTA from '../components/FinalCTA.astro';
 import Footer from '../components/Footer.astro';
 
+const homepage = await getEntryBySlug('pages', 'homepage');
+const { Content } = await homepage.render();
+
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout 
-	title="Custom Climates | Stop Weather From Hijacking Your Construction Timeline" 
-	description="Climate-controlled trailers and containers that protect materials, stream live data, and keep your project on schedule."
+	title={homepage.data.title}
+	description={homepage.data.hero_subheadline}
 >
 	<Header />
 	<main>
-		<Hero />
+		<Hero headline={homepage.data.hero_headline} subheadline={homepage.data.hero_subheadline} />
 		<ProblemStatement />
 		<SolutionOverview />
 		<HowItWorks />

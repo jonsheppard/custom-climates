@@ -1,8 +1,11 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import ComparisonTable from '../components/ComparisonTable.astro';
 import Footer from '../components/Footer.astro';
+
+const services = await getCollection('services');
 ---
 
 <Layout 
@@ -18,11 +21,21 @@ import Footer from '../components/Footer.astro';
 			</div>
 		</section>
 
-		<!-- Placeholder for Service Details -->
-		<section class="py-20 bg-neutral-light">
-			<div class="container mx-auto px-6 text-center">
-				<h2 class="text-3xl font-bold font-heading">Service Details</h2>
-				<p class="mt-4">Content coming soon...</p>
+		<section id="service-details" class="py-20 bg-neutral-light">
+			<div class="container mx-auto px-6 space-y-12">
+				{services.map(async (service) => {
+					const { Content } = await service.render();
+					return (
+						<div id={service.slug} class="grid md:grid-cols-2 gap-12 items-center">
+							<div>
+								<h2 class="text-3xl font-bold font-heading mb-4">{service.data.title}</h2>
+								<div class="prose lg:prose-xl">
+									<Content />
+								</div>
+							</div>
+						</div>
+					)
+				})}
 			</div>
 		</section>
 

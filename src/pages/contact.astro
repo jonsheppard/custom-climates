@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import ContactForm from '../components/forms/ContactForm.astro';
+import settings from '../data/settings.json';
 // We will create the ContactForm component next
 // import ContactForm from '../components/forms/ContactForm.astro';
 ---
@@ -28,11 +29,11 @@ import ContactForm from '../components/forms/ContactForm.astro';
 					<div class="space-y-6">
 						<div>
 							<h3 class="text-xl font-bold font-heading">Call Us</h3>
-							<a href="tel:435-773-1076" class="text-lg text-brand-blue hover:underline">(435) 773-1076</a>
+							<a href={`tel:${settings.phone}`} class="text-lg text-brand-blue hover:underline">{settings.phone}</a>
 						</div>
 						<div>
 							<h3 class="text-xl font-bold font-heading">Email Us</h3>
-							<a href="mailto:tate@customclimatesusa.com" class="text-lg text-brand-blue hover:underline">tate@customclimatesusa.com</a>
+							<a href={`mailto:${settings.email}`} class="text-lg text-brand-blue hover:underline">{settings.email}</a>
 						</div>
 						<div>
 							<h3 class="text-xl font-bold font-heading">Service Area</h3>

@@ -1,15 +1,24 @@
 ---
-// Using a placeholder image for now. The client will provide actual images later.
-const heroImageUrl = "https://images.unsplash.com/photo-1581094371926-29367c236353?q=80&w=2070&auto=format&fit=crop";
+interface Props {
+  headline: string;
+  subheadline: string;
+  heroImageUrl?: string;
+}
+
+const { 
+  headline, 
+  subheadline, 
+  heroImageUrl = "https://images.unsplash.com/photo-1581094371926-29367c236353?q=80&w=2070&auto=format&fit=crop" 
+} = Astro.props;
 ---
 <section class="relative bg-cover bg-center text-white" style=`background-image: url(${heroImageUrl})`>
     <div class="absolute inset-0 bg-black opacity-50"></div>
     <div class="relative container mx-auto px-6 py-32 text-center">
         <h1 class="text-4xl md:text-6xl font-bold font-heading leading-tight">
-            Stop Weather From Hijacking Your Construction Timeline
+            {headline}
         </h1>
         <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto">
-            Climate-controlled trailers and containers that protect materials, stream live data, and keep your project on schedule.
+            {subheadline}
         </p>
         <div class="mt-8">
             <a href="/contact?quote=true" class="bg-brand-orange text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-opacity-90 transition-colors">
