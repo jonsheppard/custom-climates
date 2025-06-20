@@ -10,6 +10,10 @@
   from = "/*"
   to = "/index.html"
   status = 200
+  from = "http:///*"
+  to = "https://customclimates.netlify.app/:splat"
+  status = 301
+  force = true
 
 [dev]
   command = "npm run dev"
