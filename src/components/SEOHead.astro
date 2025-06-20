@@ -34,9 +34,11 @@ try {
 // Determine final SEO values with fallbacks
 const finalTitle = seo?.title || title || globalSEO?.data?.title || 'Custom Climates';
 const finalDescription = seo?.description || description || globalSEO?.data?.description || 'Climate-controlled storage solutions for construction materials';
-const finalImage = seo?.image || image || globalSEO?.data?.image;
+const finalImage = seo?.image || image || globalSEO?.data?.image || '/placeholder-og-image.jpg';
 const finalKeywords = seo?.keywords || globalSEO?.data?.keywords;
 const finalImageAlt = seo?.imageAlt || finalTitle;
+
+const siteURL = Astro.site ? Astro.site.toString() : 'https://example.com';
 
 // Build structured data for business (if business info exists)
 const businessSchema = businessInfo ? {
@@ -57,7 +59,7 @@ const businessSchema = businessInfo ? {
     "name": area.location
   })) || [],
   "openingHours": businessInfo.data.hours,
-  "url": Astro.site?.toString()
+  "url": siteURL
 } : null;
 ---
 <SEO
@@ -69,7 +71,7 @@ const businessSchema = businessInfo ? {
     basic: {
       title: finalTitle,
       type: type,
-      image: finalImage ? new URL(finalImage, Astro.site || 'http://localhost:3000').toString() : undefined,
+      image: new URL(finalImage, siteURL).toString(),
       url: Astro.url.toString()
     },
     optional: {
@@ -81,7 +83,7 @@ const businessSchema = businessInfo ? {
     card: "summary_large_image",
     title: finalTitle,
     description: finalDescription,
-    image: finalImage ? new URL(finalImage, Astro.site || 'http://localhost:3000').toString() : undefined,
+    image: new URL(finalImage, siteURL).toString(),
     imageAlt: finalImageAlt
   }}
 />
