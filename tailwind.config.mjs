@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 import defaultTheme from 'tailwindcss/defaultTheme';
+import typography from '@tailwindcss/typography';
 
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
@@ -23,6 +24,6 @@ export default {
 		},
 	},
 	plugins: [
-		require('@tailwindcss/typography'),
+		typography,
 	],
 }; 
