@@ -10,7 +10,7 @@ This document breaks down the website rebuild into manageable phases, based on t
 This phase focuses on setting up the core infrastructure and building the essential, above-the-fold content for the homepage.
 
 - [x] Set up a fresh Astro project with Tailwind CSS.
-- [ ] Implement a responsive layout shell with a site-wide header and footer.
+- [x] Implement a responsive layout shell with a site-wide header and footer.
 - [ ] Build the homepage hero section with an inline lead form.
 - [ ] Configure Netlify Forms for lead capture, including honeypot spam protection.
 - [ ] Create the 3-card "Equipment Overview" section (static content).

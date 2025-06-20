@@ -1,0 +1,22 @@
+---
+// src/components/Header.astro
+---
+<header class="bg-gray-900 text-white p-4 flex justify-between items-center">
+  <div class="text-xl font-bold">
+    <a href="/">Custom Climates</a>
+  </div>
+  <nav class="hidden md:flex space-x-6">
+    <a href="/equipment" class="hover:text-blue-400">Equipment</a>
+    <a href="/process" class="hover:text-blue-400">Our Process</a>
+    <a href="/industries" class="hover:text-blue-400">Industries</a>
+    <a href="/about" class="hover:text-blue-400">About</a>
+    <a href="/contact" class="hover:text-blue-400">Contact</a>
+  </nav>
+  <div class="md:hidden">
+    <button class="text-white focus:outline-none">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+    </button>
+  </div>
+</header> 

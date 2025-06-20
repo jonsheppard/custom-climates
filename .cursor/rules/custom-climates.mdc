@@ -1,0 +1,258 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Custom Climates Website - Cursor Project Rules
+
+## Project Overview
+Building a modern, high-performance marketing website for Custom Climates using Astro, Tailwind CSS, and Netlify. The site prioritizes clean design, fast load times, and high conversion rates.
+
+## Tech Stack
+- **Framework**: Astro 4.x
+- **Styling**: Tailwind CSS 3.x
+- **Deployment**: Netlify
+- **Forms**: Netlify Forms
+- **CMS**: Decap CMS (optional)
+- **Testing**: Playwright
+- **Package Manager**: npm
+
+## Project Structure
+```
+custom-climates/
+├── src/
+│   ├── components/
+│   │   ├── Hero.astro
+│   │   ├── Navigation.astro
+│   │   ├── EquipmentCard.astro
+│   │   ├── ProcessStep.astro
+│   │   ├── QuoteForm.astro
+│   │   └── Footer.astro
+│   ├── layouts/
+│   │   └── BaseLayout.astro
+│   ├── pages/
+│   │   ├── index.astro
+│   │   ├── equipment/
+│   │   ├── process.astro
+│   │   └── contact.astro
+│   ├── styles/
+│   │   └── global.css
+│   └── content/
+│       └── equipment/
+├── public/
+│   ├── images/
+│   └── fonts/
+├── tests/
+│   └── e2e/
+└── astro.config.mjs
+```
+
+## Code Style Guidelines
+
+### Astro Components
+- Use `.astro` files for all components
+- Keep components focused and single-purpose
+- Props should be destructured in the component frontmatter
+- Use TypeScript interfaces for props when needed
+
+### CSS/Tailwind
+- Use Tailwind utility classes exclusively
+- Avoid custom CSS unless absolutely necessary
+- Group related utilities logically
+- Use Tailwind's responsive prefixes (sm:, md:, lg:)
+
+### JavaScript
+- Minimize client-side JavaScript
+- Use `is:inline` for critical scripts
+- Prefer `is:idle` for non-critical interactivity
+- No jQuery or heavy libraries
+
+## Component Patterns
+
+### Astro Component Template
+```astro
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = '' } = Astro.props;
+---
+
+<section class="py-16 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-3xl font-bold text-center mb-4">{title}</h2>
+    {description && <p class="text-xl text-gray-600">{description}</p>}
+    <slot />
+  </div>
+</section>
+```
+
+### Form Handling
+```astro
+<form 
+  name="quote-form" 
+  method="POST" 
+  data-netlify="true"
+  data-netlify-honeypot="bot-field"
+  class="space-y-4"
+>
+  <input type="hidden" name="form-name" value="quote-form" />
+  <p class="hidden">
+    <label>Don't fill this out: <input name="bot-field" /></label>
+  </p>
+  <!-- Form fields -->
+</form>
+```
+
+## Testing Guidelines
+
+### Playwright Setup
+```javascript
+// playwright.config.js
+module.exports = {
+  testDir: './tests/e2e',
+  use: {
+    baseURL: 'http://localhost:4321',
+    screenshot: 'only-on-failure',
+  },
+  webServer: {
+    command: 'npm run dev',
+    port: 4321,
+    reuseExistingServer: !process.env.CI,
+  },
+};
+```
+
+### Test Patterns
+```javascript
+// tests/e2e/homepage.spec.js
+import { test, expect } from '@playwright/test';
+
+test.describe('Homepage', () => {
+  test('should display hero section with form', async ({ page }) => {
+    await page.goto('/');
+    
+    // Check hero content
+    await expect(page.locator('h1')).toContainText('Onsite Climate Controlled Solutions');
+    
+    // Test form presence
+    const form = page.locator('form[name="quote-form"]');
+    await expect(form).toBeVisible();
+    
+    // Test form submission
+    await page.fill('input[name="name"]', 'Test User');
+    await page.fill('input[name="phone"]', '555-0123');
+    await page.fill('input[name="email"]', 'test@example.com');
+    await page.click('button[type="submit"]');
+  });
+});
+```
+
+## Performance Requirements
+- Lighthouse score must be 95+ on all metrics
+- Images must use Astro's Image component
+- Implement lazy loading for below-fold content
+- Total page weight < 1MB (excluding images)
+- Time to Interactive < 2.5s
+
+## SEO Requirements
+- Every page needs unique title and meta description
+- Use semantic HTML (header, nav, main, section, footer)
+- All images need descriptive alt text
+- Implement structured data for LocalBusiness
+
+## Accessibility Requirements
+- WCAG 2.1 AA compliance
+- All interactive elements keyboard accessible
+- Color contrast ratio minimum 4.5:1
+- Focus indicators on all interactive elements
+- Screen reader friendly form labels
+
+## Git Workflow
+- Branch naming: `feature/description` or `fix/description`
+- Commit messages: Use conventional commits (feat:, fix:, docs:)
+- PR required for all changes to main
+- Run tests before committing
+
+## Environment Variables
+```env
+# .env.example
+PUBLIC_SITE_URL=https://customclimatesco.com
+PUBLIC_GOOGLE_ANALYTICS_ID=GA-XXXXXXXXX
+NETLIFY_FORMS_TOKEN=your-token-here
+```
+
+## Build Commands
+```bash
+# Development
+npm run dev
+
+# Build
+npm run build
+
+# Preview production build
+npm run preview
+
+# Run tests
+npm run test
+npm run test:e2e
+
+# Lint
+npm run lint
+```
+
+## Content Guidelines
+- Headlines: Bold, action-oriented
+- Body text: Clear, concise, benefit-focused
+- CTAs: Use strong verbs ("Get Quote", "View Equipment")
+- Avoid jargon, write at 8th-grade level
+
+## Image Requirements
+- Hero images: 1920x1080 minimum, WebP format
+- Equipment photos: 800x600, consistent aspect ratio
+- Use descriptive filenames (climate-controlled-trailer.webp)
+- Optimize all images before commit
+
+## Error Handling
+- Form submissions need success/error feedback
+- 404 page with helpful navigation
+- Graceful fallbacks for JavaScript failures
+
+## Deployment Checklist
+- [ ] Run Playwright tests
+- [ ] Check Lighthouse scores
+- [ ] Verify all forms work
+- [ ] Test on mobile devices
+- [ ] Check meta tags and OG images
+- [ ] Verify sitemap generation
+- [ ] Test 404 page
+- [ ] Confirm analytics tracking
+
+## DO NOT
+- Use localStorage or sessionStorage
+- Add heavy JavaScript libraries
+- Create custom CSS when Tailwind works
+- Forget alt text on images
+- Skip testing before deploy
+- Use absolute URLs for internal links
+- Commit sensitive data or API keys
+
+## Key Brand Elements
+- Primary Blue: #0A3F91
+- Dark Gray: #1E1E1E
+- White: #FFFFFF
+- Font: System font stack
+- Logo: Shield shape with "CC"
+
+## AI Assistant Instructions
+When generating code for this project:
+1. Always use Astro components over React
+2. Prioritize static generation
+3. Keep JavaScript minimal
+4. Use Tailwind utilities only
+5. Write Playwright tests for new features
+6. Follow the component patterns above
+7. Optimize for Core Web Vitals
+8. Ensure mobile-first responsive design
