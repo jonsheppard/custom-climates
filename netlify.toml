@@ -6,14 +6,18 @@
   NODE_VERSION = "18"
   NPM_FLAGS = "--legacy-peer-deps"
 
+# Rule to force HTTPS
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
   from = "http:///*"
   to = "https://customclimates.netlify.app/:splat"
   status = 301
   force = true
+
+# Rule for Single Page Application (SPA) routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
 
 [dev]
   command = "npm run dev"
