@@ -1,48 +1,22 @@
----
 import '../styles/global.css';
-import SEOHead from '../components/SEOHead.astro';
 
 interface Props {
-	title?: string;
-	description?: string;
-    frontmatter?: {
-        seo?: any;
-    };
+	title: string;
 }
 
-const { title, description, frontmatter } = Astro.props;
----
+const { title } = Astro.props;
+
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Poppins:wght@700&display=swap"
-			rel="stylesheet"
-		/>
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-        <SEOHead 
-            title={title}
-            description={description}
-            seo={frontmatter?.seo}
-        />
-		<script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+		<title>{title}</title>
 	</head>
-	<body class="bg-neutral-light text-neutral-dark font-sans">
+	<body>
 		<slot />
-		<script is:inline>
-			if (window.netlifyIdentity) {
-				window.netlifyIdentity.on('init', (user) => {
-					if (!user) {
-						window.netlifyIdentity.on('login', () => {
-							document.location.href = '/admin/';
-						});
-					}
-				});
-			}
-		</script>
 	</body>
-</html>
+</html> 

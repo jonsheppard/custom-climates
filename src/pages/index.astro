@@ -1,36 +1,10 @@
 ---
-import { getEntryBySlug } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Hero from '../components/Hero.astro';
-import ProblemStatement from '../components/ProblemStatement.astro';
-import SolutionOverview from '../components/SolutionOverview.astro';
-import HowItWorks from '../components/HowItWorks.astro';
-import EquipmentShowcase from '../components/EquipmentShowcase.astro';
-import SocialProof from '../components/SocialProof.astro';
-import FinalCTA from '../components/FinalCTA.astro';
-import Footer from '../components/Footer.astro';
-
-const homepage = await getEntryBySlug('pages', 'homepage');
-const { Content } = await homepage.render();
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout 
-	title={homepage.data.title}
-	description={homepage.data.hero_subheadline}
->
-	<Header />
-	<main>
-		<Hero headline={homepage.data.hero_headline} subheadline={homepage.data.hero_subheadline} />
-		<ProblemStatement />
-		<SolutionOverview />
-		<HowItWorks />
-		<EquipmentShowcase />
-		<SocialProof />
-		<FinalCTA />
+<Layout title="Welcome to Custom Climates">
+	<main class="h-screen bg-gray-900 flex items-center justify-center">
+		<h1 class="text-5xl font-bold text-white">Custom Climates</h1>
+		<p class="text-xl text-gray-400 mt-4">New site coming soon...</p>
 	</main>
-	<Footer />
 </Layout>
