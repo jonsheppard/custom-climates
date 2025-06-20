@@ -13,7 +13,7 @@ This phase focuses on setting up the core infrastructure and building the essent
 - [x] Implement a responsive layout shell with a site-wide header and footer.
 - [x] Build the homepage hero section with an inline lead form.
 - [x] Configure Netlify Forms for lead capture, including honeypot spam protection.
-- [ ] Create the 3-card "Equipment Overview" section (static content).
+- [x] Create the 3-card "Equipment Overview" section (static content).
 - [ ] Build the "How It Works" simple process section.
 
 ---

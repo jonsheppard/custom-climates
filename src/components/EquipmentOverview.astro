@@ -1,0 +1,46 @@
+---
+// src/components/EquipmentOverview.astro
+
+const equipment = [
+  {
+    title: "Climate Controlled Trailers",
+    description: "Reliable, on-demand temperature control for any environment.",
+    imageUrl: "https://via.placeholder.com/800x600",
+    link: "/equipment/trailers"
+  },
+  {
+    title: "Power Generation Units",
+    description: "Keep your operations running with our robust power solutions.",
+    imageUrl: "https://via.placeholder.com/800x600",
+    link: "/equipment/power"
+  },
+  {
+    title: "Office/Storage Combos",
+    description: "Versatile units for secure storage and functional office space.",
+    imageUrl: "https://via.placeholder.com/800x600",
+    link: "/equipment/combos"
+  }
+];
+---
+<section id="equipment" class="bg-gray-900 py-20 px-8">
+  <div class="container mx-auto text-center">
+    <h2 class="text-4xl font-bold mb-12">Our Core Offerings</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {equipment.map(item => (
+        <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+          <img src={item.imageUrl} alt={item.title} class="w-full h-64 object-cover">
+          <div class="p-6">
+            <h3 class="text-2xl font-bold mb-2">{item.title}</h3>
+            <p class="text-gray-400 mb-4">{item.description}</p>
+            <a href={item.link} class="text-blue-400 hover:underline">Learn More &rarr;</a>
+          </div>
+        </div>
+      ))}
+    </div>
+    <div class="mt-16">
+      <a href="/equipment" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg text-lg">
+        View All Equipment
+      </a>
+    </div>
+  </div>
+</section> 
