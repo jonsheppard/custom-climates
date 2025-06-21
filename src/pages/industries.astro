@@ -1,8 +1,5 @@
 ---
-import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
-import finishMaterials from '../assets/images/industries/finish-materials.jpg';
-import furnitureFixtures from '../assets/images/industries/furniture-fixtures.jpg';
 
 const title = "Construction Industry Solutions | Custom Climates";
 const description = "On-site, climate-controlled storage solutions for large-scale construction projects. Protect everything from finish materials to furniture and keep your project on schedule.";
@@ -31,7 +28,7 @@ const description = "On-site, climate-controlled storage solutions for large-sca
         <div class="grid md:grid-cols-2 gap-10 items-center">
           <!-- Benefit 1: Finish Materials -->
           <div class="mb-8 md:mb-0">
-            <Image src={finishMaterials} alt="Climate-controlled storage for finish materials" class="w-full h-80 object-cover rounded-lg shadow-lg" />
+            <div class="w-full h-80 rounded-lg shadow-lg bg-gray-700"></div>
           </div>
           <div>
             <h3 class="text-3xl font-bold mb-3">Protect High-Value Finish Materials</h3>
@@ -48,7 +45,7 @@ const description = "On-site, climate-controlled storage solutions for large-sca
             </p>
           </div>
           <div>
-             <Image src={furnitureFixtures} alt="Secure on-site storage for furniture and fixtures" class="w-full h-80 object-cover rounded-lg shadow-lg" />
+            <div class="w-full h-80 rounded-lg shadow-lg bg-gray-700"></div>
           </div>
         </div>
       </div>
