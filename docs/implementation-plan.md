@@ -27,7 +27,7 @@ This phase involves building out the secondary content sections, interior pages,
 - [x] Implement the collapsible SEO content band for the homepage.
 - [x] Create placeholder pages for all primary navigation links (Equipment, Our Process, etc.).
 - [x] Implement basic SEO metadata (titles, descriptions) across all pages.
-- [ ] Generate an XML sitemap for search engines.
+- [x] Generate an XML sitemap for search engines.
 - [ ] Ensure all images are optimized for performance.
 
 ---
