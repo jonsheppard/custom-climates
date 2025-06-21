@@ -3,25 +3,13 @@ import Layout from '../layouts/Layout.astro';
 import HowItWorks from '../components/HowItWorks.astro';
 
 const title = "Our Process | Custom Climates";
-const description = "Our process is designed to be simple, fast, and reliable. Learn how we go from consultation to delivery and pickup, keeping your jobsite efficient.";
+const description = "Our process is designed to be simple, fast, and reliable. Learn how we go from consultation to delivery and support.";
 ---
 
 <Layout title={title} description={description}>
-  <main class="bg-gray-800 text-white">
-    <div class="py-20 px-8 text-center">
-      <h1 class="text-5xl font-extrabold">Simple, Fast, and Reliable</h1>
-      <p class="mt-4 text-xl text-gray-300 max-w-3xl mx-auto">
-        We've refined our process to eliminate complexity and get you the equipment you need without the hassle. Our goal is to keep your project moving forward.
-      </p>
-    </div>
-
+  <main class="py-24 sm:py-32">
     <HowItWorks />
-
-    <div class="py-20 px-8 text-center">
-        <h2 class="text-4xl font-bold mb-4">Ready to Get Started?</h2>
-        <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-            Let's get a climate-controlled unit to your jobsite.
-        </p>
+    <div class="mt-16 text-center">
         <a href="/contact" class="bg-[#0955A9] hover:bg-[#07448a] text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-300">
             Request a Quote
         </a>

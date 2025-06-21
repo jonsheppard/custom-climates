@@ -7,7 +7,7 @@ import HowItWorks from '../components/HowItWorks.astro';
 import SeoContent from '../components/SeoContent.astro';
 
 const homepage = await getEntry('pages', 'homepage');
-const { hero_headline, hero_subtext } = homepage.data;
+const { hero_headline, hero_subtext, hero_trust_text, hero_secondary_cta } = homepage.data;
 
 const title = "Custom Climates | Onsite Climate Controlled Solutions";
 const description = "Don't let weather ruin your schedule. Protect every panel, plank, and pallet with our mobile climate-controlled storage solutions, available 24/7 nationwide.";
@@ -15,7 +15,12 @@ const description = "Don't let weather ruin your schedule. Protect every panel, 
 
 <Layout title={title} description={description}>
 	<main>
-		<Hero headline={hero_headline} subtext={hero_subtext} />
+		<Hero 
+			headline={hero_headline} 
+			subtext={hero_subtext}
+			trust_text={hero_trust_text}
+			secondary_cta={hero_secondary_cta}
+		/>
 		<EquipmentOverview />
 		<HowItWorks />
 		<SeoContent />
