@@ -1,6 +1,8 @@
 ---
 title: "Our Process | Custom Climates"
 description: "Seamless from First Call to Final Delivery. Our entire process is designed for the modern contractor: fast, reliable, and straightforward."
+hero_headline: "Our Simple, Reliable Process"
+hero_subtext: "From consultation to pickup, we make climate control effortless."
 headline: "Seamless from First Call to Final Pickup"
 subtext: "Our entire process is designed for the modern contractor: fast, reliable, and straightforward. Here's how we get you from a problem to a solution."
 steps:
