@@ -1,3 +1,4 @@
+---
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
@@ -15,6 +16,7 @@ const { Content } = await equipment.render();
 
 const title = `${data.title} | Custom Climates`;
 const description = data.description;
+---
 
 <Layout {title} {description}>
   <main class="py-20 px-8 bg-gray-800 text-white">
