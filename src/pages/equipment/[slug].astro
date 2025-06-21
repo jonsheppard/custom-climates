@@ -1,0 +1,36 @@
+import { getCollection, getEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const equipment = await getCollection('equipment');
+  return equipment.map(item => ({
+    params: { slug: item.slug },
+    props: { equipment: item }
+  }));
+}
+
+const { equipment } = Astro.props;
+const { data, render } = equipment;
+const { Content } = await render();
+
+const title = `${data.title} | Custom Climates`;
+const description = data.description;
+
+<Layout {title} {description}>
+  <main class="container mx-auto py-12 px-8">
+    <article class="prose prose-invert lg:prose-xl max-w-none">
+      <img src={data.image} alt={data.title} class="w-full rounded-lg mb-8 shadow-lg" />
+      <h1>{data.title}</h1>
+      <p class="lead">{data.description}</p>
+      
+      <h2>Features</h2>
+      <ul>
+        {data.features.map((feature) => (
+          <li>{feature}</li>
+        ))}
+      </ul>
+      
+      <Content />
+    </article>
+  </main>
+</Layout> 

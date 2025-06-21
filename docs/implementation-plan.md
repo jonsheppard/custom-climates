@@ -37,8 +37,8 @@ This phase involves building out the secondary content sections, interior pages,
 This phase focuses on making the site's content manageable through Decap CMS.
 
 - [x] Configure Decap CMS with collections for `Equipment` and `Pages`.
-- [ ] Replace the static homepage content (hero, equipment cards) with content managed in Decap.
-- [ ] Build the full, dynamic "Equipment" pages that pull content from the CMS.
+- [x] Replace the static homepage content (hero, equipment cards) with content managed in Decap.
+- [x] Build the full, dynamic "Equipment" pages that pull content from the CMS.
 - [ ] Create a "Case Studies" collection and corresponding pages (optional, as per strategy).
 
 ---
