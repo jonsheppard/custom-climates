@@ -49,7 +49,7 @@ The final phase involves testing, performance tuning, and preparing the site for
 
 - [x] Perform end-to-end testing on the contact form.
 - [x] Conduct cross-browser and mobile-responsive testing.
-- [ ] Run a Lighthouse audit and implement performance optimizations to score 95+.
+- [x] Run a Lighthouse audit and implement performance optimizations to score 95+.
 - [ ] Add analytics (e.g., a privacy-friendly alternative to Google Analytics).
 - [ ] Set up A/B testing for the hero video vs. static image.
 - [ ] Submit the sitemap to Google Search Console.
