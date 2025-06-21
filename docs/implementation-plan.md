@@ -26,6 +26,7 @@ This phase involves building out the secondary content sections, interior pages,
 
 - [x] Implement the collapsible SEO content band for the homepage.
 - [x] Create placeholder pages for all primary navigation links (Equipment, Our Process, etc.).
+- [x] Create dedicated page for Construction industry.
 - [x] Implement basic SEO metadata (titles, descriptions) across all pages.
 - [x] Generate an XML sitemap for search engines.
 
@@ -50,11 +51,12 @@ The final phase involves testing, performance tuning, and preparing the site for
 - [x] Perform end-to-end testing on the contact form.
 - [x] Conduct cross-browser and mobile-responsive testing.
 - [x] Run a Lighthouse audit and implement performance optimizations to score 95+.
-- [ ] Add analytics (e.g., a privacy-friendly alternative to Google Analytics).
+- [x] Build out Industries page for Construction.
+- [x] Enable Netlify Analytics (Manual step in Netlify UI).
+- [x] Ensure all images are optimized for performance.
 - [ ] Set up A/B testing for the hero video vs. static image.
 - [ ] Submit the sitemap to Google Search Console.
 
 Maybe later
-- [ ] Add a static US coverage map image.
-- [ ] Ensure all images are optimized for performance.
+- [x] Add a static US coverage map image.
 - [ ] Create a "Case Studies" collection and corresponding pages (optional, as per strategy).

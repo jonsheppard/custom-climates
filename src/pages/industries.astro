@@ -1,15 +1,68 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
+import finishMaterials from '../assets/images/industries/finish-materials.jpg';
+import furnitureFixtures from '../assets/images/industries/furniture-fixtures.jpg';
 
-const title = "Industries We Serve | Custom Climates";
-const description = "We provide reliable, climate-controlled solutions for construction, events, disaster relief, and a wide range of other industries nationwide.";
+const title = "Construction Industry Solutions | Custom Climates";
+const description = "On-site, climate-controlled storage solutions for large-scale construction projects. Protect everything from finish materials to furniture and keep your project on schedule.";
 ---
 
 <Layout title={title} description={description}>
-  <main class="py-20 px-8 text-center">
-    <h1 class="text-4xl font-bold">Industries We Serve</h1>
-    <p class="mt-4 text-lg text-gray-300">
-      This page will be built out later.
-    </p>
+  <main class="bg-gray-800 text-white">
+    <!-- Hero Section -->
+    <div class="py-20 px-8 text-center">
+      <h1 class="text-5xl font-extrabold">Your Partner on the Modern Jobsite</h1>
+      <p class="mt-4 text-xl text-gray-300 max-w-3xl mx-auto">
+        Large-scale construction projects demand precision. We provide secure, on-site, climate-controlled storage to protect your most valuable materials from weather, damage, and theft.
+      </p>
+    </div>
+
+    <!-- Features/Benefits Section -->
+    <div class="py-16 bg-gray-900 px-8">
+      <div class="container mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold">Eliminate Risk. Maximize Efficiency.</h2>
+          <p class="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">
+            Stop wasting time and money on off-site storage or damaged materials. Our solutions are built for the construction workflow.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+          <!-- Benefit 1: Finish Materials -->
+          <div class="mb-8 md:mb-0">
+            <Image src={finishMaterials} alt="Climate-controlled storage for finish materials" class="w-full h-80 object-cover rounded-lg shadow-lg" />
+          </div>
+          <div>
+            <h3 class="text-3xl font-bold mb-3">Protect High-Value Finish Materials</h3>
+            <p class="text-gray-300 mb-4 text-lg">
+              Humidity, temperature swings, and dust can ruin expensive finishes. Store drywall, cabinetry, flooring, and paint in a pristine, climate-controlled environment right on your jobsite. Ensure materials are perfect at the moment of installation.
+            </p>
+          </div>
+
+          <!-- Benefit 2: Furniture & Fixtures -->
+          <div class="mb-8 md:mb-0 mt-8 md:mt-0">
+            <h3 class="text-3xl font-bold mb-3">Secure Storage for FF&E</h3>
+            <p class="text-gray-300 mb-4 text-lg">
+              For large commercial or residential projects, staging furniture, fixtures, and equipment (FF&E) is a logistical challenge. Our spacious containers provide a secure, clean, and easily accessible space to store items until they're ready for placement.
+            </p>
+          </div>
+          <div>
+             <Image src={furnitureFixtures} alt="Secure on-site storage for furniture and fixtures" class="w-full h-80 object-cover rounded-lg shadow-lg" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="py-20 px-8 text-center">
+      <h2 class="text-4xl font-bold mb-4">Ready to Secure Your Jobsite?</h2>
+      <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+        Let's discuss your project's specific needs and get a quote for a tailored on-site storage solution.
+      </p>
+      <a href="/contact" class="bg-[#0955A9] hover:bg-[#07448a] text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-300">
+          Request a Quote
+      </a>
+    </div>
   </main>
 </Layout> 
