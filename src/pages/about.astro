@@ -1,6 +1,10 @@
 ---
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
+import travis from '../assets/images/team/Travis.webp';
+import jake from '../assets/images/team/Jake.webp';
+import tate from '../assets/images/team/Tate.webp';
+import antony from '../assets/images/team/Antony.webp';
 
 const title = "About Us | Custom Climates";
 const description = "Learn about the Custom Climates story, our values of reliability and innovation, and our commitment to serving contractors nationwide.";
@@ -25,7 +29,9 @@ const description = "Learn about the Custom Climates story, our values of reliab
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
           <!-- Travis -->
           <div class="bg-gray-900 p-8 rounded-lg flex flex-col items-center">
-            <div class="w-48 h-48 mb-6 rounded-full bg-gray-700"></div>
+            <div class="w-48 h-48 mb-6">
+              <Image src={travis} alt="Headshot of Travis" class="rounded-full w-full h-full object-cover" />
+            </div>
             <div class="text-center">
               <h3 class="text-2xl font-bold mb-3 text-white">Travis</h3>
               <p class="text-gray-300 space-y-4">
@@ -38,7 +44,9 @@ const description = "Learn about the Custom Climates story, our values of reliab
 
           <!-- Jake -->
           <div class="bg-gray-900 p-8 rounded-lg flex flex-col items-center">
-            <div class="w-48 h-48 mb-6 rounded-full bg-gray-700"></div>
+             <div class="w-48 h-48 mb-6">
+              <Image src={jake} alt="Headshot of Jake" class="rounded-full w-full h-full object-cover" />
+            </div>
             <div class="text-center">
               <h3 class="text-2xl font-bold mb-3 text-white">Jake</h3>
               <p class="text-gray-300 space-y-4">
@@ -57,7 +65,9 @@ const description = "Learn about the Custom Climates story, our values of reliab
 
           <!-- Tate -->
           <div class="bg-gray-900 p-8 rounded-lg flex flex-col items-center">
-            <div class="w-48 h-48 mb-6 rounded-full bg-gray-700"></div>
+             <div class="w-48 h-48 mb-6">
+              <Image src={tate} alt="Headshot of Tate" class="rounded-full w-full h-full object-cover" />
+            </div>
             <div class="text-center">
               <h3 class="text-2xl font-bold mb-3 text-white">Tate</h3>
               <p class="text-gray-300 space-y-4">
@@ -74,7 +84,9 @@ const description = "Learn about the Custom Climates story, our values of reliab
 
           <!-- Antony -->
           <div class="bg-gray-900 p-8 rounded-lg flex flex-col items-center">
-            <div class="w-48 h-48 mb-6 rounded-full bg-gray-700"></div>
+            <div class="w-48 h-48 mb-6">
+              <Image src={antony} alt="Headshot of Antony" class="rounded-full w-full h-full object-cover" />
+            </div>
             <div class="text-center">
               <h3 class="text-2xl font-bold mb-3 text-white">Antony</h3>
               <p class="text-gray-300 space-y-4">
