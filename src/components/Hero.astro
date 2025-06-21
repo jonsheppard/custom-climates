@@ -1,11 +1,17 @@
 ---
 // src/components/Hero.astro
+interface Props {
+  headline: string;
+  subtext: string;
+}
+
+const { headline, subtext } = Astro.props;
 ---
 <div class="relative bg-gray-800 text-white py-24 px-8 text-center" style="background-image: url('https://via.placeholder.com/1920x1080'); background-size: cover; background-position: center;">
   <div class="absolute inset-0 bg-black opacity-50"></div>
   <div class="relative z-10">
-    <h1 class="text-5xl font-extrabold">Onsite Climate Controlled Solutions</h1>
-    <p class="mt-4 text-xl">24/7 Emergency Deployment • Serving All 50 States</p>
+    <h1 class="text-5xl font-extrabold">{headline}</h1>
+    <p class="mt-4 text-xl">{subtext}</p>
     
     <div class="mt-8">
       <a href="/contact" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg text-xl">

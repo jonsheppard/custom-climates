@@ -5,7 +5,7 @@ This document breaks down the website rebuild into manageable phases, based on t
 ---
 
 ### Phase 1: Foundation & Core Homepage
-**Status:** In Progress 🟡
+**Status:** Complete 🟢
 
 This phase focuses on setting up the core infrastructure and building the essential, above-the-fold content for the homepage.
 
@@ -20,7 +20,7 @@ This phase focuses on setting up the core infrastructure and building the essent
 ---
 
 ### Phase 2: Content & SEO Basics
-**Status:** In Progress 🟡
+**Status:** Complete 🟢
 
 This phase involves building out the secondary content sections, interior pages, and fundamental SEO elements.
 

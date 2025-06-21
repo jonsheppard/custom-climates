@@ -1,26 +1,9 @@
 ---
 // src/components/EquipmentOverview.astro
 
-const equipment = [
-  {
-    title: "Climate Controlled Trailers",
-    description: "Reliable, on-demand temperature control for any environment.",
-    imageUrl: "https://via.placeholder.com/800x600",
-    link: "/equipment/trailers"
-  },
-  {
-    title: "Power Generation Units",
-    description: "Keep your operations running with our robust power solutions.",
-    imageUrl: "https://via.placeholder.com/800x600",
-    link: "/equipment/power"
-  },
-  {
-    title: "Office/Storage Combos",
-    description: "Versatile units for secure storage and functional office space.",
-    imageUrl: "https://via.placeholder.com/800x600",
-    link: "/equipment/combos"
-  }
-];
+import { getCollection } from 'astro:content';
+
+const equipment = await getCollection('equipment');
 ---
 <section id="equipment" class="bg-gray-900 py-20 px-8">
   <div class="container mx-auto text-center">
@@ -28,11 +11,11 @@ const equipment = [
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       {equipment.map(item => (
         <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-          <img src={item.imageUrl} alt={item.title} class="w-full h-64 object-cover">
+          <img src={item.data.image} alt={item.data.title} class="w-full h-64 object-cover">
           <div class="p-6">
-            <h3 class="text-2xl font-bold mb-2">{item.title}</h3>
-            <p class="text-gray-400 mb-4">{item.description}</p>
-            <a href={item.link} class="text-blue-400 hover:underline">Learn More &rarr;</a>
+            <h3 class="text-2xl font-bold mb-2">{item.data.title}</h3>
+            <p class="text-gray-400 mb-4">{item.data.description}</p>
+            <a href={`/equipment/${item.slug}`} class="text-blue-400 hover:underline">Learn More &rarr;</a>
           </div>
         </div>
       ))}
