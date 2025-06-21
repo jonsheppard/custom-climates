@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import video from '../assets/images/hero-loop.mp4';
 // src/components/Hero.astro
 interface Props {
   headline: string;
@@ -7,8 +9,17 @@ interface Props {
 
 const { headline, subtext } = Astro.props;
 ---
-<section class="bg-gray-900 text-white text-center py-20 px-8">
-  <div class="container mx-auto">
+<section class="relative bg-gray-900 text-white text-center py-40 px-8 overflow-hidden">
+  <video
+    autoplay
+    loop
+    muted
+    playsinline
+    class="absolute top-0 left-0 w-full h-full object-cover z-0"
+    src={video}
+  ></video>
+  <div class="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-10"></div>
+  <div class="relative container mx-auto z-20">
     <h1 class="text-5xl font-extrabold leading-tight">{headline}</h1>
     <p class="mt-4 text-xl text-gray-300 max-w-2xl mx-auto">{subtext}</p>
     <div class="mt-8">
