@@ -28,16 +28,15 @@ This phase involves building out the secondary content sections, interior pages,
 - [x] Create placeholder pages for all primary navigation links (Equipment, Our Process, etc.).
 - [x] Implement basic SEO metadata (titles, descriptions) across all pages.
 - [x] Generate an XML sitemap for search engines.
-- [ ] Ensure all images are optimized for performance.
 
 ---
 
 ### Phase 3: CMS Integration
-**Status:** Not Started ⚪
+**Status:** In Progress 🟡
 
 This phase focuses on making the site's content manageable through Decap CMS.
 
-- [ ] Configure Decap CMS with collections for `Equipment` and `Pages`.
+- [x] Configure Decap CMS with collections for `Equipment` and `Pages`.
 - [ ] Replace the static homepage content (hero, equipment cards) with content managed in Decap.
 - [ ] Build the full, dynamic "Equipment" pages that pull content from the CMS.
 - [ ] Create a "Case Studies" collection and corresponding pages (optional, as per strategy).
@@ -58,3 +57,4 @@ The final phase involves testing, performance tuning, and preparing the site for
 
 Maybe later
 - [ ] Add a static US coverage map image.
+- [ ] Ensure all images are optimized for performance.
