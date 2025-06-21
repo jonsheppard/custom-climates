@@ -4,9 +4,12 @@ import Hero from '../components/Hero.astro';
 import EquipmentOverview from '../components/EquipmentOverview.astro';
 import HowItWorks from '../components/HowItWorks.astro';
 import SeoContent from '../components/SeoContent.astro';
+
+const title = "Custom Climates | Onsite Climate Controlled Solutions";
+const description = "Don't let weather ruin your schedule. Protect every panel, plank, and pallet with our mobile climate-controlled storage solutions, available 24/7 nationwide.";
 ---
 
-<Layout title="Welcome to Custom Climates">
+<Layout title={title} description={description}>
 	<main>
 		<Hero />
 		<EquipmentOverview />

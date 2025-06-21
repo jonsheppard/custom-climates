@@ -26,8 +26,7 @@ This phase involves building out the secondary content sections, interior pages,
 
 - [x] Implement the collapsible SEO content band for the homepage.
 - [x] Create placeholder pages for all primary navigation links (Equipment, Our Process, etc.).
-- [ ] Add a static US coverage map image.
-- [ ] Implement basic SEO metadata (titles, descriptions) across all pages.
+- [x] Implement basic SEO metadata (titles, descriptions) across all pages.
 - [ ] Generate an XML sitemap for search engines.
 - [ ] Ensure all images are optimized for performance.
 
@@ -55,4 +54,7 @@ The final phase involves testing, performance tuning, and preparing the site for
 - [ ] Run a Lighthouse audit and implement performance optimizations to score 95+.
 - [ ] Add analytics (e.g., a privacy-friendly alternative to Google Analytics).
 - [ ] Set up A/B testing for the hero video vs. static image.
-- [ ] Submit the sitemap to Google Search Console. 
+- [ ] Submit the sitemap to Google Search Console.
+
+Maybe later
+- [ ] Add a static US coverage map image.
