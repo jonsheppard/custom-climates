@@ -1,6 +1,6 @@
 ---
 title: "On-Site Office Container"
-description: "For general contracts. Our 20 foot length trailer is fast to setup, provides secure access and comfort on every job site."
+description: "A secure, climate-controlled mobile office, delivered to your job site and ready to use. Perfect for project management and coordination."
 image: "../../assets/uploads/placeholder-trailer.jpg"
 features:
   - "Climate-Controlled Interior (A/C & Heat)"

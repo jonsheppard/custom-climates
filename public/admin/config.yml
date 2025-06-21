@@ -1,9 +1,12 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: your-github-username/custom-climates # e.g. "my-user/my-repo"
   branch: main
 
-media_folder: "public/assets/uploads"
-public_folder: "/assets/uploads"
+local_backend: true
+
+media_folder: "src/assets/uploads" # Media files will be stored in the repo here
+public_folder: "/assets/uploads" # The src attribute for uploaded media will begin with /assets/uploads
 
 collections:
   - name: "pages"

@@ -1,38 +1,34 @@
 ---
 // src/components/EquipmentOverview.astro
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+
+const equipment = await getCollection('equipment');
 ---
-<section id="why-us" class="bg-gray-100 dark:bg-gray-800 py-20 px-8">
+<section id="equipment" class="bg-white dark:bg-gray-900 py-20 px-8">
   <div class="container mx-auto text-center">
-    <h2 class="text-4xl font-bold mb-4 text-gray-900 dark:text-white">Stop Letting The Weather Dictate Your Project</h2>
-    <p class="text-lg text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto">Jobsite delays cost you time and money. Our mobile, climate-controlled units protect your materials from damage and keep your project on schedule.</p>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-      <!-- Tile 1: Avoid Delays -->
-      <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8">
-        <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Avoid Costly Delays</h3>
-        <p class="text-gray-600 dark:text-gray-300">
-          Don't let rain, humidity, or temperature swings halt your progress. Keep your materials (drywall, flooring, paint) in a perfectly controlled environment, ready for installation anytime.
-        </p>
-      </div>
-
-      <!-- Tile 2: Protect Materials -->
-      <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8">
-        <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Protect Your Investment</h3>
-        <p class="text-gray-600 dark:text-gray-300">
-          Warped lumber, ruined drywall, and damaged pallets are a thing of the past. Secure your valuable materials from theft and weather damage, reducing waste and protecting your bottom line.
-        </p>
-      </div>
-
-      <!-- Tile 3: Simplify Logistics -->
-      <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8">
-        <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Simplify Jobsite Logistics</h3>
-        <p class="text-gray-600 dark:text-gray-300">
-          Get a plug-and-play storage solution delivered directly to your site. No complex setup, no off-site trips—just secure, accessible, climate-controlled storage where you need it.
-        </p>
-      </div>
+    <h2 class="text-4xl font-bold mb-12 text-gray-900 dark:text-white">Our Core Solutions</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+      {equipment.map(item => (
+        <div class="bg-gray-50 dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden flex flex-col">
+          <div class="w-full h-48 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+            {/* Placeholder for image */}
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">{item.data.title}</h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-6 flex-grow">
+              {item.data.description}
+            </p>
+            <a href={`/equipment/${item.slug}`} class="text-sky-500 hover:text-sky-400 font-semibold transition-colors duration-300 self-start">
+              Learn More →
+            </a>
+          </div>
+        </div>
+      ))}
     </div>
     <div class="mt-16">
       <a href="/equipment" class="bg-[#0955A9] hover:bg-[#07448a] text-white font-bold py-3 px-6 rounded-lg text-lg transition-colors duration-300">
-        Explore Our Equipment
+        View All Equipment
       </a>
     </div>
   </div>
