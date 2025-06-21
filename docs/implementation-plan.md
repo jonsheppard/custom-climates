@@ -39,7 +39,6 @@ This phase focuses on making the site's content manageable through Decap CMS.
 - [x] Configure Decap CMS with collections for `Equipment` and `Pages`.
 - [x] Replace the static homepage content (hero, equipment cards) with content managed in Decap.
 - [x] Build the full, dynamic "Equipment" pages that pull content from the CMS.
-- [ ] Create a "Case Studies" collection and corresponding pages (optional, as per strategy).
 
 ---
 
@@ -48,7 +47,7 @@ This phase focuses on making the site's content manageable through Decap CMS.
 
 The final phase involves testing, performance tuning, and preparing the site for launch.
 
-- [ ] Perform end-to-end testing on the contact form.
+- [x] Perform end-to-end testing on the contact form.
 - [ ] Conduct cross-browser and mobile-responsive testing.
 - [ ] Run a Lighthouse audit and implement performance optimizations to score 95+.
 - [ ] Add analytics (e.g., a privacy-friendly alternative to Google Analytics).
@@ -58,3 +57,4 @@ The final phase involves testing, performance tuning, and preparing the site for
 Maybe later
 - [ ] Add a static US coverage map image.
 - [ ] Ensure all images are optimized for performance.
+- [ ] Create a "Case Studies" collection and corresponding pages (optional, as per strategy).
