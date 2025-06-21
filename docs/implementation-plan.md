@@ -20,11 +20,11 @@ This phase focuses on setting up the core infrastructure and building the essent
 ---
 
 ### Phase 2: Content & SEO Basics
-**Status:** Not Started ⚪
+**Status:** In Progress 🟡
 
 This phase involves building out the secondary content sections, interior pages, and fundamental SEO elements.
 
-- [ ] Implement the collapsible SEO content band for the homepage.
+- [x] Implement the collapsible SEO content band for the homepage.
 - [ ] Create placeholder pages for all primary navigation links (Equipment, Our Process, etc.).
 - [ ] Add a static US coverage map image.
 - [ ] Implement basic SEO metadata (titles, descriptions) across all pages.

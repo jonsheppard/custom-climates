@@ -1,0 +1,26 @@
+---
+// src/components/SeoContent.astro
+---
+<section class="bg-gray-800 py-16">
+  <div class="container mx-auto text-center">
+    <button id="seo-toggle" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg">
+      Learn More About Our Services ↓
+    </button>
+    <div id="seo-content" class="hidden mt-8 text-left max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4">Protect Your Materials, Protect Your Timeline</h2>
+      <p class="text-gray-400 mb-4">
+        Don't let weather ruin your schedule. Protect every panel, plank, and pallet with our mobile climate-controlled storage solutions. We offer onsite, plug-and-play units with real-time monitoring to ensure your materials are always in a controlled environment.
+      </p>
+      <p class="text-gray-400">
+        With over $2.5B in jobsite weather damage reported annually, you can't afford to take risks. Our climate-controlled trailers and containers are built for the jobsite, with features like humidifiers, sensors, and robust insulation.
+      </p>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.getElementById('seo-toggle').addEventListener('click', () => {
+    const content = document.getElementById('seo-content');
+    content.classList.toggle('hidden');
+  });
+</script> 
