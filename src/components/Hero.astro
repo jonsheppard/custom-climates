@@ -7,21 +7,14 @@ interface Props {
 
 const { headline, subtext } = Astro.props;
 ---
-<div class="relative bg-gray-800 text-white py-24 px-8 text-center" style="background-image: url('https://via.placeholder.com/1920x1080'); background-size: cover; background-position: center;">
-  <div class="absolute inset-0 bg-black opacity-50"></div>
-  <div class="relative z-10">
-    <h1 class="text-5xl font-extrabold">{headline}</h1>
-    <p class="mt-4 text-xl">{subtext}</p>
-    
+<section class="bg-gray-900 text-white text-center py-20 px-8">
+  <div class="container mx-auto">
+    <h1 class="text-5xl font-extrabold leading-tight">{headline}</h1>
+    <p class="mt-4 text-xl text-gray-300 max-w-2xl mx-auto">{subtext}</p>
     <div class="mt-8">
-      <a href="/contact" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg text-xl">
-        Get Quote Now
+      <a href="/contact" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-300">
+        Request a Quote
       </a>
     </div>
-
-    <div class="mt-8">
-      <a href="#equipment" class="text-lg underline hover:text-blue-400">View Equipment</a>
-      <p class="mt-2 text-sm text-gray-400">500+ Projects Completed</p>
-    </div>
   </div>
-</div> 
+</section> 

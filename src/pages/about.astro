@@ -2,14 +2,91 @@
 import Layout from '../layouts/Layout.astro';
 
 const title = "About Us | Custom Climates";
-const description = "Learn about the Custom Climates story, our values, and our commitment to providing reliable, innovative climate control solutions to our customers.";
+const description = "Learn about the Custom Climates story, our values of reliability and innovation, and our commitment to serving contractors nationwide.";
 ---
 
 <Layout title={title} description={description}>
-  <main class="py-20 px-8 text-center">
-    <h1 class="text-4xl font-bold">About Custom Climates</h1>
-    <p class="mt-4 text-lg text-gray-400">
-      Learn about our story, our values, and our commitment to our customers.
-    </p>
+  <main class="bg-gray-800 text-white">
+    <div class="py-20 px-8 text-center">
+      <h1 class="text-5xl font-extrabold">Protecting Your Materials with Precision</h1>
+      <p class="mt-4 text-xl text-gray-300 max-w-4xl mx-auto">
+        Custom Climates, LLC specializes in American-made climate-controlled trailers and conex containers. We are dedicated to designing high-quality, customized storage solutions to save businesses money by preventing weather-related damage to their materials.
+      </p>
+    </div>
+
+    <div class="py-10 px-8">
+      <div class="container mx-auto max-w-6xl">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold">Meet the Team</h2>
+            <p class="mt-4 text-lg text-gray-300 max-w-3xl mx-auto">Our company thrives on collaboration, innovation, and a shared vision. It's been an incredible journey of learning and growth, thanks to our dedicated team effort.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+          <!-- Travis -->
+          <div class="bg-gray-900 p-8 rounded-lg">
+            <h3 class="text-2xl font-bold mb-3 text-white">Travis</h3>
+            <p class="text-gray-400 space-y-4">
+                Travis worked extensively in the oil and gas industry for 19 years with Exxon Mobil and BP products North America. His last eight years were spent being the Book Lead for the Crude Oil Trading group of BP products North America. He developed trading strategies that included futures, logistical arbitrage, and physical trading across North America. He was a member of the BP Crude Oil Executive Team that was responsible for one of the largest crude oil trading divisions in the world.
+                <br/><br/>
+                Upon retiring in 2020 Travis moved his attention to assisting small startup companies like Gemstone Lights America, and now Custom Climates Co. Travis is a principal investor, who excels in commodity trading strategies, financial analysis, and negotiation.
+            </p>
+          </div>
+
+          <!-- Jake -->
+          <div class="bg-gray-900 p-8 rounded-lg">
+            <h3 class="text-2xl font-bold mb-3 text-white">Jake</h3>
+            <p class="text-gray-400 space-y-4">
+                Jake spent over 20 years at Burt Brothers Tire & Service, serving in all capacities from Vice President to Tire Technician and everything in between, helping grow a family business built on trust, quality, and customer care. Along the way, I became a licensed real estate agent, combining my love for business with a passion for helping people make smart, confident decisions—whether it's buying a home, building a business or something new.
+                <br/><br/>
+                With a strong background in sales, team leadership, and business development, I bring a practical, people-first approach to everything I do. I believe in clear communication, doing the right thing, and always showing up for clients and colleagues.
+            </p>
+            <div class="mt-4 pt-4 border-t border-gray-700">
+                <h4 class="font-bold text-white">Specialties:</h4>
+                <p class="text-gray-400">Building relationships, leading teams, solving problems, and creating real value—both in real estate and business.</p>
+                <h4 class="font-bold text-white mt-2">Education:</h4>
+                <p class="text-gray-400">Westminster University– Bachelor of Arts, International Business</p>
+            </div>
+          </div>
+
+          <!-- Tate -->
+          <div class="bg-gray-900 p-8 rounded-lg">
+            <h3 class="text-2xl font-bold mb-3 text-white">Tate</h3>
+            <p class="text-gray-400 space-y-4">
+                Tate brings over four years of direct sales experience, representing leading companies in pest control, solar energy, and termite protection along the East Coast. His expertise lies in solution-based selling, customer engagement, and developing high-performing sales strategies in competitive markets.
+                <br/><br/>
+                With a proven ability to connect with customers and drive results, Tate has a track record of translating complex services into practical value. He thrives in fast-paced, people-focused environments and is known for his adaptability, persistence, and leadership on the ground. Now contributing to Custom Climates Co., Tate applies his sales acumen and entrepreneurial mindset to support the growth of innovative startups.
+            </p>
+             <div class="mt-4 pt-4 border-t border-gray-700">
+                <h4 class="font-bold text-white">Specialties:</h4>
+                <p class="text-gray-400">Direct sales, customer acquisition, and relationship-building with a strategic, results-driven approach.</p>
+            </div>
+          </div>
+
+          <!-- Antony -->
+          <div class="bg-gray-900 p-8 rounded-lg">
+            <h3 class="text-2xl font-bold mb-3 text-white">Antony</h3>
+            <p class="text-gray-400 space-y-4">
+                Antony is a licensed contractor and entrepreneur with deep experience across the construction and transportation industries. Since 2017, he has worked with several general contractors, gaining valuable expertise in project coordination, on-site management, and contractor relations.
+                <br/><br/>
+                In 2021, Antony earned both his B100 (General Building Contractor) and E100 (Engineering Contractor) licenses, marking a significant step in his career. With these credentials, he has successfully led numerous construction projects, ensuring quality, compliance, and smooth operations from start to finish. In addition to his work in construction, Antony has been involved in multiple startups and business ventures, including the launch of a thriving transportation company.
+            </p>
+             <div class="mt-4 pt-4 border-t border-gray-700">
+                <h4 class="font-bold text-white">Specialties:</h4>
+                <p class="text-gray-400">Project coordination, on-site management, contractor relations, and strategic leadership.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+     <div class="py-20 px-8 text-center bg-gray-900">
+        <h2 class="text-4xl font-bold mb-4">Ready to Work With Us?</h2>
+        <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+            Our team is ready to help you protect your materials and keep your project on track.
+        </p>
+        <a href="/contact" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-300">
+            Request a Quote
+        </a>
+    </div>
   </main>
 </Layout> 

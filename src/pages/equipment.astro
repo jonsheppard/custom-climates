@@ -1,15 +1,36 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
 
+const equipment = await getCollection('equipment');
 const title = "Our Equipment | Custom Climates";
-const description = "Explore our high-performance, jobsite-ready equipment, including climate-controlled trailers, containers, and power generation units.";
+const description = "High-performance, jobsite-ready climate-controlled trailers and containers. Explore our solutions and find the right fit for your project.";
 ---
 
 <Layout title={title} description={description}>
-  <main class="py-20 px-8 text-center">
-    <h1 class="text-4xl font-bold">Our Equipment</h1>
-    <p class="mt-4 text-lg text-gray-400">
-      High-performance equipment, built for the jobsite. This page will showcase our trailers and containers.
-    </p>
+  <main class="bg-gray-800 text-white">
+    <div class="py-20 px-8 text-center">
+      <h1 class="text-5xl font-extrabold">High-Performance Equipment. Built for the Jobsite.</h1>
+      <p class="mt-4 text-xl text-gray-300 max-w-3xl mx-auto">
+        Our equipment is engineered for reliability and performance in the toughest conditions. Explore our options below.
+      </p>
+    </div>
+
+    <div class="py-10 px-8">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {equipment.map(item => (
+                  <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg flex flex-col">
+                    <img src={item.data.image} alt={item.data.title} class="w-full h-64 object-cover">
+                    <div class="p-6 flex flex-col flex-grow">
+                      <h3 class="text-2xl font-bold mb-2">{item.data.title}</h3>
+                      <p class="text-gray-400 mb-4 flex-grow">{item.data.description}</p>
+                      <a href={`/equipment/${item.slug}`} class="mt-auto text-blue-400 hover:underline self-start">Learn More &rarr;</a>
+                    </div>
+                  </div>
+                ))}
+            </div>
+        </div>
+    </div>
   </main>
 </Layout> 

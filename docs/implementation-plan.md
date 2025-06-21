@@ -32,7 +32,7 @@ This phase involves building out the secondary content sections, interior pages,
 ---
 
 ### Phase 3: CMS Integration
-**Status:** In Progress 🟡
+**Status:** Complete 🟢
 
 This phase focuses on making the site's content manageable through Decap CMS.
 
@@ -43,12 +43,12 @@ This phase focuses on making the site's content manageable through Decap CMS.
 ---
 
 ### Phase 4: Optimization & Launch
-**Status:** Not Started ⚪
+**Status:** In Progress 🟡
 
 The final phase involves testing, performance tuning, and preparing the site for launch.
 
 - [x] Perform end-to-end testing on the contact form.
-- [ ] Conduct cross-browser and mobile-responsive testing.
+- [x] Conduct cross-browser and mobile-responsive testing.
 - [ ] Run a Lighthouse audit and implement performance optimizations to score 95+.
 - [ ] Add analytics (e.g., a privacy-friendly alternative to Google Analytics).
 - [ ] Set up A/B testing for the hero video vs. static image.

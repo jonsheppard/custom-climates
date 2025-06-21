@@ -1,28 +1,38 @@
 ---
 // src/components/EquipmentOverview.astro
-
-import { getCollection } from 'astro:content';
-
-const equipment = await getCollection('equipment');
 ---
-<section id="equipment" class="bg-gray-900 py-20 px-8">
+<section id="why-us" class="bg-gray-100 dark:bg-gray-800 py-20 px-8">
   <div class="container mx-auto text-center">
-    <h2 class="text-4xl font-bold mb-12">Our Core Offerings</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {equipment.map(item => (
-        <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-          <img src={item.data.image} alt={item.data.title} class="w-full h-64 object-cover">
-          <div class="p-6">
-            <h3 class="text-2xl font-bold mb-2">{item.data.title}</h3>
-            <p class="text-gray-400 mb-4">{item.data.description}</p>
-            <a href={`/equipment/${item.slug}`} class="text-blue-400 hover:underline">Learn More &rarr;</a>
-          </div>
-        </div>
-      ))}
+    <h2 class="text-4xl font-bold mb-4 text-gray-900 dark:text-white">Stop Letting The Weather Dictate Your Project</h2>
+    <p class="text-lg text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto">Jobsite delays cost you time and money. Our mobile, climate-controlled units protect your materials from damage and keep your project on schedule.</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+      <!-- Tile 1: Avoid Delays -->
+      <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8">
+        <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Avoid Costly Delays</h3>
+        <p class="text-gray-600 dark:text-gray-400">
+          Don't let rain, humidity, or temperature swings halt your progress. Keep your materials (drywall, flooring, paint) in a perfectly controlled environment, ready for installation anytime.
+        </p>
+      </div>
+
+      <!-- Tile 2: Protect Materials -->
+      <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8">
+        <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Protect Your Investment</h3>
+        <p class="text-gray-600 dark:text-gray-400">
+          Warped lumber, ruined drywall, and damaged pallets are a thing of the past. Secure your valuable materials from theft and weather damage, reducing waste and protecting your bottom line.
+        </p>
+      </div>
+
+      <!-- Tile 3: Simplify Logistics -->
+      <div class="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8">
+        <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Simplify Jobsite Logistics</h3>
+        <p class="text-gray-600 dark:text-gray-400">
+          Get a plug-and-play storage solution delivered directly to your site. No complex setup, no off-site trips—just secure, accessible, climate-controlled storage where you need it.
+        </p>
+      </div>
     </div>
     <div class="mt-16">
-      <a href="/equipment" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg text-lg">
-        View All Equipment
+      <a href="/equipment" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg text-lg transition-colors duration-300">
+        Explore Our Equipment
       </a>
     </div>
   </div>
