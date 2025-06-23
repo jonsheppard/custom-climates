@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: your-github-username/custom-climates # e.g. "my-user/my-repo"
+  repo: jonsheppard/custom-climates
   branch: main
 
 local_backend: true
@@ -16,8 +16,73 @@ collections:
         name: "homepage"
         file: "src/content/pages/homepage.md"
         fields:
+          - { label: "Title (SEO)", name: "title", widget: "string", default: "Custom Climates | Climate Controlled Solutions" }
+          - { label: "Meta Description", name: "description", widget: "text", default: "Climate controlled trailers and containers for construction. Protect materials from weather damage with 24/7 monitoring." }
+          - { label: "Hero Headline", name: "hero_headline", widget: "string" }
+          - { label: "Hero Subtext", name: "hero_subtext", widget: "text" }
+          - { label: "Hero Trust Text", name: "hero_trust_text", widget: "string", required: false }
+          - { label: "Secondary CTA Text", name: "hero_secondary_cta", widget: "string", required: false }
+      
+      - label: "About Page"
+        name: "about"
+        file: "src/content/pages/about.md"
+        fields:
+          - { label: "Title (SEO)", name: "title", widget: "string" }
+          - { label: "Meta Description", name: "description", widget: "text" }
+          - { label: "Hero Headline", name: "hero_headline", widget: "string" }
+          - { label: "Hero Subtext", name: "hero_subtext", widget: "text" }
+          - { label: "Team Intro Headline", name: "team_intro_headline", widget: "string" }
+          - { label: "Team Intro Subtext", name: "team_intro_subtext", widget: "text" }
+          - label: "Team Members"
+            name: "team_members"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Bio", name: "bio", widget: "markdown" }
+              - { label: "Specialties Headline", name: "specialties_headline", widget: "string", required: false }
+              - { label: "Specialties", name: "specialties", widget: "text", required: false }
+              - { label: "Education Headline", name: "education_headline", widget: "string", required: false }
+              - { label: "Education", name: "education", widget: "text", required: false }
+
+      - label: "Process Page"
+        name: "process"
+        file: "src/content/pages/process.md"
+        fields:
+          - { label: "Title (SEO)", name: "title", widget: "string" }
+          - { label: "Meta Description", name: "description", widget: "text" }
           - { label: "Hero Headline", name: "hero_headline", widget: "string" }
           - { label: "Hero Subtext", name: "hero_subtext", widget: "string" }
+          - { label: "Main Headline", name: "headline", widget: "string" }
+          - { label: "Main Subtext", name: "subtext", widget: "text" }
+          - label: "Process Steps"
+            name: "steps"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+
+      - label: "Industries Page"
+        name: "industries"
+        file: "src/content/pages/industries.md"
+        fields:
+          - { label: "Title (SEO)", name: "title", widget: "string" }
+          - { label: "Meta Description", name: "description", widget: "text" }
+          - { label: "Hero Headline", name: "hero_headline", widget: "string" }
+          - { label: "Hero Subtext", name: "hero_subtext", widget: "text" }
+          - { label: "Features Headline", name: "features_headline", widget: "string" }
+          - { label: "Features Subtext", name: "features_subtext", widget: "text" }
+          - label: "Benefits"
+            name: "benefits"
+            widget: "list"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Alt Text", name: "alt", widget: "string" }
+              - { label: "Headline", name: "headline", widget: "string" }
+              - { label: "Text", name: "text", widget: "text" }
+          - { label: "CTA Headline", name: "cta_headline", widget: "string" }
+          - { label: "CTA Subtext", name: "cta_subtext", widget: "text" }
 
   - name: "equipment"
     label: "Equipment"
@@ -27,5 +92,12 @@ collections:
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
-      - { label: "Image", name: "image", widget: "image" }
-      - { label: "Features", name: "features", widget: "list" }
+      - { label: "Main Image", name: "image", widget: "image" }
+      - { label: "Features", name: "features", widget: "list", field: { label: "Feature", name: "feature", widget: "string" } }
+      - label: "Specifications"
+        name: "specifications"
+        widget: "list"
+        fields:
+          - { label: "Label", name: "label", widget: "string" }
+          - { label: "Value", name: "value", widget: "string" }
+      - { label: "Order Button Text", name: "order_button_text", widget: "string", default: "Get Quote" }
