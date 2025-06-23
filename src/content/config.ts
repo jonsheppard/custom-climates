@@ -15,7 +15,7 @@ const equipmentCollection = defineCollection({
   schema: ({ image }) => z.object({
     title: z.string(),
     description: z.string(),
-    image: image(),
+    image: image().optional(),
     features: z.array(z.string()),
   }),
 });

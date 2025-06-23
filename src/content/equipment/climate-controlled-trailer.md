@@ -1,9 +1,10 @@
 ---
 title: "Climate Controlled Trailers"
-description: "Reliable, on-demand temperature control for any environment."
-image: "../../assets/uploads/placeholder-trailer.jpg"
+description: "Gooseneck trailers drop right on site, freeing workspace for all trades. No more costly shuttles from distant warehouses—just rapid roll-in deployment that gets your crew loading materials the same morning."
+image: "../../assets/uploads/hero-trailer.jpg"
 features:
-  - "Real-time monitoring"
-  - "Plug-n-play setup"
-  - "24/7 support"
+  - "Stream live data to your phone—24/7, nationwide"
+  - "Plug-&-Play Power: On-board generator with shore-power option"
+  - "Commercial-grade HVAC + humidifier/de-humidifier lock temperature"
+  - "We deliver, level, and dial-in climate in under 30 minutes"
 --- 

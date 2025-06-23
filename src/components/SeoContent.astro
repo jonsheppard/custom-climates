@@ -1,26 +1,106 @@
 ---
 // src/components/SeoContent.astro
 ---
-<section class="bg-gray-800 py-16 px-8">
-  <div class="container mx-auto text-center">
-    <button id="seo-toggle" class="bg-transparent border border-gray-600 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300">
-      More About On-Site Climate Control ↓
-    </button>
-    <div id="seo-content" class="hidden mt-8 text-left max-w-4xl mx-auto space-y-4">
-      <h3 class="text-3xl font-bold mb-4 text-white">Why On-Site Climate Control is a Game-Changer</h3>
-      <p class="text-gray-300">
-        Jobsite weather damage costs contractors over $2.5 billion annually. Unpredictable rain, humidity, and temperature spikes can ruin expensive materials like drywall, flooring, and adhesives, leading to costly project delays and rework. You can't afford to leave your materials exposed to the elements.
-      </p>
-      <p class="text-gray-300">
-        Our mobile, climate-controlled trailers and containers solve this problem. We deliver a secure, perfectly-conditioned environment directly to your site, so your materials remain pristine and ready for installation. With features like real-time monitoring, robust insulation, and optional power sources, you get a plug-and-play solution that protects your investment and keeps your project on track.
-      </p>
+<section class="bg-white py-20 px-8">
+  <div class="container mx-auto">
+    <div class="max-w-4xl mx-auto text-center mb-16">
+      <h2 class="text-4xl font-bold mb-4 text-gray-900">Your Challenges. Our Solutions.</h2>
+      <p class="text-xl text-gray-600">From warped wood to workflow chaos, these climate-related problems blindside even the best-run projects—unless you stop them at the gate.</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <!-- Time Challenges -->
+      <div class="text-center">
+        <div class="bg-red-50 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+          <svg class="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold mb-4 text-gray-900">Time</h3>
+        <div class="text-left space-y-3">
+          <p class="text-gray-600">• Inconsistent site climate warps materials, driving up costs and blowing schedules.</p>
+          <p class="text-gray-600">• Damage triggers rework that pushes every trade's timeline back.</p>
+        </div>
+      </div>
+
+      <!-- Money Challenges -->
+      <div class="text-center">
+        <div class="bg-green-50 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+          <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold mb-4 text-gray-900">Money</h3>
+        <div class="text-left space-y-3">
+          <p class="text-gray-600">• Climate-controlled units keep materials pristine, cutting pricey replacements.</p>
+          <p class="text-gray-600">• Mobile storage trims handling, warehousing, and damage expenses.</p>
+        </div>
+      </div>
+
+      <!-- Logistics Challenges -->
+      <div class="text-center">
+        <div class="bg-blue-50 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6">
+          <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold mb-4 text-gray-900">Logistics</h3>
+        <div class="text-left space-y-3">
+          <p class="text-gray-600">• Gooseneck trailers drop right on site, freeing workspace for all trades.</p>
+          <p class="text-gray-600">• No more costly shuttles from distant warehouses.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="mt-20">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4 text-gray-900">One Climate Protection</h2>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="bg-sky-50 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-sky-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2 text-gray-900">Precision Climate Control</h3>
+          <p class="text-gray-600 text-sm">Commercial-grade HVAC + humidifier/de-humidifier lock temperature.</p>
+        </div>
+
+        <div class="text-center">
+          <div class="bg-yellow-50 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2 text-gray-900">Plug-&-Play Power</h3>
+          <p class="text-gray-600 text-sm">On-board generator with shore-power option means zero reliance on site utilities or half-wired temp poles.</p>
+        </div>
+
+        <div class="text-center">
+          <div class="bg-purple-50 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2 text-gray-900">Real-Time Monitoring Portal</h3>
+          <p class="text-gray-600 text-sm">Live dashboards, SMS/Email alerts, and HD cameras let you babysit your cargo from your phone—24/7, nationwide.</p>
+        </div>
+
+        <div class="text-center">
+          <div class="bg-green-50 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold mb-2 text-gray-900">Rapid Roll-In Deployment</h3>
+          <p class="text-gray-600 text-sm">We deliver, level, and dial-in climate in under 30 minutes; your crew can load materials the same morning.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<script>
-  document.getElementById('seo-toggle').addEventListener('click', () => {
-    const content = document.getElementById('seo-content');
-    content.classList.toggle('hidden');
-  });
-</script> 
+ 

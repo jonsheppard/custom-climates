@@ -1,31 +1,35 @@
 ---
 // src/components/HowItWorks.astro
 import { Image } from 'astro:assets';
-import iconCall from '../assets/images/camera-2.png';
-import iconDeploy from '../assets/images/trailer.png';
-import iconSupport from '../assets/images/twentyfourseven.png';
+import iconCall from '../assets/images/icons/features/monitoring.png';
+import iconDeploy from '../assets/images/icons/features/trailer.png';
+import iconSupport from '../assets/images/icons/features/support.png';
 
 const steps = [
   {
-    title: "1. Call Us",
-    description: "We'll assess your needs and recommend the right solution.",
+    title: "Step 1",
+    subtitle: "Book Your Consultation",
+    description: "Tell us your materials, location, & timeline—5-minute call or online form.",
     icon: iconCall
   },
   {
-    title: "2. We Deploy",
-    description: "Your climate-controlled unit is delivered to your jobsite, fast.",
+    title: "Step 2", 
+    subtitle: "Choose Unit & Dates",
+    description: "Trailer or conex, size & spec; we lock in delivery, quote, and monitoring plan.",
     icon: iconDeploy
   },
   {
-    title: "3. 24/7 Support",
-    description: "We monitor and maintain the equipment around the clock.",
+    title: "Step 3",
+    subtitle: "We Deliver & Monitor", 
+    description: "Unit rolls in, powers up, and streams live data; our team babysits the climate so you don't have to.",
     icon: iconSupport
   }
 ];
 ---
 <section class="bg-gray-100 dark:bg-gray-800 py-20 px-8">
   <div class="container mx-auto text-center">
-    <h2 class="text-4xl font-bold mb-16 text-gray-900 dark:text-white">How It Works</h2>
+    <h2 class="text-4xl font-bold mb-4 text-gray-900 dark:text-white">From Phone Call to Climate Control in Three Simple Moves</h2>
+    <p class="text-xl text-gray-600 dark:text-gray-300 mb-16 italic">ready, set, ship</p>
     <div class="relative max-w-5xl mx-auto">
       <!-- The connecting line -->
       <div class="hidden md:block absolute top-10 left-0 w-full h-0.5 bg-gray-300 dark:bg-gray-600"></div>
@@ -37,6 +41,7 @@ const steps = [
                 <Image src={step.icon} alt={step.title} class="w-10 h-10" />
             </div>
             <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">{step.title}</h3>
+            <h4 class="text-lg font-semibold mb-3 text-[#0955A9] dark:text-sky-400">{step.subtitle}</h4>
             <p class="text-gray-600 dark:text-gray-400 px-2">{step.description}</p>
           </div>
         ))}

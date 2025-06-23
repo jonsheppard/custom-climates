@@ -2,6 +2,31 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
+// Equipment media paths
+const equipmentMedia = {
+  'climate-controlled-trailer': {
+    heroVideo: '/videos/trailers/hero-video.mp4',
+    images: [
+      { src: "/images/equipment/trailers/trailer-angle-1.jpg", alt: "Climate controlled trailer side view" },
+      { src: "/images/equipment/trailers/trailer-angle-2.jpg", alt: "Climate controlled trailer profile" },
+      { src: "/images/equipment/trailers/trailer-features.jpg", alt: "Trailer exterior close-up details" },
+      { src: "/images/equipment/trailers/trailer-open-back.jpg", alt: "Trailer open back view" },
+      { src: "/images/equipment/trailers/trailer-interior.jpg", alt: "Climate controlled trailer interior" },
+      { src: "/images/equipment/trailers/hero-trailer.jpg", alt: "Climate controlled trailer main view" }
+    ],
+    videos: [
+      { src: "/videos/trailers/doors-open.mp4", title: "Doors Opening", description: "Watch how easily the trailer doors open for loading" },
+      { src: "/videos/trailers/interior-tour.mp4", title: "Interior Tour", description: "Explore the climate-controlled interior space" },
+      { src: "/videos/trailers/rotating-view.mp4", title: "360° View", description: "See the trailer from all angles" }
+    ]
+  },
+  containers: {
+    heroVideo: '/videos/containers/hero-video.mp4',
+    images: [],
+    videos: []
+  }
+};
+
 export async function getStaticPaths() {
   const equipment = await getCollection('equipment');
   return equipment.map(item => ({
@@ -16,31 +41,95 @@ const { Content } = await equipment.render();
 
 const title = `${data.title} | Custom Climates`;
 const description = data.description;
+
+// Get media for current equipment
+const currentMedia = equipmentMedia[equipment.slug as keyof typeof equipmentMedia] || { heroVideo: null, images: [], videos: [] };
 ---
 
 <Layout {title} {description}>
-  <main class="py-20 px-8 bg-gray-800 text-white">
-    <div class="container mx-auto">
-        <article class="max-w-4xl mx-auto">
-          <img src={data.image} alt={data.title} class="w-full h-auto rounded-lg mb-8 shadow-lg max-h-[500px] object-cover" />
-          <h1 class="text-4xl lg:text-5xl font-extrabold mb-4">{data.title}</h1>
-          <p class="text-xl lg:text-2xl text-gray-300 mb-8">{data.description}</p>
-          
-          <div class="prose prose-invert lg:prose-xl max-w-none">
-            <Content />
-          </div>
+  <main class="bg-gray-800 text-white">
+    <!-- Hero Section with Video -->
+    {currentMedia.heroVideo && (
+      <section class="relative bg-gray-900 overflow-hidden">
+        <video
+          autoplay
+          loop
+          muted
+          playsinline
+          class="absolute top-0 left-0 w-full h-full object-cover z-0"
+          src={currentMedia.heroVideo}
+        ></video>
+        <div class="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-10"></div>
+        <div class="relative z-20 py-32 px-8 text-center">
+          <h1 class="text-5xl lg:text-6xl font-extrabold mb-6">{data.title}</h1>
+          <p class="text-xl lg:text-2xl text-gray-200 max-w-3xl mx-auto">{data.description}</p>
+        </div>
+      </section>
+    )}
 
-          {data.features && data.features.length > 0 && (
-            <div class="mt-12">
-                <h2 class="text-3xl font-bold border-b border-gray-600 pb-2 mb-4">Features</h2>
-                <ul class="list-disc list-inside space-y-2 text-lg">
-                    {data.features.map((feature) => (
-                    <li>{feature}</li>
-                    ))}
-                </ul>
+    <!-- Standard Hero for other equipment -->
+    {equipment.slug !== 'climate-controlled-trailer' && (
+      <section class="py-20 px-8 text-center">
+        {data.image && (
+          <img src={typeof data.image === 'string' ? data.image : data.image?.src} alt={data.title} class="w-full h-auto rounded-lg mb-8 shadow-lg max-h-[500px] object-cover mx-auto" />
+        )}
+        <h1 class="text-4xl lg:text-5xl font-extrabold mb-4">{data.title}</h1>
+        <p class="text-xl lg:text-2xl text-gray-300 mb-8">{data.description}</p>
+      </section>
+    )}
+
+    <div class="py-16 px-8">
+      <div class="container mx-auto max-w-6xl">
+        <!-- Features Section -->
+        {data.features && data.features.length > 0 && (
+          <div class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Key Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {data.features.map((feature) => (
+                <div class="bg-gray-900 p-6 rounded-lg text-center">
+                  <div class="text-[#0955A9] text-2xl mb-2">✓</div>
+                  <p class="text-lg">{feature}</p>
+                </div>
+              ))}
             </div>
-          )}
-        </article>
+          </div>
+        )}
+
+        <!-- Gallery Section for Trailers -->
+        {equipment.slug === 'climate-controlled-trailer' && (
+          <div class="mb-16">
+            <h2 class="text-3xl font-bold text-center mb-8">Equipment Gallery</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {currentMedia.images.map((image: {src: string, alt: string}, index: number) => (
+                <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg">
+                  <img 
+                    src={image.src} 
+                    alt={image.alt}
+                    class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- Content Section -->
+        <div class="prose prose-invert lg:prose-xl max-w-none">
+          <Content />
+        </div>
+
+        <!-- CTA Section -->
+        <div class="mt-16 text-center">
+          <div class="bg-gradient-to-r from-[#0955A9] to-blue-600 p-8 rounded-lg">
+            <h3 class="text-2xl font-bold mb-4">Ready to Get Started?</h3>
+            <p class="text-lg mb-6">Get a custom quote for your climate control needs.</p>
+            <a href="/contact" class="bg-white text-[#0955A9] font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors">
+              Get Quote Now
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 </Layout> 

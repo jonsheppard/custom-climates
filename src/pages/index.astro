@@ -7,7 +7,12 @@ import HowItWorks from '../components/HowItWorks.astro';
 import SeoContent from '../components/SeoContent.astro';
 
 const homepage = await getEntry('pages', 'homepage');
-const { hero_headline, hero_subtext, hero_trust_text, hero_secondary_cta } = homepage.data;
+const { 
+  hero_headline = "Don't Let Weather Ruin Your Schedule", 
+  hero_subtext = "We roll in self-powered, climate-controlled trailers that keep your materials installation-ready.",
+  hero_trust_text = "Zero delays, zero reorders, and one very happy GC.",
+  hero_secondary_cta = "Our Equipment"
+} = homepage?.data || {};
 
 const title = "Custom Climates | Onsite Climate Controlled Solutions";
 const description = "Don't let weather ruin your schedule. Protect every panel, plank, and pallet with our mobile climate-controlled storage solutions, available 24/7 nationwide.";
