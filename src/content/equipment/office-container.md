@@ -1,7 +1,7 @@
 ---
 title: "Climate Controlled Office Containers"
 description: "For general contractors who need secure, comfortable command centers on every jobsite. Fast setup, climate control, and workspace that keeps your team productive—no matter what Mother Nature throws at you."
-image: "../../assets/images/equipment/containers/office-container.jpg"
+image: "../../assets/uploads/hero-trailer.jpg"
 features:
   - "Rapid deployment: Site-ready in under 30 minutes"
   - "Climate-controlled workspace keeps your team comfortable"
@@ -18,5 +18,5 @@ specifications:
     value: "On-board generator with shore-power option"
   - label: "Climate Control"
     value: "Heating, cooling, and humidity control"
-order_button_text: "Order Office Container"
+order_button_text: "Get Office Quote"
 --- 

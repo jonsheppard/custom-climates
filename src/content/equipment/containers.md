@@ -1,7 +1,7 @@
 ---
 title: "Climate Controlled Conex Containers"
 description: "When you need serious protection for serious materials. These self-powered units climate-guard everything inside—if it can melt, warp, or spoil, we've got it covered."
-image: "../../assets/images/equipment/containers/hero-container.jpg"
+image: "../../assets/uploads/hero-trailer.jpg"
 features:
   - "Live dashboards, SMS/Email alerts, and HD cameras"
   - "Zero reliance on site utilities or half-wired temp poles"
@@ -9,10 +9,14 @@ features:
   - "Mobile storage trims handling, warehousing, and damage expenses"
 specifications:
   - label: "Length"
-    value: "20 to 40 Feet"
+    value: "20 to 40 feet"
   - label: "Height"
-    value: "8ft to 9ft 5in"
+    value: "8 to 9 feet 5 inches"
   - label: "Width"
-    value: "All 8 Feet Wide"
-order_button_text: "Order Container"
+    value: "8 feet"
+  - label: "Power"
+    value: "On-board generator with shore-power backup"
+  - label: "Climate Control"
+    value: "Commercial-grade HVAC with humidity control"
+order_button_text: "Get Container Quote"
 --- 
