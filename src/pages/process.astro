@@ -6,11 +6,11 @@ import HowItWorks from '../components/HowItWorks.astro';
 const processPage = await getEntry('pages', 'process');
 const hero_headline = (processPage?.data as any)?.hero_headline || "From Phone Call to Climate Control in Three Simple Moves";
 const hero_subtext = (processPage?.data as any)?.hero_subtext || "ready, set, ship";
-const headline = (processPage?.data as any)?.headline || "We Handle the Heavy Lifting—You Focus on Building";
+const headline = (processPage?.data as any)?.headline || "We Handle the Heavy Lifting, You Focus on Building";
 const subtext = (processPage?.data as any)?.subtext || "Job-site weather damage costs American builders $2.5B each year. Here's how we stop it at the gate.";
 
 const title = "Our Process | Custom Climates";
-const description = "From phone call to climate control in three simple moves. We handle the heavy lifting—you focus on building.";
+const description = "From phone call to climate control in three simple moves. We handle the heavy lifting, you focus on building.";
 ---
 
 <Layout title={title} description={description}>
@@ -31,7 +31,7 @@ const description = "From phone call to climate control in three simple moves. W
     <section class="py-20 px-8">
       <div class="container mx-auto text-center">
         <h2 class="text-4xl font-bold mb-4 text-gray-900">
-          {headline || "We Handle the Heavy Lifting—You Focus on Building"}
+          {headline || "We Handle the Heavy Lifting, You Focus on Building"}
         </h2>
         <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
           {subtext || "Job-site weather damage costs American builders $2.5B each year. Here's how we stop it at the gate."}
@@ -47,7 +47,7 @@ const description = "From phone call to climate control in three simple moves. W
       <div class="container mx-auto text-center px-8">
         <h3 class="text-3xl font-bold mb-4 text-gray-900">Ready to Weather-Proof Your Next Project?</h3>
         <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-          One quick quote today saves you weeks of rework—and thousands in warped, water-logged, or missing materials tomorrow.
+          One quick quote today saves you weeks of rework and thousands in warped, water-logged, or missing materials tomorrow.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="/contact" class="bg-[#0955A9] hover:bg-[#07448a] text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-300">

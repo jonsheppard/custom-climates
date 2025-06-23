@@ -1,6 +1,6 @@
 ---
 title: "Climate Controlled Office Containers"
-description: "For general contractors who need secure, comfortable command centers on every jobsite. Fast setup, climate control, and workspace that keeps your team productive—no matter what Mother Nature throws at you."
+description: "For general contractors who need secure, comfortable command centers on every jobsite. Fast setup, climate control, and workspace that keeps your team productive no matter what Mother Nature throws at you."
 image: "../../assets/uploads/hero-trailer.jpg"
 features:
   - "Rapid deployment: Site-ready in under 30 minutes"

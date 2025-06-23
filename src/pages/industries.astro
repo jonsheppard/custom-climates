@@ -1,9 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Image } from 'astro:assets';
-import iconProtect from '../assets/images/icons/features/temperature.png';
-import iconLogistics from '../assets/images/icons/features/trailer.png';
-import iconSecurity from '../assets/images/icons/features/monitoring.png';
 
 const title = "Construction Industry Solutions | Custom Climates";
 const description = "On-site, climate-controlled storage solutions for large-scale construction projects. Protect everything from finish materials to furniture and keep your project on schedule.";
@@ -12,19 +8,40 @@ const benefits = [
     {
         title: "Protect Finish Materials",
         description: "Prevent damage to drywall, flooring, and cabinetry from humidity and temperature swings.",
-        icon: iconProtect
+        icon: "protect"
     },
     {
         title: "Simplify Jobsite Logistics",
         description: "Get a plug-and-play storage unit delivered directly to your site, exactly when you need it.",
-        icon: iconLogistics
+        icon: "logistics"
     },
     {
         title: "Enhance Site Security",
         description: "Secure your valuable materials and equipment from theft and weather with our monitored units.",
-        icon: iconSecurity
+        icon: "security"
     }
-]
+];
+
+const getIcon = (iconType: string) => {
+  switch(iconType) {
+    case 'protect':
+      return `<svg class="w-10 h-10 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+      </svg>`;
+    case 'logistics':
+      return `<svg class="w-10 h-10 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+        <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707L16 7.586A1 1 0 0015.414 7H14z"/>
+      </svg>`;
+    case 'security':
+      return `<svg class="w-10 h-10 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+      </svg>`;
+    default:
+      return '';
+  }
+};
 ---
 
 <Layout title={title} description={description}>
@@ -52,8 +69,8 @@ const benefits = [
         <div class="grid md:grid-cols-3 gap-12 text-center max-w-5xl mx-auto">
           {benefits.map(benefit => (
             <div>
-                <div class="flex items-center justify-center w-20 h-20 mx-auto mb-6 bg-white dark:bg-gray-700 p-3 rounded-full shadow-lg">
-                    <Image src={benefit.icon} alt={benefit.title} class="w-10 h-10" />
+                <div class="flex items-center justify-center w-20 h-20 mx-auto mb-6 bg-white dark:bg-gray-700 p-3 rounded-full shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div set:html={getIcon(benefit.icon)} />
                 </div>
                 <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">{benefit.title}</h3>
                 <p class="text-gray-600 dark:text-gray-400">
@@ -66,13 +83,13 @@ const benefits = [
     </div>
 
     <!-- Call to Action -->
-    <div class="py-20 px-8 text-center">
-      <h2 class="text-4xl font-bold mb-4 text-gray-900 dark:text-white">Ready to Secure Your Jobsite?</h2>
-      <p class="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-        Let's discuss your project's specific needs and get a quote for a tailored on-site storage solution.
+    <div class="py-20 px-8 text-center bg-gray-800">
+      <h2 class="text-4xl font-bold mb-4 text-white">Ready to Secure Your Jobsite?</h2>
+      <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+          Let's discuss your project's specific needs and get a quote for a tailored on-site storage solution.
       </p>
       <a href="/contact" class="bg-[#0955A9] hover:bg-[#07448a] text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-300">
-          Request a Quote
+          Get My Custom Quote
       </a>
     </div>
   </main>

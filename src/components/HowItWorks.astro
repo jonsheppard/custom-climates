@@ -1,30 +1,47 @@
 ---
 // src/components/HowItWorks.astro
-import { Image } from 'astro:assets';
-import iconCall from '../assets/images/icons/features/monitoring.png';
-import iconDeploy from '../assets/images/icons/features/trailer.png';
-import iconSupport from '../assets/images/icons/features/support.png';
 
 const steps = [
   {
     title: "Step 1",
     subtitle: "Book Your Consultation",
-    description: "Tell us your materials, location, & timeline—5-minute call or online form.",
-    icon: iconCall
+    description: "Tell us your materials, location, and timeline. 5-minute call or online form. Don't see what you need? Let's talk custom specs.",
+    icon: "phone"
   },
   {
     title: "Step 2", 
     subtitle: "Choose Unit & Dates",
-    description: "Trailer or conex, size & spec; we lock in delivery, quote, and monitoring plan.",
-    icon: iconDeploy
+    description: "Trailer or conex, size and spec. We lock in delivery, quote, and monitoring plan. We'll walk you through pricing and options with no surprises.",
+    icon: "truck"
   },
   {
     title: "Step 3",
     subtitle: "We Deliver & Monitor", 
-    description: "Unit rolls in, powers up, and streams live data; our team babysits the climate so you don't have to.",
-    icon: iconSupport
+    description: "Unit rolls in, powers up, and streams live data; our team babysits the climate so you don't have to. Zero delays, zero reorders, and one very happy GC.",
+    icon: "monitor"
   }
 ];
+
+const getIcon = (iconType: string) => {
+  switch(iconType) {
+    case 'phone':
+      return `<svg class="w-10 h-10 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+      </svg>`;
+    case 'truck':
+      return `<svg class="w-10 h-10 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+        <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707L16 7.586A1 1 0 0015.414 7H14z"/>
+      </svg>`;
+    case 'monitor':
+      return `<svg class="w-10 h-10 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h14a1 1 0 001-1V5a1 1 0 00-1-1H3zM2.5 2.5A1.5 1.5 0 014 1h12a1.5 1.5 0 011.5 1.5v11A1.5 1.5 0 0116 15H4a1.5 1.5 0 01-1.5-1.5v-11z"/>
+        <path d="M6 10a2 2 0 114 0 2 2 0 01-4 0z"/>
+      </svg>`;
+    default:
+      return '';
+  }
+};
 ---
 <section class="bg-gray-100 dark:bg-gray-800 py-20 px-8">
   <div class="container mx-auto text-center">
@@ -37,8 +54,8 @@ const steps = [
       <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
         {steps.map((step) => (
           <div class="text-center z-10">
-            <div class="flex items-center justify-center w-20 h-20 mx-auto mb-6 bg-white dark:bg-gray-700 p-3 rounded-full shadow-lg border-4 border-gray-100 dark:border-gray-800">
-                <Image src={step.icon} alt={step.title} class="w-10 h-10" />
+            <div class="flex items-center justify-center w-20 h-20 mx-auto mb-6 bg-white dark:bg-gray-700 p-3 rounded-full shadow-lg border-4 border-gray-100 dark:border-gray-800 hover:border-[#0955A9] transition-colors duration-300">
+                <div set:html={getIcon(step.icon)} />
             </div>
             <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">{step.title}</h3>
             <h4 class="text-lg font-semibold mb-3 text-[#0955A9] dark:text-sky-400">{step.subtitle}</h4>
