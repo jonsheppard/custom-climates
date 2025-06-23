@@ -17,7 +17,7 @@
   </nav>
   <div class="hidden md:flex items-center space-x-4">
     <a href="/contact" class="bg-[#0955A9] hover:bg-[#07448a] text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">
-      Request a Quote
+      Get Quote Now
     </a>
   </div>
   <div class="md:hidden">
@@ -35,7 +35,7 @@
   <a href="/about" class="block text-white py-2">About</a>
   <a href="/contact" class="block text-white py-2">Contact</a>
   <a href="/contact" class="bg-[#0955A9] hover:bg-[#07448a] text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 mt-2 inline-block">
-    Request a Quote
+    Get Quote Now
   </a>
 </div>
 
@@ -43,7 +43,9 @@
   const mobileMenuButton = document.getElementById('mobile-menu-button');
   const mobileMenu = document.getElementById('mobile-menu');
 
-  mobileMenuButton.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
+  if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
 </script> 
