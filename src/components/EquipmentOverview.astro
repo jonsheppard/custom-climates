@@ -2,7 +2,13 @@
 // src/components/EquipmentOverview.astro
 import { getCollection } from 'astro:content';
 
-const equipment = await getCollection('equipment');
+const allEquipment = await getCollection('equipment');
+
+// Sort equipment in the desired order: trailers, conex containers, office containers
+const desiredOrder = ['climate-controlled-trailer', 'containers', 'office-container'];
+const equipment = desiredOrder
+  .map(slug => allEquipment.find(item => item.slug === slug))
+  .filter((item): item is NonNullable<typeof item> => item !== undefined);
 ---
 <section class="py-12 sm:py-16 bg-gray-50 bg-pattern relative">
 <div class="container mx-auto px-4 sm:px-8 text-center">

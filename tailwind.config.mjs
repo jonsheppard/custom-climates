@@ -10,6 +10,8 @@ export default {
 			},
 			fontFamily: {
 				'high-speed': ['High Speed', 'Arial Black', 'Helvetica Neue', 'Arial', 'sans-serif'],
+				'work-sans': ['Work Sans', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+				'sans': ['Work Sans', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
 			}
 		},
 	},
