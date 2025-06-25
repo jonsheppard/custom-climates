@@ -23,60 +23,10 @@ const {
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		<style>
-			/* EMERGENCY MOBILE FIX */
-			@media (max-width: 768px) {
-				* {
-					outline: 1px solid red !important;
-					box-sizing: border-box !important;
-				}
-				
-				html {
-					width: 100vw !important;
-					max-width: 100vw !important;
-					overflow-x: hidden !important;
-					background: lime !important; /* Bright color to see if it shows */
-				}
-				
-				body {
-					width: 100vw !important;
-					max-width: 100vw !important;
-					margin: 0 !important;
-					padding: 0 !important;
-					overflow-x: hidden !important;
-					background: yellow !important; /* Different color to identify body */
-				}
-				
-				/* Kill EVERYTHING that could be constraining */
-				.container, 
-				[class*="container"],
-				section,
-				header,
-				main,
-				footer,
-				div {
-					width: 100% !important;
-					max-width: 100% !important;
-					margin-left: 0 !important;
-					margin-right: 0 !important;
-					box-sizing: border-box !important;
-				}
-				
-				/* Force the root elements */
-				#root, 
-				[id*="root"],
-				.astro-page,
-				[class*="astro"] {
-					width: 100vw !important;
-					max-width: 100vw !important;
-					overflow-x: hidden !important;
-				}
-			}
-		</style>
 	</head>
-	<body>
+	<body style="margin: 0; padding: 0; background: white; overflow-x: hidden;">
 		<Header />
-		<main>
+		<main style="width: 100%; background: white;">
 			<slot />
 		</main>
 		<Footer />
