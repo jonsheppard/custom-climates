@@ -2,6 +2,7 @@
 import { getEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
+import ThreeWhys from '../components/ThreeWhys.astro';
 import EquipmentOverview from '../components/EquipmentOverview.astro';
 import HowItWorks from '../components/HowItWorks.astro';
 
@@ -25,6 +26,7 @@ const description = "Don't let weather ruin your schedule. Protect every panel, 
 			trust_text={hero_trust_text}
 			secondary_cta={hero_secondary_cta}
 		/>
+		<ThreeWhys />
 		<EquipmentOverview />
 		<HowItWorks />
 		
