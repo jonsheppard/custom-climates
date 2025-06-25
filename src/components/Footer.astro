@@ -1,5 +1,6 @@
 ---
 // src/components/Footer.astro
+import darkLogo from '../assets/images/icons/logos/custom-climates-logo-for-dark-background.png';
 ---
 <footer class="bg-gray-800 text-white">
   <div class="bg-gray-700 border-l-4 border-red-500 text-center p-4">
@@ -8,7 +9,10 @@
   </div>
   <div class="container mx-auto p-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
     <div>
-      <h4 class="text-lg font-bold mb-2 font-high-speed">Custom Climates</h4>
+      <div class="flex items-center space-x-3 mb-3 justify-center md:justify-start">
+        <img src={darkLogo.src} alt="Custom Climates Logo" class="h-8 w-auto">
+        <h4 class="text-lg font-bold font-high-speed">Custom Climates</h4>
+      </div>
       <p class="text-gray-300">
         We climate-guard every plank, panel, and pallet so Mother Nature never hijacks your schedule or your margins.
       </p>

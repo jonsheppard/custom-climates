@@ -1,10 +1,11 @@
 ---
 // src/components/Header.astro
+import lightLogo from '../assets/images/icons/logos/custom-climates-logo-for-light-background.png';
 ---
 <header class="bg-gray-100 text-gray-900 p-4 flex justify-between items-center shadow-sm">
   <div class="text-xl font-bold">
     <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-      <img src="/logo.svg" alt="Custom Climates Logo" class="h-12 w-auto">
+      <img src={lightLogo.src} alt="Custom Climates Logo" class="h-12 w-auto">
       <span class="self-center text-2xl font-semibold whitespace-nowrap text-gray-900 font-high-speed">Custom Climates</span>
     </a>
   </div>
