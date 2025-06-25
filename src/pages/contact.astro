@@ -6,15 +6,19 @@ const description = "Request a consultation for a custom climate-controlled trai
 ---
 
 <Layout {title} {description}>
-  <main class="container mx-auto py-12 px-8">
-    <div class="max-w-3xl mx-auto text-center">
-              <h1 class="text-5xl font-extrabold mb-4" style="line-height: 1.6;">Don't Let Weather Wreck Your Schedule</h1>
-      <p class="text-xl text-gray-300 mb-8">
-        One quick quote today saves you weeks of rework and thousands in damaged materials tomorrow. Fill out the form below and we'll get back to you with pricing tailored to your project.
-      </p>
+  <main class="bg-gray-800 text-white">
+    <div class="py-20 px-8 text-center">
+      <div class="max-w-3xl mx-auto">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 px-4" style="line-height: 1.6;">Don't Let Weather Wreck Your Schedule</h1>
+          <p class="text-xl text-gray-300 mb-8">
+            One quick quote today saves you weeks of rework and thousands in damaged materials tomorrow. Fill out the form below and we'll get back to you with pricing tailored to your project.
+          </p>
+        </div>
+      </div>
     </div>
 
-    <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="max-w-2xl mx-auto bg-gray-900 p-8 rounded-lg shadow-lg">
+    <div class="py-12 px-8">
+      <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="max-w-2xl mx-auto bg-gray-900 p-8 rounded-lg shadow-lg">
       <input type="hidden" name="form-name" value="contact" />
       <p class="hidden">
         <label>Don't fill this out if you're human: <input name="bot-field" /></label>
@@ -83,8 +87,9 @@ const description = "Request a consultation for a custom climate-controlled trai
             Get My Quote
           </button>
         </div>
-      </div>
-    </form>
+              </div>
+      </form>
+    </div>
   </main>
 </Layout>
 
