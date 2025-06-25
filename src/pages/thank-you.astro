@@ -1,14 +1,85 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const title = "Quote Submitted | Custom Climates";
+const description = "Your quote request has been submitted. We'll get back to you within 24 hours with pricing and options.";
 ---
 
-<Layout title="Thank You">
-  <main class="h-screen flex items-center justify-center text-center">
-    <div class="text-center">
-              <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-4 px-4" style="line-height: 1.6;">We've Got This!</h1>
-      <p class="text-xl text-gray-300 mb-2">Your quote request is in. We'll get back to you within 24 hours with pricing and options.</p>
-      <p class="text-lg text-gray-400 mb-8">Need it faster? Call us now: <a href="tel:(435) 773-1076" class="text-[#0955A9] hover:text-[#07448a]">(435) 773-1076</a></p>
-      <a href="/" class="mt-8 inline-block bg-[#0955A9] hover:bg-[#07448a] text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300">Back to Homepage</a>
+<Layout {title} {description}>
+  <main class="bg-gray-50 text-gray-900 min-h-screen">
+    <!-- Hero Section -->
+    <div class="pt-20 pb-16 px-8 text-center bg-pattern">
+      <div class="max-w-4xl mx-auto">
+        <div class="mb-8">
+          <!-- Success Icon -->
+          <div class="mx-auto w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mb-6">
+            <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+          
+          <h1 class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold mb-6 px-4 text-gray-900" style="line-height: 1.6;">We've Got This!</h1>
+          
+          <p class="text-xl sm:text-2xl text-gray-600 mb-4 max-w-3xl mx-auto">
+            Your quote request is locked and loaded. We'll get back to you within 24 hours with pricing and options tailored to your project.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Next Steps Section -->
+    <div class="py-16 px-8">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-lg shadow-lg border border-gray-200 p-8 mb-8">
+          <h2 class="text-2xl sm:text-3xl font-bold mb-6 text-center text-gray-900">What Happens Next</h2>
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="text-center">
+              <div class="w-12 h-12 bg-[#0955A9] rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold text-lg">1</span>
+              </div>
+              <h3 class="text-lg font-bold mb-2">We Review Your Project</h3>
+              <p class="text-gray-600">Our team analyzes your requirements and determines the best climate-controlled solution for your jobsite.</p>
+            </div>
+            
+            <div class="text-center">
+              <div class="w-12 h-12 bg-[#0955A9] rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold text-lg">2</span>
+              </div>
+              <h3 class="text-lg font-bold mb-2">Custom Quote Delivered</h3>
+              <p class="text-gray-600">You'll receive detailed pricing, timeline, and equipment specs within 24 hours. No surprises.</p>
+            </div>
+            
+            <div class="text-center">
+              <div class="w-12 h-12 bg-[#0955A9] rounded-full flex items-center justify-center mx-auto mb-4">
+                <span class="text-white font-bold text-lg">3</span>
+              </div>
+              <h3 class="text-lg font-bold mb-2">Fast Deployment</h3>
+              <p class="text-gray-600">Once approved, we roll out to your site fast. Your materials stay installation-ready, guaranteed.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Emergency Contact Section -->
+        <div class="bg-gray-700 border-l-4 border-red-500 text-center p-6 rounded-lg mb-8">
+          <h3 class="text-xl font-bold text-white mb-2">Need It Faster?</h3>
+          <p class="text-gray-300 mb-4">Weather emergency? Material damage? We deploy nationwide, fast.</p>
+          <a href="tel:(435) 773-1076" class="text-2xl font-bold text-white hover:text-gray-200 transition-colors duration-300">
+            Call Now: (435) 773-1076
+          </a>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="text-center">
+          <a href="/" class="inline-block bg-[#0955A9] hover:bg-[#07448a] text-white font-bold py-4 px-8 rounded-lg transition-colors duration-300 text-lg cta-enhanced">
+            Back to Homepage
+          </a>
+          <p class="text-gray-600 mt-4">
+            Questions about your quote? Email us at 
+            <a href="mailto:info@customclimates.com" class="text-[#0955A9] hover:text-[#07448a] transition-colors duration-300">info@customclimates.com</a>
+          </p>
+        </div>
+      </div>
     </div>
   </main>
 </Layout> 
