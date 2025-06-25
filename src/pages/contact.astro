@@ -6,11 +6,11 @@ const description = "Request a consultation for a custom climate-controlled trai
 ---
 
 <Layout {title} {description}>
-  <main class="bg-gray-800 text-white">
+  <main class="bg-gray-50 text-gray-900">
     <div class="pt-20 pb-8 px-8 text-center">
       <div class="max-w-3xl mx-auto">
-        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 px-4" style="line-height: 1.6;">Don't Let Weather Wreck Your Schedule</h1>
-          <p class="text-xl text-gray-300 mb-4">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 px-4 text-gray-900" style="line-height: 1.6;">Don't Let Weather Wreck Your Schedule</h1>
+          <p class="text-xl text-gray-600 mb-4">
             One quick quote today saves you weeks of rework and thousands in damaged materials tomorrow. Fill out the form below and we'll get back to you with pricing tailored to your project.
           </p>
         </div>
@@ -18,7 +18,7 @@ const description = "Request a consultation for a custom climate-controlled trai
     </div>
 
     <div class="pb-12 px-8">
-      <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="max-w-2xl mx-auto bg-gray-900 p-8 rounded-lg shadow-lg">
+      <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg border border-gray-200">
       <input type="hidden" name="form-name" value="contact" />
       <p class="hidden">
         <label>Don't fill this out if you're human: <input name="bot-field" /></label>
@@ -26,52 +26,52 @@ const description = "Request a consultation for a custom climate-controlled trai
 
       <div class="grid grid-cols-1 gap-6">
         <div>
-          <label for="full-name" class="block text-gray-300 mb-2">Full Name *</label>
-          <input type="text" name="full-name" id="full-name" placeholder="Your Full Name" class="w-full p-3 rounded bg-gray-800 border border-gray-700 focus:ring-blue-500 focus:border-blue-500" required />
+          <label for="full-name" class="block text-gray-700 mb-2">Full Name *</label>
+          <input type="text" name="full-name" id="full-name" placeholder="Your Full Name" class="w-full p-3 rounded bg-white border border-gray-300 focus:ring-blue-500 focus:border-blue-500" required />
         </div>
 
         <div>
-          <label for="phone" class="block text-gray-300 mb-2">Phone *</label>
-          <input type="tel" name="phone" id="phone" placeholder="(555) 555-5555" class="w-full p-3 rounded bg-gray-700 border border-gray-700 focus:ring-blue-500 focus:border-blue-500" required pattern="\\(\\d{3}\\) \\d{3}-\\d{4}" />
+          <label for="phone" class="block text-gray-700 mb-2">Phone *</label>
+          <input type="tel" name="phone" id="phone" placeholder="(555) 555-5555" class="w-full p-3 rounded bg-white border border-gray-300 focus:ring-blue-500 focus:border-blue-500" required pattern="\\(\\d{3}\\) \\d{3}-\\d{4}" />
         </div>
 
         <div>
-          <label for="email" class="block text-gray-300 mb-2">Email *</label>
-          <input type="email" name="email" id="email" placeholder="you@company.com" class="w-full p-3 rounded bg-gray-700 border border-gray-700 focus:ring-blue-500 focus:border-blue-500" required pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" />
+          <label for="email" class="block text-gray-700 mb-2">Email *</label>
+          <input type="email" name="email" id="email" placeholder="you@company.com" class="w-full p-3 rounded bg-white border border-gray-300 focus:ring-blue-500 focus:border-blue-500" required pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" />
         </div>
 
         <div>
-          <label for="company-name" class="block text-gray-300 mb-2">Company Name *</label>
-          <input type="text" name="company-name" id="company-name" placeholder="Your Company Name" class="w-full p-3 rounded bg-gray-700 border border-gray-700 focus:ring-blue-500 focus:border-blue-500" required />
+          <label for="company-name" class="block text-gray-700 mb-2">Company Name *</label>
+          <input type="text" name="company-name" id="company-name" placeholder="Your Company Name" class="w-full p-3 rounded bg-white border border-gray-300 focus:ring-blue-500 focus:border-blue-500" required />
         </div>
         
         <div>
-          <label for="street-address" class="block text-gray-300 mb-2">Jobsite Street Address *</label>
-          <input type="text" name="street-address" id="street-address" placeholder="123 Main St" class="w-full p-3 rounded bg-gray-700 border border-gray-700 focus:ring-blue-500 focus:border-blue-500" required />
+          <label for="street-address" class="block text-gray-700 mb-2">Jobsite Street Address *</label>
+          <input type="text" name="street-address" id="street-address" placeholder="123 Main St" class="w-full p-3 rounded bg-white border border-gray-300 focus:ring-blue-500 focus:border-blue-500" required />
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label for="city" class="block text-gray-300 mb-2">City *</label>
-            <input type="text" name="city" id="city" placeholder="Anytown" class="w-full p-3 rounded bg-gray-700 border border-gray-700 focus:ring-blue-500 focus:border-blue-500" required />
+            <label for="city" class="block text-gray-700 mb-2">City *</label>
+            <input type="text" name="city" id="city" placeholder="Anytown" class="w-full p-3 rounded bg-white border border-gray-300 focus:ring-blue-500 focus:border-blue-500" required />
           </div>
           <div>
-            <label for="state" class="block text-gray-300 mb-2">State / Province *</label>
-            <input type="text" name="state" id="state" placeholder="State / Province" class="w-full p-3 rounded bg-gray-700 border border-gray-700 focus:ring-blue-500 focus:border-blue-500" required />
+            <label for="state" class="block text-gray-700 mb-2">State / Province *</label>
+            <input type="text" name="state" id="state" placeholder="State / Province" class="w-full p-3 rounded bg-white border border-gray-300 focus:ring-blue-500 focus:border-blue-500" required />
           </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label for="country" class="block text-gray-300 mb-2">Country *</label>
-            <select name="country" id="country" class="w-full p-3 rounded bg-gray-700 border border-gray-700 focus:ring-blue-500 focus:border-blue-500" required>
+            <label for="country" class="block text-gray-700 mb-2">Country *</label>
+            <select name="country" id="country" class="w-full p-3 rounded bg-white border border-gray-300 focus:ring-blue-500 focus:border-blue-500" required>
               <option value="USA">United States</option>
               <option value="Canada">Canada</option>
             </select>
           </div>
           <div>
-            <label for="postal-code" class="block text-gray-300 mb-2">Postal Code *</label>
-            <input type="text" name="postal-code" id="postal-code" placeholder="Postal Code" class="w-full p-3 rounded bg-gray-700 border border-gray-700 focus:ring-blue-500 focus:border-blue-500" required />
+            <label for="postal-code" class="block text-gray-700 mb-2">Postal Code *</label>
+            <input type="text" name="postal-code" id="postal-code" placeholder="Postal Code" class="w-full p-3 rounded bg-white border border-gray-300 focus:ring-blue-500 focus:border-blue-500" required />
           </div>
         </div>
         
