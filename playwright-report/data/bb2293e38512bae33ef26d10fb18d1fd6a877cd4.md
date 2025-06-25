@@ -1,0 +1,100 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - link "Custom Climates Logo Custom Climates":
+    - /url: /
+    - img "Custom Climates Logo"
+    - text: Custom Climates
+  - button "Toggle menu":
+    - img
+- main:
+  - main:
+    - heading "Don't Let Weather Wreck Your Schedule" [level=1]
+    - paragraph: One quick quote today saves you weeks of rework and thousands in damaged materials tomorrow. Fill out the form below and we'll get back to you with pricing tailored to your project.
+    - text: Full Name *
+    - textbox "Full Name *"
+    - text: Phone *
+    - textbox "Phone *"
+    - text: Email *
+    - textbox "Email *"
+    - text: Company Name *
+    - textbox "Company Name *"
+    - text: Jobsite Street Address *
+    - textbox "Jobsite Street Address *"
+    - text: City *
+    - textbox "City *"
+    - text: State / Province *
+    - combobox:
+      - option "Select State" [selected]
+      - option "Alabama"
+      - option "Alaska"
+      - option "Arizona"
+      - option "Arkansas"
+      - option "California"
+      - option "Colorado"
+      - option "Connecticut"
+      - option "Delaware"
+      - option "Florida"
+      - option "Georgia"
+      - option "Hawaii"
+      - option "Idaho"
+      - option "Illinois"
+      - option "Indiana"
+      - option "Iowa"
+      - option "Kansas"
+      - option "Kentucky"
+      - option "Louisiana"
+      - option "Maine"
+      - option "Maryland"
+      - option "Massachusetts"
+      - option "Michigan"
+      - option "Minnesota"
+      - option "Mississippi"
+      - option "Missouri"
+      - option "Montana"
+      - option "Nebraska"
+      - option "Nevada"
+      - option "New Hampshire"
+      - option "New Jersey"
+      - option "New Mexico"
+      - option "New York"
+      - option "North Carolina"
+      - option "North Dakota"
+      - option "Ohio"
+      - option "Oklahoma"
+      - option "Oregon"
+      - option "Pennsylvania"
+      - option "Rhode Island"
+      - option "South Carolina"
+      - option "South Dakota"
+      - option "Tennessee"
+      - option "Texas"
+      - option "Utah"
+      - option "Vermont"
+      - option "Virginia"
+      - option "Washington"
+      - option "West Virginia"
+      - option "Wisconsin"
+      - option "Wyoming"
+      - option "District of Columbia"
+    - text: Country *
+    - combobox "Country *":
+      - option "United States" [selected]
+      - option "Canada"
+    - text: Postal Code *
+    - textbox "Postal Code *"
+    - button "Get My Quote"
+- contentinfo:
+  - 'heading "24/7 Emergency: 435-773-1076" [level=3]'
+  - paragraph: Weather emergency? Material damage? We deploy nationwide, fast.
+  - img "Custom Climates Logo"
+  - heading "Custom Climates" [level=4]
+  - heading "Our Mission" [level=4]
+  - paragraph: We climate-guard every plank, panel, and pallet so Mother Nature never hijacks your schedule or your margins.
+  - heading "Get Started" [level=4]
+  - paragraph: Ready to secure your materials? Get a custom quote tailored to your project needs.
+  - link "Get a Quote":
+    - /url: /contact
+  - text: © 2025 Custom Climates. All Rights Reserved.
+```

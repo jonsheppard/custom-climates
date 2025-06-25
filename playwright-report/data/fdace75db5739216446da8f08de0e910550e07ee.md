@@ -1,0 +1,69 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - link "Custom Climates Logo Custom Climates":
+    - /url: /
+    - img "Custom Climates Logo"
+    - text: Custom Climates
+  - button "Toggle menu":
+    - img
+- main:
+  - main:
+    - 'heading "If It Can Melt, Warp, or Spoil: We Climate-Guard It" [level=1]'
+    - paragraph: Gooseneck trailers and conex containers that drop right on your jobsite. Self-powered, climate-controlled, and ready to protect your materials from Mother Nature's worst.
+    - img "Trailers"
+    - heading "Trailers" [level=3]
+    - paragraph: Gooseneck trailers drop right on site, freeing workspace for all trades. No more costly shuttles from distant warehouses. Just rapid roll-in deployment that gets your crew loading materials the same morning.
+    - link "Learn More →":
+      - /url: /equipment/climate-controlled-trailer
+    - img "Office Containers"
+    - heading "Office Containers" [level=3]
+    - paragraph: For general contractors who need secure, comfortable command centers on every jobsite. Fast setup, climate control, and workspace that keeps your team productive no matter what Mother Nature throws at you.
+    - link "Learn More →":
+      - /url: /equipment/office-container
+    - img "Conex Containers"
+    - heading "Conex Containers" [level=3]
+    - paragraph: When you need serious protection for serious materials. These self-powered units climate-guard everything inside. If it can melt, warp, or spoil, we've got it covered.
+    - link "Learn More →":
+      - /url: /equipment/containers
+    - heading "Weather-Proof Your Project Before It's Too Late" [level=2]
+    - paragraph: From warped wood to workflow chaos, climate damage blindsides even the best-run projects. Here's how we stop it at the gate.
+    - img
+    - heading "Time" [level=3]
+    - paragraph: Inconsistent site climate warps materials, driving up costs and blowing schedules.
+    - paragraph: Damage triggers rework that pushes every trade's timeline back.
+    - img
+    - heading "Money" [level=3]
+    - paragraph: Climate-controlled units keep materials pristine, cutting pricey replacements.
+    - paragraph: Mobile storage trims handling, warehousing, and damage expenses.
+    - img
+    - heading "Logistics" [level=3]
+    - paragraph: Gooseneck trailers drop right on site, freeing workspace for all trades.
+    - paragraph: No more costly shuttles from distant warehouses.
+    - heading "Complete Climate Protection Features" [level=2]
+    - img
+    - heading "Precision Climate Control" [level=3]
+    - paragraph: Commercial-grade HVAC + humidifier/de-humidifier lock temperature and humidity to spec.
+    - img
+    - heading "Plug-&-Play Power" [level=3]
+    - paragraph: On-board generator with shore-power option means zero reliance on site utilities or half-wired temp poles.
+    - img
+    - heading "Real-Time Monitoring Portal" [level=3]
+    - paragraph: Live dashboards, text message/email alerts, and HD cameras let you babysit your cargo from your phone, 24/7 nationwide.
+    - img
+    - heading "Rapid Roll-In Deployment" [level=3]
+    - paragraph: We deliver, level, and dial-in climate in under 30 minutes; your crew can load materials the same morning.
+- contentinfo:
+  - 'heading "24/7 Emergency: 435-773-1076" [level=3]'
+  - paragraph: Weather emergency? Material damage? We deploy nationwide, fast.
+  - img "Custom Climates Logo"
+  - heading "Custom Climates" [level=4]
+  - heading "Our Mission" [level=4]
+  - paragraph: We climate-guard every plank, panel, and pallet so Mother Nature never hijacks your schedule or your margins.
+  - heading "Get Started" [level=4]
+  - paragraph: Ready to secure your materials? Get a custom quote tailored to your project needs.
+  - link "Get a Quote":
+    - /url: /contact
+  - text: © 2025 Custom Climates. All Rights Reserved.
+```
