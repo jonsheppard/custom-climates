@@ -7,17 +7,17 @@ const description = "Request a consultation for a custom climate-controlled trai
 
 <Layout {title} {description}>
   <main class="bg-gray-800 text-white">
-    <div class="py-20 px-8 text-center">
+    <div class="pt-20 pb-8 px-8 text-center">
       <div class="max-w-3xl mx-auto">
         <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 px-4" style="line-height: 1.6;">Don't Let Weather Wreck Your Schedule</h1>
-          <p class="text-xl text-gray-300 mb-8">
+          <p class="text-xl text-gray-300 mb-4">
             One quick quote today saves you weeks of rework and thousands in damaged materials tomorrow. Fill out the form below and we'll get back to you with pricing tailored to your project.
           </p>
         </div>
       </div>
     </div>
 
-    <div class="py-12 px-8">
+    <div class="pb-12 px-8">
       <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="max-w-2xl mx-auto bg-gray-900 p-8 rounded-lg shadow-lg">
       <input type="hidden" name="form-name" value="contact" />
       <p class="hidden">
@@ -75,12 +75,6 @@ const description = "Request a consultation for a custom climate-controlled trai
           </div>
         </div>
         
-        <div class="flex items-start">
-          <input id="sms-consent" name="sms-consent" type="checkbox" class="h-4 w-4 text-[#0955A9] border-gray-600 rounded focus:ring-[#0955A9] mt-1" />
-          <div class="ml-3 text-sm">
-            <label for="sms-consent" class="text-gray-300">I consent to receive text messages regarding my quote and service updates. Message frequency varies. Message & data rates may apply. Reply STOP to unsubscribe.</label>
-          </div>
-        </div>
         
         <div>
           <button type="submit" class="w-full bg-[#0955A9] hover:bg-[#07448a] text-white font-bold py-4 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0955A9] focus:ring-opacity-50 transition-colors duration-300">
