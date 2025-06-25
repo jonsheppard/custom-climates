@@ -127,31 +127,31 @@ These can be done right away without waiting for assets.
 - [ ] Include key features and benefits
 - [ ] Add use case scenarios
 
-## Phase 6: Visual Enhancements
+## Phase 6: Visual Enhancements ✅ PARTIALLY COMPLETED
+
+From the client: "I  feel like on the other tabs and info on the other pages maybe we need some sort of a different background or other pictures behind it? the different shades of blue Seem a little boring to me. I like how they did the R&O Construction website and kept a lot of things going on. https://www.randoco.com"
 
 ### Background & Texture Updates
-- [ ] Add visual interest to interior pages:
-  - [ ] Subtle background patterns
-  - [ ] Construction site imagery with overlay
-  - [ ] Alternating white/gray sections
+- [x] **COMPLETED**: Replace navy blue backgrounds with clean light design
+  - [x] Updated About page from dark gray-800 → light gray-50 background
+  - [x] Updated Contact page from dark styling → clean white forms
+  - [x] Changed team member cards to white with subtle shadows
+  - [x] Updated all text colors for proper contrast and readability
+  - [x] Replaced final CTA section with brand blue background
+- [x] **COMPLETED**: Enhanced visual elements from R&O Construction inspiration
+  - [x] Added subtle background patterns and textures
+  - [x] Implemented card hover effects and transitions
+  - [x] Enhanced spacing and visual hierarchy
 - [ ] Implement parallax effects (similar to R&O site)
 - [ ] Add diagonal section dividers
 
 ### Interactive Elements
-- [ ] Add hover effects to:
-  - [ ] Equipment cards
-  - [ ] CTA buttons
-  - [ ] Navigation items
+- [x] **COMPLETED**: Add hover effects to:
+  - [x] Equipment cards
+  - [x] CTA buttons
+  - [x] Navigation items
 - [ ] Implement smooth scroll animations
 - [ ] Add loading animations for images
-
-### Dynamic Content
-- [ ] Add statistics counter:
-  - [ ] "500+ Projects Completed"
-  - [ ] "50 States Served"
-  - [ ] "24/7 Emergency Response"
-- [ ] Create rotating testimonials section
-- [ ] Add industry showcase carousel
 
 ## Phase 7: Testing & Optimization
 
@@ -177,8 +177,8 @@ These can be done right away without waiting for assets.
 ## Notes & Clarifications Needed
 
 ### Fonts
-- Confirm High Speed Font variants needed (Regular, Bold, etc.)
-- Verify licensing for web use
+- [x] Confirm High Speed Font variants needed (Regular, -Bold-, etc.)
+- [x] Verify licensing for web use
 
 ### Images
 - Waiting for actual equipment photos
@@ -187,7 +187,6 @@ These can be done right away without waiting for assets.
 
 ### Design Direction
 - Confirm exact gray shade for header (#F3F4F6 suggested)
-- Verify placement preference for relocated quote form
 - Confirm if diagonal dividers match brand aesthetic
 
 ## Priority Timeline
@@ -228,21 +227,30 @@ These can be done right away without waiting for assets.
   - Cubic footage calculations added for accurate capacity messaging
   - Mobile responsiveness improvements made for better user experience
 
+- **Phase 6: Visual Enhancements** - Partially completed
+  - Navy blue backgrounds replaced with clean light design on About/Contact pages
+  - Enhanced visual elements with R&O Construction-inspired improvements
+  - Hover effects implemented for cards, buttons, and navigation
+  - Background patterns and textures added for visual interest
+
 ### 🔄 Next Steps
 - **Phase 5: Image Updates** - Waiting for new assets
-- **Phase 6: Visual Enhancements** - Pending completion of content updates
+- **Phase 6: Visual Enhancements** - Complete remaining items (parallax, animations)
 
 ### 🛠 Technical Files Modified
 - `src/components/Hero.astro` - Video overlay, heading spacing, form removal, CTA updates
 - `src/components/Header.astro` - Background, colors, typography
 - `src/components/Footer.astro` - Brand typography
 - `src/components/ThreeWhys.astro` - **NEW**: 3 WHYs section with Heroicons
+- `src/components/EquipmentOverview.astro` - Enhanced with hover effects and visual improvements
 - `src/pages/index.astro` - Added ThreeWhys component integration
-- `src/styles/global.css` - Font declarations and utilities
+- `src/pages/about.astro` - **NEW**: Background color overhaul, team card styling
+- `src/pages/contact.astro` - **NEW**: Background and form styling updates
+- `src/styles/global.css` - Font declarations, utilities, and visual enhancements
 - `tailwind.config.mjs` - Font family configuration
 - Multiple content files for abbreviation standardization
 
 ---
 
 *Last Updated: 12/30/24*
-*Status: Phase 1, 2 & 3 Complete - Ready for Phase 4*
+*Status: Phases 1-4 Complete, Phase 6 Partially Complete - Ready for Phase 5 & remaining Phase 6 items*

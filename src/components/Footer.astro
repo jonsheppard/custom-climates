@@ -7,24 +7,25 @@ import darkLogo from '../assets/images/icons/logos/custom-climates-logo-for-dark
           <h3 class="text-2xl font-bold" style="line-height: 1.4;">24/7 Emergency: 435-773-1076</h3>
     <p class="mt-1">Weather emergency? Material damage? We deploy nationwide, fast.</p>
   </div>
-  <div class="container mx-auto p-8 grid grid-cols-1 md:grid-cols-2 gap-8 text-center md:text-left">
-    <div>
-      <div class="flex items-start space-x-4 mb-3 justify-center md:justify-start">
-        <img src={darkLogo.src} alt="Custom Climates Logo" class="h-24 w-auto flex-shrink-0">
-        <div>
-          <h4 class="text-lg font-bold font-high-speed mb-2">Custom Climates</h4>
-          <p class="text-gray-300">
-            We climate-guard every plank, panel, and pallet so Mother Nature never hijacks your schedule or your margins.
-          </p>
-        </div>
+  <div class="container mx-auto p-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+    <div class="md:col-span-1">
+      <div class="flex items-center justify-center md:justify-start space-x-3 mb-3">
+        <img src={darkLogo.src} alt="Custom Climates Logo" class="h-20 w-auto">
+        <h4 class="text-lg font-bold font-high-speed">Custom Climates</h4>
       </div>
     </div>
-    <div>
-      <h4 class="text-lg font-bold mb-2">Get Started</h4>
+    <div class="md:col-span-1">
+      <h4 class="text-lg font-bold mb-3">Our Mission</h4>
       <p class="text-gray-300">
-        Ready to secure your materials?
+        We climate-guard every plank, panel, and pallet so Mother Nature never hijacks your schedule or your margins.
       </p>
-      <a href="/contact" class="mt-2 inline-block bg-[#0955A9] hover:bg-[#07448a] text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">
+    </div>
+    <div class="md:col-span-1">
+      <h4 class="text-lg font-bold mb-3">Get Started</h4>
+      <p class="text-gray-300 mb-4">
+        Ready to secure your materials? Get a custom quote tailored to your project needs.
+      </p>
+      <a href="/contact" class="inline-block bg-[#0955A9] hover:bg-[#07448a] text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300">
         Get a Quote
       </a>
     </div>
