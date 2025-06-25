@@ -2,12 +2,12 @@
 // src/components/Header.astro
 import lightLogo from '../assets/images/icons/logos/custom-climates-logo-for-light-background.png';
 ---
-<header class="bg-gray-100 text-gray-900 shadow-sm relative z-50" style="width: 100%; margin: 0;">
-  <div style="width: 100%; max-width: 80rem; margin: 0 auto; padding: 0.75rem 1rem; display: flex; justify-content: space-between; align-items: center;">
+<header class="bg-gray-100 text-gray-900 shadow-sm relative z-50">
+  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
     <div class="flex items-center">
       <a href="/" class="flex items-center space-x-2">
         <img src={lightLogo.src} alt="Custom Climates Logo" class="h-10 sm:h-12 w-auto">
-        <span class="text-lg sm:text-xl font-semibold text-gray-900 font-high-speed block">Custom Climates</span>
+        <span class="text-lg sm:text-xl font-semibold text-gray-900 font-high-speed hidden sm:block">Custom Climates</span>
       </a>
     </div>
     
@@ -36,8 +36,8 @@ import lightLogo from '../assets/images/icons/logos/custom-climates-logo-for-lig
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="hidden lg:hidden bg-gray-200 border-t border-gray-300" style="width: 100%;">
-    <div style="width: 100%; max-width: 80rem; margin: 0 auto; padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem;">
+  <div id="mobile-menu" class="hidden lg:hidden bg-gray-200 border-t border-gray-300">
+    <div class="container mx-auto px-4 py-4 space-y-3">
       <a href="/equipment" class="block text-gray-900 py-2 px-2 hover:text-[#0955A9] hover:bg-gray-300 rounded transition-colors font-medium">Equipment</a>
       <a href="/process" class="block text-gray-900 py-2 px-2 hover:text-[#0955A9] hover:bg-gray-300 rounded transition-colors font-medium">Our Process</a>
       <a href="/industries" class="block text-gray-900 py-2 px-2 hover:text-[#0955A9] hover:bg-gray-300 rounded transition-colors font-medium">Industries</a>

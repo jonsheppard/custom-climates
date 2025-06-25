@@ -45,26 +45,45 @@ const getIcon = (iconType: string) => {
 };
 ---
 <section class="bg-gray-100 dark:bg-gray-800 py-20 px-8">
-  <div style="width: 100%; max-width: 80rem; margin: 0 auto; padding-left: 1rem; padding-right: 1rem; text-align: center;">
+  <div class="container mx-auto text-center">
     <h2 class="text-4xl font-bold mb-4 text-gray-900 dark:text-white" style="line-height: 1.5;">From Phone Call to Climate Control in Three Simple Moves</h2>
     <p class="text-xl text-gray-600 dark:text-gray-300 mb-16 italic">ready, set, ship</p>
-    <div class="relative max-w-5xl mx-auto">
-      <!-- The connecting line -->
-      <div class="hidden md:block absolute top-10 left-0 w-full h-0.5 bg-gray-300 dark:bg-gray-600"></div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+      <!-- Step 1 -->
+      <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6">
+        <div class="flex items-center mb-4">
+          <div class="bg-[#0955A9] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">1</div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white" style="line-height: 1.4;">Book Your Consultation</h3>
+        </div>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">Tell us about your project and site conditions. We'll assess your needs and recommend the perfect climate-controlled solution.</p>
+        <a href="/contact" class="text-[#0955A9] hover:text-[#07448a] font-semibold transition-colors duration-300">
+          Start Here →
+        </a>
+      </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
-        {steps.map((step) => (
-          <div class="text-center z-10">
-            <div class="flex items-center justify-center w-20 h-20 mx-auto mb-6 bg-white dark:bg-gray-700 p-3 rounded-full shadow-lg border-4 border-gray-100 dark:border-gray-800 hover:border-[#0955A9] transition-colors duration-300">
-                <div set:html={getIcon(step.icon)} />
-            </div>
-            <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white" style="line-height: 1.4;">{step.title}</h3>
-            <h4 class="text-lg font-semibold mb-3 text-[#0955A9] dark:text-sky-400">
-              <a href={step.link} class="hover:underline transition-all duration-300">{step.subtitle}</a>
-            </h4>
-            <p class="text-gray-600 dark:text-gray-400 px-2">{step.description}</p>
-          </div>
-        ))}
+      <!-- Step 2 -->
+      <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6">
+        <div class="flex items-center mb-4">
+          <div class="bg-[#0955A9] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">2</div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white" style="line-height: 1.4;">Choose Unit & Dates</h3>
+        </div>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">Select from our fleet of trailers and containers. Lock in your delivery and pickup dates to keep your project on schedule.</p>
+        <a href="/equipment" class="text-[#0955A9] hover:text-[#07448a] font-semibold transition-colors duration-300">
+          See Equipment Options →
+        </a>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6">
+        <div class="flex items-center mb-4">
+          <div class="bg-[#0955A9] text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">3</div>
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white" style="line-height: 1.4;">We Deliver & Monitor</h3>
+        </div>
+        <p class="text-gray-600 dark:text-gray-300 mb-4">Our team delivers and sets up your unit. Monitor temperature and humidity remotely while we handle the logistics.</p>
+        <a href="/contact" class="text-[#0955A9] hover:text-[#07448a] font-semibold transition-colors duration-300">
+          Get Started →
+        </a>
       </div>
     </div>
   </div>
