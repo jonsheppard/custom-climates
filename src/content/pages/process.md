@@ -14,5 +14,5 @@ steps:
     description: "Trailer or conex, size and spec. We lock in delivery, quote, and monitoring plan. We'll walk you through pricing and options with no surprises."
   - title: "Step 3"
     subtitle: "We Deliver & Monitor"
-    description: "Unit rolls in, powers up, and streams live data; our team babysits the climate so you don't have to. Zero delays, zero reorders, and one very happy GC."
+    description: "Unit rolls in, powers up, and streams live data; our team babysits the climate so you don't have to. Zero delays, zero reorders, and one very happy General Contractor."
 --- 

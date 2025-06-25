@@ -1,19 +1,19 @@
 ---
 // src/components/Header.astro
 ---
-<header class="bg-gray-900 text-white p-4 flex justify-between items-center">
+<header class="bg-gray-100 text-gray-900 p-4 flex justify-between items-center shadow-sm">
   <div class="text-xl font-bold">
     <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
       <img src="/logo.svg" alt="Custom Climates Logo" class="h-12 w-auto">
-      <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Custom Climates</span>
+      <span class="self-center text-2xl font-semibold whitespace-nowrap text-gray-900 font-high-speed">Custom Climates</span>
     </a>
   </div>
   <nav class="hidden md:flex space-x-6">
-    <a href="/equipment" class="hover:opacity-80 transition-opacity">Equipment</a>
-    <a href="/process" class="hover:opacity-80 transition-opacity">Our Process</a>
-    <a href="/industries" class="hover:opacity-80 transition-opacity">Industries</a>
-    <a href="/about" class="hover:opacity-80 transition-opacity">About</a>
-    <a href="/contact" class="hover:opacity-80 transition-opacity">Contact</a>
+    <a href="/equipment" class="hover:text-[#0955A9] transition-colors">Equipment</a>
+    <a href="/process" class="hover:text-[#0955A9] transition-colors">Our Process</a>
+    <a href="/industries" class="hover:text-[#0955A9] transition-colors">Industries</a>
+    <a href="/about" class="hover:text-[#0955A9] transition-colors">About</a>
+    <a href="/contact" class="hover:text-[#0955A9] transition-colors">Contact</a>
   </nav>
   <div class="hidden md:flex items-center space-x-4">
     <a href="/contact" class="bg-[#0955A9] hover:bg-[#07448a] text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">
@@ -21,19 +21,19 @@
     </a>
   </div>
   <div class="md:hidden">
-    <button id="mobile-menu-button" class="text-white focus:outline-none" aria-label="Open menu">
+    <button id="mobile-menu-button" class="text-gray-900 focus:outline-none" aria-label="Open menu">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
       </svg>
     </button>
   </div>
 </header>
-<div id="mobile-menu" class="hidden md:hidden bg-gray-800 p-4">
-  <a href="/equipment" class="block text-white py-2">Equipment</a>
-  <a href="/process" class="block text-white py-2">Our Process</a>
-  <a href="/industries" class="block text-white py-2">Industries</a>
-  <a href="/about" class="block text-white py-2">About</a>
-  <a href="/contact" class="block text-white py-2">Contact</a>
+<div id="mobile-menu" class="hidden md:hidden bg-gray-200 p-4">
+  <a href="/equipment" class="block text-gray-900 py-2 hover:text-[#0955A9]">Equipment</a>
+  <a href="/process" class="block text-gray-900 py-2 hover:text-[#0955A9]">Our Process</a>
+  <a href="/industries" class="block text-gray-900 py-2 hover:text-[#0955A9]">Industries</a>
+  <a href="/about" class="block text-gray-900 py-2 hover:text-[#0955A9]">About</a>
+  <a href="/contact" class="block text-gray-900 py-2 hover:text-[#0955A9]">Contact</a>
   <a href="/contact" class="bg-[#0955A9] hover:bg-[#07448a] text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 mt-2 inline-block">
     Get Quote Now
   </a>

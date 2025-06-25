@@ -7,6 +7,9 @@ export default {
 				'brand-blue': '#0955A9',
 				'brand-black': '#000000',
 				'brand-white': '#FFFFFF',
+			},
+			fontFamily: {
+				'high-speed': ['High Speed', 'Arial Black', 'Helvetica Neue', 'Arial', 'sans-serif'],
 			}
 		},
 	},
