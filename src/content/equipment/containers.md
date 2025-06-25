@@ -1,5 +1,5 @@
 ---
-title: "Climate Controlled Conex Containers"
+title: "Conex Containers"
 description: "When you need serious protection for serious materials. These self-powered units climate-guard everything inside. If it can melt, warp, or spoil, we've got it covered."
 image: "../../assets/uploads/hero-trailer.jpg"
 features:

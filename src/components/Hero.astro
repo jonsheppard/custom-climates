@@ -11,7 +11,7 @@ interface Props {
 
 const { headline, subtext, trust_text, secondary_cta } = Astro.props;
 ---
-<section class="relative bg-gray-900 text-white overflow-hidden">
+<section class="relative bg-gray-900 text-white overflow-hidden" style="width: 100vw; max-width: 100vw;">
   <video
     autoplay
     loop
@@ -21,17 +21,17 @@ const { headline, subtext, trust_text, secondary_cta } = Astro.props;
     src={video}
   ></video>
   <div class="absolute top-0 left-0 w-full h-full bg-black opacity-15 z-10"></div>
-  <div class="relative container mx-auto px-8 py-24 lg:py-40 z-20">
-    <div class="text-center max-w-4xl mx-auto">
-      <h1 class="text-4xl md:text-6xl font-extrabold mb-6" style="line-height: 1.6;">{headline}</h1>
-      <p class="text-lg md:text-xl text-gray-200 mb-8 max-w-3xl mx-auto">{subtext}</p>
-      {trust_text && <p class="mb-10 font-semibold text-sky-300 text-lg">{trust_text}</p>}
+  <div class="relative py-16 sm:py-24 lg:py-40 z-20" style="width: 100%; max-width: 100vw; margin: 0; padding-left: 1rem; padding-right: 1rem;">
+    <div class="text-center mx-auto" style="width: 100%; max-width: 64rem;">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6" style="line-height: 1.6; width: 100%;">{headline}</h1>
+      <p class="text-base sm:text-lg md:text-xl text-gray-200 mb-6 sm:mb-8 mx-auto" style="width: 100%; max-width: 48rem;">{subtext}</p>
+      {trust_text && <p class="mb-8 sm:mb-10 font-semibold text-sky-300 text-base sm:text-lg" style="width: 100%;">{trust_text}</p>}
       
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a href="/contact" class="bg-[#0955A9] hover:bg-[#07448a] text-white font-bold py-4 px-8 rounded-lg text-lg transition-colors duration-300 inline-block">
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center" style="width: 100%;">
+        <a href="/contact" class="w-full sm:w-auto bg-[#0955A9] hover:bg-[#07448a] text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-lg text-base sm:text-lg transition-colors duration-300 inline-block text-center" style="max-width: 20rem;">
           Get My Quote
         </a>
-        <a href="/equipment" class="text-sky-300 hover:text-sky-200 transition-colors duration-300 font-medium text-lg">
+        <a href="/equipment" class="text-sky-300 hover:text-sky-200 transition-colors duration-300 font-medium text-base sm:text-lg">
           {secondary_cta}
         </a>
       </div>

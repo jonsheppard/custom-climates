@@ -2,51 +2,96 @@
 // src/components/Header.astro
 import lightLogo from '../assets/images/icons/logos/custom-climates-logo-for-light-background.png';
 ---
-<header class="bg-gray-100 text-gray-900 p-4 flex justify-between items-center shadow-sm">
-  <div class="text-xl font-bold">
-    <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-      <img src={lightLogo.src} alt="Custom Climates Logo" class="h-12 w-auto">
-      <span class="self-center text-2xl font-semibold whitespace-nowrap text-gray-900 font-high-speed">Custom Climates</span>
-    </a>
-  </div>
-  <nav class="hidden md:flex space-x-6">
-    <a href="/equipment" class="hover:text-[#0955A9] transition-colors">Equipment</a>
-    <a href="/process" class="hover:text-[#0955A9] transition-colors">Our Process</a>
-    <a href="/industries" class="hover:text-[#0955A9] transition-colors">Industries</a>
-    <a href="/about" class="hover:text-[#0955A9] transition-colors">About</a>
-    <a href="/contact" class="hover:text-[#0955A9] transition-colors">Contact</a>
-  </nav>
-  <div class="hidden md:flex items-center space-x-4">
-    <a href="/contact" class="bg-[#0955A9] hover:bg-[#07448a] text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">
-      Get Quote Now
-    </a>
-  </div>
-  <div class="md:hidden">
-    <button id="mobile-menu-button" class="text-gray-900 focus:outline-none" aria-label="Open menu">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<header class="bg-gray-100 text-gray-900 shadow-sm relative z-50" style="width: 100%; margin: 0;">
+  <div style="width: 100%; max-width: 80rem; margin: 0 auto; padding: 0.75rem 1rem; display: flex; justify-content: space-between; align-items: center;">
+    <div class="flex items-center">
+      <a href="/" class="flex items-center space-x-2">
+        <img src={lightLogo.src} alt="Custom Climates Logo" class="h-10 sm:h-12 w-auto">
+        <span class="text-lg sm:text-xl font-semibold text-gray-900 font-high-speed hidden xs:block">Custom Climates</span>
+      </a>
+    </div>
+    
+    <!-- Desktop Navigation -->
+    <nav class="hidden lg:flex space-x-6">
+      <a href="/equipment" class="hover:text-[#0955A9] transition-colors font-medium">Equipment</a>
+      <a href="/process" class="hover:text-[#0955A9] transition-colors font-medium">Our Process</a>
+      <a href="/industries" class="hover:text-[#0955A9] transition-colors font-medium">Industries</a>
+      <a href="/about" class="hover:text-[#0955A9] transition-colors font-medium">About</a>
+      <a href="/contact" class="hover:text-[#0955A9] transition-colors font-medium">Contact</a>
+    </nav>
+    
+    <!-- Desktop CTA -->
+    <div class="hidden lg:flex items-center">
+      <a href="/contact" class="bg-[#0955A9] hover:bg-[#07448a] text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 text-sm">
+        Get Quote Now
+      </a>
+    </div>
+    
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-button" class="lg:hidden text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0955A9] rounded p-1" aria-label="Toggle menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
       </svg>
     </button>
   </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-gray-200 border-t border-gray-300" style="width: 100%;">
+    <div style="width: 100%; max-width: 80rem; margin: 0 auto; padding: 1rem; display: flex; flex-direction: column; gap: 0.75rem;">
+      <a href="/equipment" class="block text-gray-900 py-2 px-2 hover:text-[#0955A9] hover:bg-gray-300 rounded transition-colors font-medium">Equipment</a>
+      <a href="/process" class="block text-gray-900 py-2 px-2 hover:text-[#0955A9] hover:bg-gray-300 rounded transition-colors font-medium">Our Process</a>
+      <a href="/industries" class="block text-gray-900 py-2 px-2 hover:text-[#0955A9] hover:bg-gray-300 rounded transition-colors font-medium">Industries</a>
+      <a href="/about" class="block text-gray-900 py-2 px-2 hover:text-[#0955A9] hover:bg-gray-300 rounded transition-colors font-medium">About</a>
+      <a href="/contact" class="block text-gray-900 py-2 px-2 hover:text-[#0955A9] hover:bg-gray-300 rounded transition-colors font-medium">Contact</a>
+      <div class="pt-3 border-t border-gray-400">
+        <a href="/contact" class="block bg-[#0955A9] hover:bg-[#07448a] text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300 text-center">
+          Get Quote Now
+        </a>
+      </div>
+    </div>
+  </div>
 </header>
-<div id="mobile-menu" class="hidden md:hidden bg-gray-200 p-4">
-  <a href="/equipment" class="block text-gray-900 py-2 hover:text-[#0955A9]">Equipment</a>
-  <a href="/process" class="block text-gray-900 py-2 hover:text-[#0955A9]">Our Process</a>
-  <a href="/industries" class="block text-gray-900 py-2 hover:text-[#0955A9]">Industries</a>
-  <a href="/about" class="block text-gray-900 py-2 hover:text-[#0955A9]">About</a>
-  <a href="/contact" class="block text-gray-900 py-2 hover:text-[#0955A9]">Contact</a>
-  <a href="/contact" class="bg-[#0955A9] hover:bg-[#07448a] text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300 mt-2 inline-block">
-    Get Quote Now
-  </a>
-</div>
 
 <script>
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  const mobileMenu = document.getElementById('mobile-menu');
+  // Mobile menu functionality
+  function initializeMobileMenu() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-  if (mobileMenuButton && mobileMenu) {
-    mobileMenuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
+    if (mobileMenuButton && mobileMenu) {
+      mobileMenuButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        mobileMenu.classList.toggle('hidden');
+        
+        // Update button icon
+        const svg = mobileMenuButton.querySelector('svg path');
+        if (svg) {
+          if (mobileMenu.classList.contains('hidden')) {
+            svg.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7'); // Hamburger
+          } else {
+            svg.setAttribute('d', 'M6 18L18 6M6 6l12 12'); // X
+          }
+        }
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener('click', (e) => {
+        const target = e.target as HTMLElement;
+        if (!mobileMenuButton.contains(target) && !mobileMenu.contains(target)) {
+          mobileMenu.classList.add('hidden');
+          const svg = mobileMenuButton.querySelector('svg path');
+          if (svg) {
+            svg.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7'); // Hamburger
+          }
+        }
+      });
+    }
+  }
+
+  // Initialize when DOM is loaded
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeMobileMenu);
+  } else {
+    initializeMobileMenu();
   }
 </script> 

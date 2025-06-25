@@ -27,6 +27,29 @@ const equipmentMedia = {
   }
 };
 
+// Helper function to calculate cubic footage
+function calculateCubicFootage(length: string, width: string, height: string): string {
+  // Extract numbers from strings like "20 to 40 feet" or "8 feet"
+  const lengthMatch = length.match(/(\d+)(?:\s*to\s*(\d+))?/);
+  const widthMatch = width.match(/(\d+)/);
+  const heightMatch = height.match(/(\d+)/);
+  
+  if (!lengthMatch || !widthMatch || !heightMatch) return 'Contact for details';
+  
+  const minLength = parseInt(lengthMatch[1]);
+  const maxLength = lengthMatch[2] ? parseInt(lengthMatch[2]) : minLength;
+  const w = parseInt(widthMatch[0]);
+  const h = parseInt(heightMatch[0]);
+  
+  if (minLength === maxLength) {
+    return `${minLength * w * h} cubic feet`;
+  } else {
+    const minCubic = minLength * w * h;
+    const maxCubic = maxLength * w * h;
+    return `${minCubic} to ${maxCubic} cubic feet`;
+  }
+}
+
 export async function getStaticPaths() {
   const equipment = await getCollection('equipment');
   return equipment.map(item => ({
@@ -44,6 +67,18 @@ const description = data.description;
 
 // Get media for current equipment
 const currentMedia = equipmentMedia[equipment.slug as keyof typeof equipmentMedia] || { heroVideo: null, images: [], videos: [] };
+
+// Calculate cubic footage if specifications exist
+let cubicFootage = '';
+if (data.specifications) {
+  const length = data.specifications.find((spec: any) => spec.label === 'Length')?.value || '';
+  const width = data.specifications.find((spec: any) => spec.label === 'Width')?.value || '';
+  const height = data.specifications.find((spec: any) => spec.label === 'Height')?.value || '';
+  
+  if (length && width && height) {
+    cubicFootage = calculateCubicFootage(length, width, height);
+  }
+}
 ---
 
 <Layout {title} {description}>
@@ -60,35 +95,115 @@ const currentMedia = equipmentMedia[equipment.slug as keyof typeof equipmentMedi
           src={currentMedia.heroVideo}
         ></video>
         <div class="absolute top-0 left-0 w-full h-full bg-black opacity-50 z-10"></div>
-        <div class="relative z-20 py-32 px-8 text-center">
-          <h1 class="text-5xl lg:text-6xl font-extrabold mb-6" style="line-height: 1.6;">{data.title}</h1>
-          <p class="text-xl lg:text-2xl text-gray-200 max-w-3xl mx-auto">{data.description}</p>
+        <div class="relative z-20 py-20 sm:py-32 px-4 sm:px-8 text-center">
+          <h1 class="text-3xl sm:text-4xl lg:text-6xl font-extrabold mb-4 sm:mb-6" style="line-height: 1.6;">{data.title}</h1>
+          <p class="text-lg sm:text-xl lg:text-2xl text-gray-200 max-w-3xl mx-auto px-4">{data.description}</p>
         </div>
       </section>
     )}
 
     <!-- Standard Hero for other equipment -->
     {equipment.slug !== 'climate-controlled-trailer' && (
-      <section class="py-20 px-8 text-center">
+      <section class="py-12 sm:py-20 px-4 sm:px-8 text-center">
         {data.image && (
-          <img src={typeof data.image === 'string' ? data.image : data.image?.src} alt={data.title} class="w-full h-auto rounded-lg mb-8 shadow-lg max-h-[500px] object-cover mx-auto" />
+          <img src={typeof data.image === 'string' ? data.image : data.image?.src} alt={data.title} class="w-full h-auto rounded-lg mb-6 sm:mb-8 shadow-lg max-h-[300px] sm:max-h-[500px] object-cover mx-auto" />
         )}
-        <h1 class="text-4xl lg:text-5xl font-extrabold mb-4" style="line-height: 1.6;">{data.title}</h1>
-        <p class="text-xl lg:text-2xl text-gray-300 mb-8">{data.description}</p>
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4" style="line-height: 1.6;">{data.title}</h1>
+        <p class="text-lg sm:text-xl lg:text-2xl text-gray-300 mb-6 sm:mb-8 px-4">{data.description}</p>
       </section>
     )}
 
-    <div class="py-16 px-8">
+    <div class="py-8 sm:py-16 px-4 sm:px-8">
       <div class="container mx-auto max-w-6xl">
+        
+        <!-- Specifications Section -->
+        {data.specifications && data.specifications.length > 0 && (
+          <div class="mb-12 sm:mb-16">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center mb-8" style="line-height: 1.5;">Equipment Specifications</h2>
+            
+            <!-- Size Specifications Grid -->
+            <div class="bg-gray-900 rounded-lg p-6 sm:p-8 mb-8">
+              <h3 class="text-lg sm:text-xl font-bold mb-6 text-center text-[#0955A9]">Dimensions & Features</h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                {data.specifications.map((spec: any) => (
+                  <div class="text-center p-4 bg-gray-800 rounded-lg">
+                    <div class="text-sm text-gray-400 mb-1">{spec.label}</div>
+                    <div class="text-base sm:text-lg font-semibold text-white">{spec.value}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <!-- Cubic Footage Display -->
+            {cubicFootage && (
+              <div class="bg-gradient-to-r from-[#0955A9] to-blue-600 rounded-lg p-6 sm:p-8 text-center">
+                <h3 class="text-lg sm:text-xl font-bold mb-2">Storage Capacity</h3>
+                <div class="text-2xl sm:text-3xl font-bold mb-2">{cubicFootage}</div>
+                <p class="text-sm sm:text-base text-blue-100">Climate-controlled storage space for your materials</p>
+              </div>
+            )}
+
+            <!-- Size Comparison Chart -->
+            <div class="mt-8 sm:mt-12">
+              <h3 class="text-lg sm:text-xl font-bold text-center mb-6">Size Comparison</h3>
+              <div class="bg-gray-100 rounded-lg p-6 sm:p-8">
+                <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 text-gray-800">
+                  <!-- Visual comparison boxes -->
+                  {equipment.slug === 'climate-controlled-trailer' && (
+                    <>
+                      <div class="text-center">
+                        <div class="bg-[#0955A9] rounded h-12 sm:h-16 w-20 sm:w-32 mb-2 mx-auto"></div>
+                        <div class="text-xs sm:text-sm font-medium">20' Trailer</div>
+                        <div class="text-xs text-gray-600">1,280 cu ft</div>
+                      </div>
+                      <div class="text-center">
+                        <div class="bg-[#0955A9] rounded h-12 sm:h-16 w-24 sm:w-40 mb-2 mx-auto"></div>
+                        <div class="text-xs sm:text-sm font-medium">30' Trailer</div>
+                        <div class="text-xs text-gray-600">1,920 cu ft</div>
+                      </div>
+                      <div class="text-center">
+                        <div class="bg-[#0955A9] rounded h-12 sm:h-16 w-28 sm:w-48 mb-2 mx-auto"></div>
+                        <div class="text-xs sm:text-sm font-medium">40' Trailer</div>
+                        <div class="text-xs text-gray-600">2,560 cu ft</div>
+                      </div>
+                    </>
+                  )}
+                  {equipment.slug === 'containers' && (
+                    <>
+                      <div class="text-center">
+                        <div class="bg-[#0955A9] rounded h-14 sm:h-18 w-20 sm:w-32 mb-2 mx-auto"></div>
+                        <div class="text-xs sm:text-sm font-medium">20' Container</div>
+                        <div class="text-xs text-gray-600">1,360 cu ft</div>
+                      </div>
+                      <div class="text-center">
+                        <div class="bg-[#0955A9] rounded h-14 sm:h-18 w-28 sm:w-48 mb-2 mx-auto"></div>
+                        <div class="text-xs sm:text-sm font-medium">40' Container</div>
+                        <div class="text-xs text-gray-600">2,720 cu ft</div>
+                      </div>
+                    </>
+                  )}
+                  {equipment.slug === 'office-container' && (
+                    <div class="text-center">
+                      <div class="bg-[#0955A9] rounded h-16 sm:h-20 w-20 sm:w-32 mb-2 mx-auto"></div>
+                      <div class="text-xs sm:text-sm font-medium">20' Office</div>
+                      <div class="text-xs text-gray-600">1,520 cu ft</div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
         <!-- Features Section -->
         {data.features && data.features.length > 0 && (
-          <div class="mb-16">
-            <h2 class="text-3xl font-bold text-center mb-8" style="line-height: 1.5;">Key Features</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="mb-12 sm:mb-16">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center mb-8" style="line-height: 1.5;">Key Features</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {data.features.map((feature) => (
-                <div class="bg-gray-900 p-6 rounded-lg text-center">
-                  <div class="text-[#0955A9] text-2xl mb-2">✓</div>
-                  <p class="text-lg">{feature}</p>
+                <div class="bg-gray-900 p-4 sm:p-6 rounded-lg text-center">
+                  <div class="text-[#0955A9] text-xl sm:text-2xl mb-2">✓</div>
+                  <p class="text-sm sm:text-lg">{feature}</p>
                 </div>
               ))}
             </div>
@@ -97,15 +212,15 @@ const currentMedia = equipmentMedia[equipment.slug as keyof typeof equipmentMedi
 
         <!-- Gallery Section for Trailers -->
         {equipment.slug === 'climate-controlled-trailer' && (
-          <div class="mb-16">
-            <h2 class="text-3xl font-bold text-center mb-8" style="line-height: 1.5;">Equipment Gallery</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="mb-12 sm:mb-16">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center mb-8" style="line-height: 1.5;">Equipment Gallery</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {currentMedia.images.map((image: {src: string, alt: string}, index: number) => (
                 <div class="bg-gray-900 rounded-lg overflow-hidden shadow-lg">
                   <img 
                     src={image.src} 
                     alt={image.alt}
-                    class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+                    class="w-full h-48 sm:h-64 object-cover hover:scale-105 transition-transform duration-300"
                     loading="lazy"
                   />
                 </div>
@@ -115,20 +230,20 @@ const currentMedia = equipmentMedia[equipment.slug as keyof typeof equipmentMedi
         )}
 
         <!-- Content Section -->
-        <div class="prose prose-invert lg:prose-xl max-w-none">
+        <div class="prose prose-invert lg:prose-xl max-w-none mb-12 sm:mb-16">
           <Content />
         </div>
 
         <!-- CTA Section -->
-        <div class="mt-16 text-center">
-          <div class="bg-gradient-to-r from-[#0955A9] to-blue-600 p-8 rounded-lg">
-            <h3 class="text-2xl font-bold mb-4" style="line-height: 1.4;">Ready to Weather-Proof Your Project?</h3>
-            <p class="text-lg mb-6">One quick quote today saves you weeks of rework and thousands in damaged materials tomorrow.</p>
+        <div class="text-center">
+          <div class="bg-gradient-to-r from-[#0955A9] to-blue-600 p-6 sm:p-8 rounded-lg">
+            <h3 class="text-xl sm:text-2xl font-bold mb-4" style="line-height: 1.4;">Ready to Weather-Proof Your Project?</h3>
+            <p class="text-base sm:text-lg mb-6 px-4">One quick quote today saves you weeks of rework and thousands in damaged materials tomorrow.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="/contact" class="bg-white text-[#0955A9] font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors">
+              <a href="/contact" class="bg-white text-[#0955A9] font-bold py-3 px-6 sm:px-8 rounded-lg hover:bg-gray-100 transition-colors text-sm sm:text-base">
                 Get My Custom Quote
               </a>
-              <a href="tel:(435) 773-1076" class="border-2 border-white text-white hover:bg-white hover:text-[#0955A9] font-bold py-3 px-8 rounded-lg transition-colors">
+              <a href="tel:(435) 773-1076" class="border-2 border-white text-white hover:bg-white hover:text-[#0955A9] font-bold py-3 px-6 sm:px-8 rounded-lg transition-colors text-sm sm:text-base">
                 Or Call (435) 773-1076 →
               </a>
             </div>

@@ -1,5 +1,5 @@
 ---
-title: "Climate Controlled Trailers"
+title: "Trailers"
 description: "Gooseneck trailers drop right on site, freeing workspace for all trades. No more costly shuttles from distant warehouses. Just rapid roll-in deployment that gets your crew loading materials the same morning."
 image: "../../assets/uploads/hero-trailer.jpg"
 features:
