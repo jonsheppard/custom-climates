@@ -4,27 +4,31 @@ import { getCollection } from 'astro:content';
 
 const equipment = await getCollection('equipment');
 ---
-<section class="py-12 sm:py-16 bg-gray-50">
+<section class="py-12 sm:py-16 bg-gray-50 bg-pattern relative">
 <div class="container mx-auto px-4 sm:px-8 text-center">
-  <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6" style="line-height: 1.5;">Our Equipment</h2>
-  <p class="text-base sm:text-lg text-gray-700 mb-8 sm:mb-12 max-w-3xl mx-auto">
+  <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 text-shadow-subtle animate-fadeInUp" style="line-height: 1.5;">Our Equipment</h2>
+  <p class="text-base sm:text-lg text-gray-700 mb-8 sm:mb-12 max-w-3xl mx-auto animate-fadeInUp">
     Self-powered, climate-controlled mobile storage solutions engineered for the toughest job sites.
   </p>
   
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-    {equipment.map((item) => (
-      <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
-        <img 
-          src={typeof item.data.image === 'string' ? item.data.image : item.data.image?.src} 
-          alt={item.data.title}
-          class="w-full h-48 sm:h-56 object-cover"
-        />
+    {equipment.map((item, index) => (
+      <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover focus-enhanced" style={`animation-delay: ${index * 0.1}s`}>
+        <div class="relative overflow-hidden">
+          <img 
+            src={typeof item.data.image === 'string' ? item.data.image : item.data.image?.src} 
+            alt={item.data.title}
+            class="w-full h-48 sm:h-56 object-cover transition-transform duration-300 hover:scale-105"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
         <div class="p-4 sm:p-6">
-          <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3" style="line-height: 1.4;">{item.data.title}</h3>
+          <h3 class="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 text-shadow-subtle" style="line-height: 1.4;">{item.data.title}</h3>
           <p class="text-sm sm:text-base text-gray-600 mb-4">{item.data.description}</p>
           <a 
             href={`/equipment/${item.slug}`}
-            class="bg-[#0955A9] hover:bg-[#07448a] text-white font-bold py-2 px-4 rounded text-sm sm:text-base transition-colors duration-300 inline-block"
+            class="bg-[#0955A9] hover:bg-[#07448a] text-white font-bold py-2 px-4 rounded text-sm sm:text-base transition-colors duration-300 inline-block cta-enhanced focus-enhanced"
           >
             View Details
           </a>
