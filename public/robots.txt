@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Block admin and CMS areas
+Disallow: /admin/
+Disallow: /admin.html
+
+# Block test and development files
+Disallow: /test-results/
+Disallow: /playwright-report/
+
+# Block any temporary or build files
+Disallow: /*.log$
+Disallow: /node_modules/
+
+# Common crawl delay (optional - helps with server load)
+Crawl-delay: 1
+
+# Sitemap location (you may want to add this when you have a sitemap)
+# Sitemap: https://customclimatesusa.com/sitemap.xml 
