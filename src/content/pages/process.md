@@ -2,7 +2,7 @@
 title: "Our Process | Custom Climates"
 description: "From phone call to climate control in three simple moves. We handle the heavy lifting, you focus on building."
 hero_headline: "From Phone Call to Climate Control in Three Simple Moves"
-hero_subtext: "Ready, set, ship"
+hero_subtext: ""
 headline: "We Handle the Heavy Lifting, You Focus on Building"
 subtext: "Job-site weather damage costs American builders $2.5B each year. Here's how we stop it at the gate."
 steps:

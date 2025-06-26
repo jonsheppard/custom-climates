@@ -5,7 +5,7 @@ import HowItWorks from '../components/HowItWorks.astro';
 
 const processPage = await getEntry('pages', 'process');
 const hero_headline = (processPage?.data as any)?.hero_headline || "From Phone Call to Climate Control in Three Simple Moves";
-const hero_subtext = (processPage?.data as any)?.hero_subtext || "Ready, set, ship";
+const hero_subtext = (processPage?.data as any)?.hero_subtext || "";
 const headline = (processPage?.data as any)?.headline || "We Handle the Heavy Lifting, You Focus on Building";
 const subtext = (processPage?.data as any)?.subtext || "Job-site weather damage costs American builders $2.5B each year. Here's how we stop it at the gate.";
 
@@ -21,9 +21,11 @@ const description = "From phone call to climate control in three simple moves. W
         <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 px-4" style="line-height: 1.6;">
           {hero_headline || "From Phone Call to Climate Control in Three Simple Moves"}
         </h1>
-        <p class="text-xl text-gray-300 italic">
-          {hero_subtext || "Ready, set, ship"}
-        </p>
+        {hero_subtext && (
+          <p class="text-xl text-gray-300 italic">
+            {hero_subtext}
+          </p>
+        )}
       </div>
     </section>
 

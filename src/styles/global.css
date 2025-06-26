@@ -55,7 +55,9 @@
 h1, .brand-text {
   font-family: 'High Speed', 'Arial Black', 'Helvetica Neue', Arial, sans-serif;
   word-wrap: break-word;
-  hyphens: auto;
+  hyphens: none;
+  word-break: keep-all;
+  overflow-wrap: normal;
 }
 
 /* Work Sans for section headings */
