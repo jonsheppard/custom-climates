@@ -1,6 +1,10 @@
 backend:
   name: git-gateway
   branch: main
+  # Auth0 configuration for Decap CMS
+  auth_scope: openid profile email
+  auth_url: https://dev-bzsxxye5476326q5.auth0.com/authorize
+  auth_token_url: https://dev-bzsxxye5476326q5.auth0.com/oauth/token
 
 # local_backend: true # Only enable for local development
 
