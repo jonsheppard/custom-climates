@@ -27,27 +27,10 @@ const equipmentMedia = {
   }
 };
 
-// Helper function to calculate cubic footage
-function calculateCubicFootage(length: string, width: string, height: string): string {
-  // Extract numbers from strings like "20 to 40 feet" or "8 feet"
-  const lengthMatch = length.match(/(\d+)(?:\s*to\s*(\d+))?/);
-  const widthMatch = width.match(/(\d+)/);
-  const heightMatch = height.match(/(\d+)/);
-  
-  if (!lengthMatch || !widthMatch || !heightMatch) return 'Contact for details';
-  
-  const minLength = parseInt(lengthMatch[1]);
-  const maxLength = lengthMatch[2] ? parseInt(lengthMatch[2]) : minLength;
-  const w = parseInt(widthMatch[0]);
-  const h = parseInt(heightMatch[0]);
-  
-  if (minLength === maxLength) {
-    return `${minLength * w * h} cubic feet`;
-  } else {
-    const minCubic = minLength * w * h;
-    const maxCubic = maxLength * w * h;
-    return `${minCubic} to ${maxCubic} cubic feet`;
-  }
+// Helper function to get storage capacity from specifications
+function getStorageCapacity(specifications: any[]): string {
+  const storageSpec = specifications.find((spec: any) => spec.label === 'Storage Capacity');
+  return storageSpec ? storageSpec.value : '';
 }
 
 export async function getStaticPaths() {
@@ -68,16 +51,10 @@ const description = data.description;
 // Get media for current equipment
 const currentMedia = equipmentMedia[equipment.slug as keyof typeof equipmentMedia] || { heroVideo: null, images: [], videos: [] };
 
-// Calculate cubic footage if specifications exist
-let cubicFootage = '';
+// Get storage capacity from specifications
+let storageCapacity = '';
 if (data.specifications) {
-  const length = data.specifications.find((spec: any) => spec.label === 'Length')?.value || '';
-  const width = data.specifications.find((spec: any) => spec.label === 'Width')?.value || '';
-  const height = data.specifications.find((spec: any) => spec.label === 'Height')?.value || '';
-  
-  if (length && width && height) {
-    cubicFootage = calculateCubicFootage(length, width, height);
-  }
+  storageCapacity = getStorageCapacity(data.specifications);
 }
 ---
 
@@ -134,11 +111,11 @@ if (data.specifications) {
               </div>
             </div>
 
-            <!-- Cubic Footage Display -->
-            {cubicFootage && (
+            <!-- Storage Capacity Display -->
+            {storageCapacity && (
               <div class="bg-gradient-to-r from-[#0955A9] to-blue-600 rounded-lg p-6 sm:p-8 text-center">
                 <h3 class="text-lg sm:text-xl font-bold mb-2">Storage Capacity</h3>
-                <div class="text-2xl sm:text-3xl font-bold mb-2">{cubicFootage}</div>
+                <div class="text-lg sm:text-xl font-bold mb-2">{storageCapacity}</div>
                 <p class="text-sm sm:text-base text-blue-100">Climate-controlled storage space for your materials</p>
               </div>
             )}
@@ -171,23 +148,50 @@ if (data.specifications) {
                   {equipment.slug === 'containers' && (
                     <>
                       <div class="text-center">
-                        <div class="bg-[#0955A9] rounded h-14 sm:h-18 w-20 sm:w-32 mb-2 mx-auto"></div>
-                        <div class="text-xs sm:text-sm font-medium">20' Container</div>
-                        <div class="text-xs text-gray-600">1,360 cu ft</div>
+                        <div class="bg-[#0955A9] rounded h-10 sm:h-14 w-16 sm:w-24 mb-2 mx-auto"></div>
+                        <div class="text-xs sm:text-sm font-medium">20' Low Box</div>
+                        <div class="text-xs text-gray-600">1,280 cu ft</div>
                       </div>
                       <div class="text-center">
-                        <div class="bg-[#0955A9] rounded h-14 sm:h-18 w-28 sm:w-48 mb-2 mx-auto"></div>
-                        <div class="text-xs sm:text-sm font-medium">40' Container</div>
-                        <div class="text-xs text-gray-600">2,720 cu ft</div>
+                        <div class="bg-[#0955A9] rounded h-16 sm:h-20 w-16 sm:w-24 mb-2 mx-auto"></div>
+                        <div class="text-xs sm:text-sm font-medium">20' High Box</div>
+                        <div class="text-xs text-gray-600">1,520 cu ft</div>
+                      </div>
+                      <div class="text-center">
+                        <div class="bg-[#0955A9] rounded h-10 sm:h-14 w-32 sm:w-48 mb-2 mx-auto"></div>
+                        <div class="text-xs sm:text-sm font-medium">40' Low Box</div>
+                        <div class="text-xs text-gray-600">2,560 cu ft</div>
+                      </div>
+                      <div class="text-center">
+                        <div class="bg-[#0955A9] rounded h-16 sm:h-20 w-32 sm:w-48 mb-2 mx-auto"></div>
+                        <div class="text-xs sm:text-sm font-medium">40' High Box</div>
+                        <div class="text-xs text-gray-600">3,040 cu ft</div>
                       </div>
                     </>
                   )}
                   {equipment.slug === 'office-container' && (
-                    <div class="text-center">
-                      <div class="bg-[#0955A9] rounded h-16 sm:h-20 w-20 sm:w-32 mb-2 mx-auto"></div>
-                      <div class="text-xs sm:text-sm font-medium">20' Office</div>
-                      <div class="text-xs text-gray-600">1,520 cu ft</div>
-                    </div>
+                    <>
+                      <div class="text-center">
+                        <div class="bg-[#0955A9] rounded h-10 sm:h-14 w-16 sm:w-24 mb-2 mx-auto"></div>
+                        <div class="text-xs sm:text-sm font-medium">20' Low Box</div>
+                        <div class="text-xs text-gray-600">1,280 cu ft</div>
+                      </div>
+                      <div class="text-center">
+                        <div class="bg-[#0955A9] rounded h-16 sm:h-20 w-16 sm:w-24 mb-2 mx-auto"></div>
+                        <div class="text-xs sm:text-sm font-medium">20' High Box</div>
+                        <div class="text-xs text-gray-600">1,520 cu ft</div>
+                      </div>
+                      <div class="text-center">
+                        <div class="bg-[#0955A9] rounded h-10 sm:h-14 w-32 sm:w-48 mb-2 mx-auto"></div>
+                        <div class="text-xs sm:text-sm font-medium">40' Low Box</div>
+                        <div class="text-xs text-gray-600">2,560 cu ft</div>
+                      </div>
+                      <div class="text-center">
+                        <div class="bg-[#0955A9] rounded h-16 sm:h-20 w-32 sm:w-48 mb-2 mx-auto"></div>
+                        <div class="text-xs sm:text-sm font-medium">40' High Box</div>
+                        <div class="text-xs text-gray-600">3,040 cu ft</div>
+                      </div>
+                    </>
                   )}
                 </div>
               </div>

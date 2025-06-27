@@ -14,6 +14,8 @@ specifications:
     value: "Low box 8 ft or High box 9 ft 6 in"
   - label: "Width"
     value: "8 ft"
+  - label: "Storage Capacity"
+    value: "20' Low: 1,280 cu ft | 20' High: 1,520 cu ft | 40' Low: 2,560 cu ft | 40' High: 3,040 cu ft"
   - label: "Power"
     value: "On-board generator with backup generator and shore-power option"
   - label: "Climate Control"
