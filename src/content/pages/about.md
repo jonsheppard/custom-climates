@@ -1,6 +1,6 @@
 ---
 title: "About Us | Custom Climates"
-description: "Meet the team that keeps your materials safe when Mother Nature tries to wreck your schedule. Real construction experience, real solutions."
+description: "Meet the team that keeps your materials safe when weather tries to wreck your schedule. Real construction experience, real solutions."
 hero_headline: "We've Seen What Weather Can Do to a Project"
 hero_subtext: "And we're here to make sure it never happens to yours. Our team combines decades of construction, logistics, and business experience to deliver climate-controlled solutions that actually work when you need them most."
 team_intro_headline: "The People Behind Your Protection"
@@ -8,7 +8,7 @@ team_intro_subtext: "We're not just equipment guys. We're former contractors, tr
 team_members:
   - name: "Travis"
     image: "../../assets/images/team/Travis.webp"
-    bio: "Travis spent 19 years in the oil and gas trenches with Exxon Mobil and BP, where small miscalculations cost millions. His last eight years as Book Lead for BP's Crude Oil Trading group taught him how to manage risk when the stakes are high and the weather doesn't care about your timeline.<br/><br/>He was part of the BP Crude Oil Executive Team running one of the world's largest trading operations. Think logistics nightmares, commodity price swings, and keeping product flowing across North America no matter what Mother Nature threw at them.<br/><br/>After retiring in 2020, Travis turned his attention to helping startups solve real problems. At Custom Climates, he brings that same risk management mindset to keeping your materials safe and your projects on track."
+    bio: "Travis spent 19 years in the oil and gas trenches with Exxon Mobil and BP, where small miscalculations cost millions. His last eight years as Book Lead for BP's Crude Oil Trading group taught him how to manage risk when the stakes are high and the weather doesn't care about your timeline.<br/><br/>He was part of the BP Crude Oil Executive Team running one of the world's largest trading operations. Think logistics nightmares, commodity price swings, and keeping product flowing across North America no matter what the elements threw at them.<br/><br/>After retiring in 2020, Travis turned his attention to helping startups solve real problems. At Custom Climates, he brings that same risk management mindset to keeping your materials safe and your projects on track."
   - name: "Jake"
     image: "../../assets/images/team/Jake.webp"
     bio: "Jake spent over 20 years building Burt Brothers Tire & Service from the ground up, doing everything from VP strategy to hands-on tire work. When you're running a family business, you learn real fast that customer care isn't just a buzzword - it's how you stay in business.<br/><br/>He's also a licensed real estate agent, which means he knows what it's like to help people make big decisions under pressure. Whether you're buying equipment or protecting a million-dollar material shipment, Jake brings that same straight-talk approach to every conversation."

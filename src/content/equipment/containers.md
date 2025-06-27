@@ -1,6 +1,6 @@
 ---
 title: "Conex Containers"
-description: "When you need serious protection for serious materials. These self-powered units climate-guard everything inside. If it can melt, warp, or spoil, we've got it covered."
+description: "When you need serious protection for serious materials. These self-powered units deliver complete climate protection for everything inside."
 image: "../../assets/images/equipment/containers/climate-controlled-container.PNG"
 features:
   - "Live dashboards, text message/email alerts, and HD cameras"
@@ -9,13 +9,13 @@ features:
   - "Mobile storage trims handling, warehousing, and damage expenses"
 specifications:
   - label: "Length"
-    value: "20 to 40 feet"
+    value: "20 ft or 40 ft"
   - label: "Height"
-    value: "8 to 9 feet 5 inches"
+    value: "Low box 8 ft or High box 9 ft 6 in"
   - label: "Width"
-    value: "8 feet"
+    value: "8 ft"
   - label: "Power"
-    value: "On-board generator with shore-power backup"
+    value: "On-board generator with backup generator and shore-power option"
   - label: "Climate Control"
     value: "Commercial-grade HVAC with humidity control"
 order_button_text: "Get Container Quote"

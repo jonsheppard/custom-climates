@@ -29,7 +29,7 @@ Custom Climates speaks like a seasoned construction professional who's seen it a
 ### 1. Weather Protection is Project Protection
 - Weather damage costs builders billions
 - We prevent the problems before they start
-- "If it can melt, warp, or spoil, we climate-guard it"
+- "We keep your materials stable, no matter what"
 
 ### 2. Mobile Solutions = Fewer Headaches
 - Drop right on site
@@ -48,7 +48,6 @@ Custom Climates speaks like a seasoned construction professional who's seen it a
 **Solution:** [How we solve it]"
 
 ### Key Phrases to Use
-- "Mother Nature never hijacks your schedule or your margins"
 - "climate-guard it"
 - "babysit your cargo"
 - "lock temps and humidity to spec"
@@ -58,6 +57,20 @@ Custom Climates speaks like a seasoned construction professional who's seen it a
 - "stop them at the gate"
 - "weather-proof your project"
 - "zero delays, zero reorders"
+- "Built to defend against heat, moisture, and time"
+- "We keep your materials stable, no matter what"
+- "No spoilage, no warping — just protection"
+
+### Limited Use Phrases (Use Sparingly)
+- "Mother Nature never hijacks your schedule or your margins" (LIMIT TO ONE REFERENCE SITEWIDE - homepage hero only)
+
+### Alternative Weather References
+Instead of overusing "Mother Nature," use:
+- "Weather"
+- "The elements" 
+- "Harsh outdoor conditions"
+- "Environmental extremes"
+- "Harsh weather"
 
 ### Industry Terms We Use
 - "onsign" (not "onsite")
@@ -145,7 +158,7 @@ Custom Climates speaks like a seasoned construction professional who's seen it a
 "Our climate-controlled storage solutions provide reliable temperature management for your construction materials."
 
 ### After (Brand Voice)
-"We climate-guard every plank, panel, and pallet so Mother Nature never hijacks your schedule or your margins."
+"We climate-guard every plank, panel, and pallet so weather never hijacks your schedule or your margins."
 
 ### Before (Corporate)
 "Utilizing advanced monitoring technology, we provide real-time data access through our comprehensive dashboard system."
@@ -199,7 +212,7 @@ Your website currently has **three distinct brand voices**:
 - "We'll walk you through pricing and options—no surprises."
 - "Our team stays on it from quote to delivery."
 - "Gooseneck trailers that drop right on your jobsite"
-- "Climate-guard your materials before Mother Nature costs you money"
+- "Climate-guard your materials before harsh weather costs you money"
 - "Lock temps and humidity to spec—your crew loads materials the same morning"
 
 ## Business Model Clarification Needed

@@ -258,3 +258,41 @@ This checklist tracks our progress in reviewing and updating all website content
 **Last Updated**: [Date]  
 **Next Review**: [Date]  
 **Completion Status**: 🎉 **ALL PHASES COMPLETE!** 15/15 items ✅ - TOTAL BRAND VOICE OVERHAUL FINISHED! 
+
+## Content Review Checklist
+
+### Brand Voice & Messaging
+- [ ] **Conversational tone**: Uses contractions, direct language, industry insider voice
+- [ ] **Problem/solution structure**: Leads with customer pain points, follows with solutions
+- [ ] **Quantified benefits**: Includes specific numbers when possible ($2.5B damage, 30-minute setup)
+- [ ] **Results-focused**: Emphasizes preventing disasters, not just providing equipment
+
+### Key Phrases & Language
+- [ ] **Use signature phrases appropriately**: "climate-guard", "babysit your cargo", "lock temps and humidity to spec"
+- [ ] **Avoid phrase overuse**: Don't repeat signature phrases too frequently across pages
+- [ ] **Mother Nature usage**: Limit to ONE reference sitewide (homepage hero only)
+- [ ] **Alternative weather references**: Use "weather", "the elements", "harsh outdoor conditions" instead of repeating Mother Nature
+- [ ] **Fresh alternatives**: Use varied headlines like "Built to defend against heat, moisture, and time"
+
+### Technical Accuracy
+- [ ] **Trailer specs**: 20-44 ft length, 7-8'4" height, includes backup generator
+- [ ] **Container specs**: 20/40 ft length, 8 ft/9'6" height options, includes backup generator  
+- [ ] **Office container specs**: 20/40 ft length, 8 ft/9'6" height, NO humidity control claims, NO generator claims
+
+### Content Structure
+- [ ] **Clear hierarchy**: H1, H2, H3 tags used properly
+- [ ] **Scannable format**: Short paragraphs, bullet points, clear sections
+- [ ] **Mobile-friendly**: Content works well on small screens
+- [ ] **CTA placement**: Clear calls-to-action at logical points
+
+### SEO & Technical
+- [ ] **Meta descriptions**: Unique, compelling, under 160 characters
+- [ ] **Alt text**: All images have descriptive alt text
+- [ ] **Internal links**: Appropriate links to other pages/sections
+- [ ] **External links**: Open in new tabs where appropriate
+
+### Grammar & Style
+- [ ] **No em dashes**: Replace with periods, commas, colons, or other punctuation
+- [ ] **Consistent terminology**: "jobsite" not "job site", "conex" not "shipping container"
+- [ ] **Professional but casual**: Maintains expertise without being overly formal
+- [ ] **Error-free**: No typos, grammatical errors, or formatting issues 
