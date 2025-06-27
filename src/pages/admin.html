@@ -11,16 +11,10 @@
     <!-- Decap CMS script -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     
-    <!-- Simple redirect to Auth0 login -->
+    <!-- Let Decap CMS handle Auth0 authentication via git-gateway -->
     <script>
-      // Check if user is already authenticated
-      const urlParams = new URLSearchParams(window.location.search);
-      const hasAuthCode = urlParams.get('code');
-      
-      if (!hasAuthCode) {
-        // Redirect to Auth0 login - let CMS handle this
-        console.log('No auth code found, CMS will handle authentication');
-      }
+      // CMS will automatically handle authentication through git-gateway + Auth0
+      console.log('Decap CMS loading with git-gateway + Auth0 authentication');
     </script>
   </body>
 </html> 
