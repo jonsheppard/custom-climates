@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Content Manager</title>
+    <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url" />
+  </head>
+  <body>
+    <!-- Decap CMS script -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    
+    <!-- Simple redirect to Auth0 login -->
+    <script>
+      // Check if user is already authenticated
+      const urlParams = new URLSearchParams(window.location.search);
+      const hasAuthCode = urlParams.get('code');
+      
+      if (!hasAuthCode) {
+        // Redirect to Auth0 login - let CMS handle this
+        console.log('No auth code found, CMS will handle authentication');
+      }
+    </script>
+  </body>
+</html> 
