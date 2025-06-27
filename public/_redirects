@@ -1,0 +1,6 @@
+# Netlify Identity redirects
+# Redirect password reset confirmation to our custom page
+/.netlify/identity/reset-password /reset-password 200
+
+# General redirects
+/admin /admin/ 200 
