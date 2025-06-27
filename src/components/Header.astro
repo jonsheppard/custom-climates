@@ -1,6 +1,13 @@
 ---
 // src/components/Header.astro
 import lightLogo from '../assets/images/icons/logos/custom-climates-logo-for-light-background.png';
+import { getCollection } from 'astro:content';
+
+const allEquipment = await getCollection('equipment');
+const desiredOrder = ['climate-controlled-trailer', 'containers', 'office-container'];
+const equipment = desiredOrder
+  .map(slug => allEquipment.find(item => item.slug === slug))
+  .filter((item): item is NonNullable<typeof item> => item !== undefined);
 ---
 <header class="bg-gray-100 text-gray-900 shadow-sm relative z-50">
   <div class="container mx-auto px-4 py-3 flex justify-between items-center">
@@ -13,9 +20,29 @@ import lightLogo from '../assets/images/icons/logos/custom-climates-logo-for-lig
     
     <!-- Desktop Navigation -->
     <nav class="hidden lg:flex space-x-6">
-      <a href="/equipment" class="hover:text-[#0955A9] transition-colors font-medium">Equipment</a>
+      <!-- Equipment Dropdown -->
+      <div class="relative group">
+        <a href="/equipment" class="hover:text-[#0955A9] transition-colors font-medium flex items-center space-x-1">
+          <span>Equipment</span>
+          <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </a>
+        <div class="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-lg border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+          <div class="p-2">
+            {equipment.map((item) => (
+              <a 
+                href={`/equipment/${item.slug}`} 
+                class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#0955A9] rounded-md transition-colors"
+              >
+                {item.data.title}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+      
       <a href="/process" class="hover:text-[#0955A9] transition-colors font-medium">Our Process</a>
-      <!-- <a href="/industries" class="hover:text-[#0955A9] transition-colors font-medium">Industries</a> -->
       <a href="/about" class="hover:text-[#0955A9] transition-colors font-medium">About</a>
       <a href="/contact" class="hover:text-[#0955A9] transition-colors font-medium">Contact</a>
     </nav>
@@ -37,10 +64,28 @@ import lightLogo from '../assets/images/icons/logos/custom-climates-logo-for-lig
 
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="hidden lg:hidden bg-gray-200 border-t border-gray-300">
-    <div class="container mx-auto px-4 py-4 space-y-3">
-      <a href="/equipment" class="block text-gray-900 py-2 px-2 hover:text-[#0955A9] hover:bg-gray-300 rounded transition-colors font-medium">Equipment</a>
+    <div class="container mx-auto px-4 py-4 space-y-1">
+      <!-- Equipment Section -->
+      <div class="space-y-1">
+        <button id="mobile-equipment-toggle" class="w-full text-left flex items-center justify-between text-gray-900 py-2 px-2 hover:text-[#0955A9] hover:bg-gray-300 rounded transition-colors font-medium">
+          <span>Equipment</span>
+          <svg class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div id="mobile-equipment-menu" class="hidden pl-4 space-y-1 border-l-2 border-gray-400 ml-2">
+          {equipment.map((item) => (
+            <a 
+              href={`/equipment/${item.slug}`} 
+              class="block text-gray-700 py-2 px-2 hover:text-[#0955A9] hover:bg-gray-300 rounded transition-colors text-sm"
+            >
+              {item.data.title}
+            </a>
+          ))}
+        </div>
+      </div>
+      
       <a href="/process" class="block text-gray-900 py-2 px-2 hover:text-[#0955A9] hover:bg-gray-300 rounded transition-colors font-medium">Our Process</a>
-      <!-- <a href="/industries" class="block text-gray-900 py-2 px-2 hover:text-[#0955A9] hover:bg-gray-300 rounded transition-colors font-medium">Industries</a> -->
       <a href="/about" class="block text-gray-900 py-2 px-2 hover:text-[#0955A9] hover:bg-gray-300 rounded transition-colors font-medium">About</a>
       <a href="/contact" class="block text-gray-900 py-2 px-2 hover:text-[#0955A9] hover:bg-gray-300 rounded transition-colors font-medium">Contact</a>
       <div class="pt-3 border-t border-gray-400">
@@ -57,6 +102,8 @@ import lightLogo from '../assets/images/icons/logos/custom-climates-logo-for-lig
   function initializeMobileMenu() {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
+    const equipmentToggle = document.getElementById('mobile-equipment-toggle');
+    const equipmentMenu = document.getElementById('mobile-equipment-menu');
 
     if (mobileMenuButton && mobileMenu) {
       mobileMenuButton.addEventListener('click', (e) => {
@@ -83,6 +130,20 @@ import lightLogo from '../assets/images/icons/logos/custom-climates-logo-for-lig
           if (svg) {
             svg.setAttribute('d', 'M4 6h16M4 12h16m-7 6h7'); // Hamburger
           }
+        }
+      });
+    }
+
+    // Equipment submenu toggle
+    if (equipmentToggle && equipmentMenu) {
+      equipmentToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        equipmentMenu.classList.toggle('hidden');
+        
+        // Rotate arrow
+        const arrow = equipmentToggle.querySelector('svg');
+        if (arrow) {
+          arrow.classList.toggle('rotate-180');
         }
       });
     }
