@@ -32,5 +32,15 @@ const {
 			</main>
 			<Footer />
 		</div>
+		
+		<!-- Netlify Identity global handler -->
+		<script is:inline>
+			// Handle password reset redirects globally
+			if (typeof window !== 'undefined') {
+				if (window.location.hash.includes("recovery_token") || window.location.search.includes("recovery_token")) {
+					window.location.href = "/reset-password" + window.location.search + window.location.hash;
+				}
+			}
+		</script>
 	</body>
 </html> 
