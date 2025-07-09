@@ -20,7 +20,10 @@ const { headline, subtext, trust_text, secondary_cta } = Astro.props;
     class="absolute top-0 left-0 w-full h-full object-cover z-0"
     src={video}
   ></video>
-  <div class="absolute top-0 left-0 w-full h-full bg-black opacity-15 z-10"></div>
+  <div
+    class="absolute top-0 left-0 w-full h-full bg-black z-10"
+    style="opacity:0.15;"
+  ></div>
   <div class="relative container mx-auto px-4 sm:px-8 py-16 sm:py-24 lg:py-40 z-20">
     <div class="text-center max-w-4xl mx-auto">
       <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6" style="line-height: 1.6;">{headline}</h1>
@@ -36,5 +39,4 @@ const { headline, subtext, trust_text, secondary_cta } = Astro.props;
         </a>
       </div>
     </div>
-  </div>
-</section>
+  </div></section>
