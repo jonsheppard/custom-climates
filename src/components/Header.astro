@@ -123,8 +123,12 @@ const equipment = desiredOrder
 
       // Close menu when clicking outside
       document.addEventListener('click', (e) => {
-        const target = e.target as HTMLElement;
-        if (!mobileMenuButton.contains(target) && !mobileMenu.contains(target)) {
+        const target = e.target;
+        if (
+          target instanceof HTMLElement &&
+          !mobileMenuButton.contains(target) &&
+          !mobileMenu.contains(target)
+        ) {
           mobileMenu.classList.add('hidden');
           const svg = mobileMenuButton.querySelector('svg path');
           if (svg) {
@@ -154,5 +158,4 @@ const equipment = desiredOrder
     document.addEventListener('DOMContentLoaded', initializeMobileMenu);
   } else {
     initializeMobileMenu();
-  }
-</script> 
+  }</script> 

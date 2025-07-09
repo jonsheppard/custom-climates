@@ -165,7 +165,8 @@ const description = "Request a consultation for a custom climate-controlled trai
   // Phone formatting
   if (phoneInput) {
     phoneInput.addEventListener('input', (e) => {
-      const target = e.target as HTMLInputElement;
+      const target = e.target;
+      if (!(target instanceof HTMLInputElement)) return;
       let input = target.value.replace(/\D/g, '').substring(0, 10);
       const areaCode = input.substring(0, 3);
       const middle = input.substring(3, 6);
@@ -182,10 +183,14 @@ const description = "Request a consultation for a custom climate-controlled trai
   }
 
   // Country selection handler
-  if (countrySelect && stateUsSelect && stateCaSelect) {
-    const countryEl = countrySelect as HTMLSelectElement;
-    const stateUsEl = stateUsSelect as HTMLSelectElement;
-    const stateCaEl = stateCaSelect as HTMLSelectElement;
+  if (
+    countrySelect instanceof HTMLSelectElement &&
+    stateUsSelect instanceof HTMLSelectElement &&
+    stateCaSelect instanceof HTMLSelectElement
+  ) {
+    const countryEl = countrySelect;
+    const stateUsEl = stateUsSelect;
+    const stateCaEl = stateCaSelect;
     
     function updateStateDropdown() {
       const selectedCountry = countryEl.value;
@@ -210,5 +215,4 @@ const description = "Request a consultation for a custom climate-controlled trai
 
     // Update when country changes
     countryEl.addEventListener('change', updateStateDropdown);
-  }
-</script> 
+  }</script> 
