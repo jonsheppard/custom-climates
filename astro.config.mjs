@@ -10,7 +10,7 @@ export default defineConfig({
   integrations: [
     tailwind(), 
     sitemap({
-      filter: (page) => !page.includes('/industries') && !page.includes('/auth-redirect')
+      filter: (page) => !page.includes('/industries') && !page.includes('/auth-redirect') && !page.includes('/admin')
     })
   ]
 });
