@@ -2,9 +2,11 @@ backend:
   name: github
   repo: jonsheppard/custom-climates
   branch: main
-  auth_type: implicit
-  base_url: https://api.netlify.com
-  auth_endpoint: auth
+  auth_type: pkce
+  auth_url: https://dev-bzsxxye5476326q5.auth0.com/authorize
+  auth_token_url: https://dev-bzsxxye5476326q5.auth0.com/oauth/token
+  auth_scope: "openid profile email"
+  client_id: FZnSoTzPdOoyHjo44s1wejODnEWPebUs
 
 # local_backend: true # Only enable for local development
 
