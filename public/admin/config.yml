@@ -1,6 +1,10 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: jonsheppard/custom-climates
   branch: main
+  auth_type: implicit
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
 
 # local_backend: true # Only enable for local development
 
